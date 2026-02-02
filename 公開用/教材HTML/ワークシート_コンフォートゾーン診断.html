@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体験ワーク：コンフォートゾーン診断</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 28px;
+            color: #1a1a1a;
+            border-bottom: 3px solid #4f46e5;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            font-size: 22px;
+            color: #4f46e5;
+            margin-bottom: 20px;
+            border-left: 5px solid #4f46e5;
+            padding-left: 15px;
+        }
+        
+        .instruction {
+            background: #f0f4ff;
+            border-left: 4px solid #4f46e5;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+        }
+        
+        .instruction p {
+            margin-bottom: 10px;
+        }
+        
+        .instruction ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .worksheet-area {
+            background: white;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            min-height: 150px;
+        }
+        
+        .worksheet-area-large {
+            min-height: 200px;
+        }
+        
+        textarea {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 16px;
+            line-height: 1.8;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .example {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .example-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #92400e;
+        }
+        
+        .note {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            background: #4f46e5;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #4338ca;
+        }
+        
+        @media print {
+            .btn-container {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>体験ワーク：コンフォートゾーン診断</h1>
+        <p class="subtitle">「目標達成を支援するコーチング」セミナー</p>
+        
+        <div class="instruction">
+            <p><strong>このワークの目的：</strong></p>
+            <ul>
+                <li>自分のコンフォートゾーン（安心できる領域）を可視化する</li>
+                <li>挑戦したい領域と現在の領域のギャップを明確にする</li>
+                <li>抵抗の声を「自分を守ってくれている声」として認める</li>
+                <li>未来へ進む方法を一緒に考える</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>時間：</strong> 個人ワーク5分 → ペアワーク7分 → 全体共有3分</p>
+            <p><strong>ポイント：</strong> 完璧を目指さず、思いついたことをどんどん書いてください。</p>
+        </div>
+        
+        <div class="section">
+            <h2>1. 今、安心できる領域</h2>
+            <p style="margin-bottom: 15px;">今、あなたが安心・安全を感じられる領域はどこですか？具体的に書き出してください。</p>
+            
+            <div class="example">
+                <div class="example-title">記入例：</div>
+                <ul>
+                    <li>現在の仕事（慣れ親しんだ環境）</li>
+                    <li>家族との時間（安定した関係性）</li>
+                    <li>毎朝のコーヒータイム（ルーティン）</li>
+                </ul>
+            </div>
+            
+            <div class="worksheet-area">
+                <textarea placeholder="ここに記入してください（3つ以上書いてみましょう）"></textarea>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>2. 挑戦したい領域</h2>
+            <p style="margin-bottom: 15px;">今、あなたが挑戦したい、または変えたい領域はどこですか？</p>
+            
+            <div class="example">
+                <div class="example-title">記入例：</div>
+                <ul>
+                    <li>新しいスキルを身につける</li>
+                    <li>副業を始める</li>
+                    <li>人間関係を改善する</li>
+                </ul>
+            </div>
+            
+            <div class="worksheet-area">
+                <textarea placeholder="ここに記入してください（3つ以上書いてみましょう）"></textarea>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>3. 抵抗の声</h2>
+            <p style="margin-bottom: 15px;">ギャップを埋めようとする際に浮かぶ「抵抗の声」は何ですか？その声に名前をつけてください。</p>
+            
+            <div class="example">
+                <div class="example-title">記入例：</div>
+                <ul>
+                    <li>「失敗したらどうしよう」→ <strong>「慎重派の私」</strong></li>
+                    <li>「時間がない」→ <strong>「忙しさを理由にする私」</strong></li>
+                    <li>「今のままでいい」→ <strong>「現状維持を選ぶ私」</strong></li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                <strong>ポイント：</strong> 抵抗の声を否定するのではなく、「自分を守ってくれている声」として認めることが大切です。
+            </div>
+            
+            <div class="worksheet-area">
+                <textarea placeholder="抵抗の声とその名前を書いてください（例：『失敗したらどうしよう』→『慎重派の私』）"></textarea>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>4. 未来へ進む方法</h2>
+            <p style="margin-bottom: 15px;">抵抗の声と共存しながら、未来へ進むための方法を考えてください。</p>
+            
+            <div class="example">
+                <div class="example-title">記入例：</div>
+                <ul>
+                    <li>「慎重派の私」に「小さな一歩から始める」と伝える</li>
+                    <li>「忙しさを理由にする私」に「優先順位を明確にする」と伝える</li>
+                    <li>「現状維持を選ぶ私」に「未来の自分をイメージする」と伝える</li>
+                </ul>
+            </div>
+            
+            <div class="worksheet-area worksheet-area-large">
+                <textarea placeholder="抵抗の声と共存しながら、未来へ進む方法を書いてください"></textarea>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>5. 振り返り</h2>
+            <p style="margin-bottom: 15px;">このワークを通じて、どんな気づきがありましたか？</p>
+            
+            <div class="worksheet-area">
+                <textarea placeholder="気づきや学びを書いてください"></textarea>
+            </div>
+        </div>
+        
+        <div class="note" style="margin-top: 40px;">
+            <strong>次のステップ：</strong> ペアワークでは、このワークシートの内容をシェアしてください。相手の「抵抗の声」を「自分を守ってくれている声」として認め、未来へ進む方法を一緒に考えてください。
+        </div>
+        
+        <div class="btn-container">
+            <button class="btn" onclick="window.print()">印刷する</button>
+        </div>
+    </div>
+</body>
+</html>
+

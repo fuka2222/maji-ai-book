@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第3章　構造化：科学的な目標設定と進行｜ミチシル　ママのための私軸コーチング</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .progress-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #ea580c 0%, #fb7185 100%);
+            color: white;
+            padding: 12px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 1000;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .progress-header .chapter-info { font-weight: 600; }
+        .progress-header .section-info { font-weight: 500; opacity: 0.95; }
+        .progress-header .section-number {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-right: 8px;
+        }
+        body { padding-top: 50px; }
+        @media print {
+            .progress-header { display: none; }
+            body { padding-top: 0; }
+        }
+        .michishiru-accent { color: #ea580c; font-weight: 600; }
+        .work-placeholder {
+            background: #fff7ed;
+            border: 2px dashed #fb7185;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            color: #c2410c;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-header">
+        <div class="chapter-info">ミチシル　第3章　構造化</div>
+        <div class="section-info">
+            <span class="section-number" id="current-section-number">3-1</span>
+            <span id="current-section-title">目標設定の科学（SMART+ER）</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="chapter-header">
+            <h1>第3章　構造化：科学的な目標設定と進行</h1>
+            <p class="chapter-intro">第2章では「認める」「聴く」「問う」「フィードバックする」の4つの基本スキルを学びました。この章では、そのスキルを活かして、対話を「成果を生む型」に整えていきます。目標の立て方（SMART+ER）、信頼関係の築き方（ラポール形成）、セッションの設計図（GROWモデル）の3つを学び、曖昧な願いを脳が動き出すゴールに変え、ママの日常や子育ての目標にもそのまま使える内容にしていきます。</p>
+            <p class="chapter-intro">対話には、うまくいく「流れ」があります。まず信頼関係を築き、そのうえでテーマや本音を引き出し、具体的な一歩を決め、セッションのあいだも振り返りでつなぐ——その流れを<strong>ストラクチャー</strong>といい、<strong>ラポールモード・発見モード・行動モード・セッションとセッションの間</strong>という4つのモードで形づくられています。第2章で学んだ「認める」「聴く」は最初のラポールモードで、「問う」「フィードバックする」は発見モードで特に活きるスキルです。この章では、目標の立て方（SMART+ER）から始め、信頼関係の築き方（ラポール形成）と対話の型（GROWモデル）を学び、この流れをママの対話でも使いやすくしていきましょう。</p>
+
+            <figure style="margin: 28px 0; padding: 24px; background: #f8f9fa; border-radius: 12px; border: 1px solid #e5e7eb;">
+                <figcaption style="font-weight: 600; margin-bottom: 16px; color: #1a1a1a; font-size: 16px;">［図］ストラクチャー（対話の流れを形づくる4つのモード）</figcaption>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                        <thead>
+                            <tr style="background: #fff7ed; border-bottom: 2px solid #ea580c;">
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">ストラクチャー</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">コーチ</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">クライアント</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">得られるもの</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;"><td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>ラポールモード</strong></td><td style="padding: 12px; border: 1px solid #e5e7eb;">認める、聴く</td><td style="padding: 12px; border: 1px solid #e5e7eb;">話す</td><td style="padding: 12px; border: 1px solid #e5e7eb;">安心感、解放感、信頼</td></tr>
+                            <tr style="background: #fefce8;"><td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>発見モード</strong></td><td style="padding: 12px; border: 1px solid #e5e7eb;">質問する、フィードバックする</td><td style="padding: 12px; border: 1px solid #e5e7eb;">考える、答える、感じる</td><td style="padding: 12px; border: 1px solid #e5e7eb;">棚卸し、整理、気づき</td></tr>
+                            <tr style="background: white;"><td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>行動モード</strong></td><td style="padding: 12px; border: 1px solid #e5e7eb;">リクエストする</td><td style="padding: 12px; border: 1px solid #e5e7eb;">納得する</td><td style="padding: 12px; border: 1px solid #e5e7eb;">意欲、自発、自信</td></tr>
+                            <tr style="background: #f0fdf4;"><td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>セッションとセッションの間</strong></td><td style="padding: 12px; border: 1px solid #e5e7eb;">フォローアップする</td><td style="padding: 12px; border: 1px solid #e5e7eb;">行動する</td><td style="padding: 12px; border: 1px solid #e5e7eb;">持続性</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin-top: 16px; margin-bottom: 0; font-size: 14px; color: #374151; line-height: 1.7;">クライアントの「行動する」とコーチの「フォローアップする」が重なり合うことで、<strong>目標達成</strong>につながります。</p>
+            </figure>
+        </header>
+
+        <!-- 3-1 目標設定の科学（SMART+ER） -->
+        <section class="section" data-section="3-1" data-section-title="目標設定の科学（SMART+ER）">
+            <h2>3-1 目標設定の科学（SMART+ER）</h2>
+
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
+                <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>「幸せになりたい」「もっと余裕を持ちたい」——そんな目標を立てたことはありますか？</li>
+                    <li>その目標は、具体的にいつ・何をすれば達成したと言えますか？</li>
+                </ol>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; margin-top: 18px; min-height: 100px;">
+                    <p style="color: #6b7280; font-size: 14px;">メモ欄：</p>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">解説</h3>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">① 曖昧なゴールでは脳は動かない</h4>
+                <p style="margin-bottom: 18px; line-height: 1.9;">「幸せになりたい」「もっと余裕を持ちたい」といった曖昧なゴールでは、脳（RAS：網様体賦活系）は情報を集められません。SMARTの法則に、感情と整合性を加えた<strong>SMART+ER</strong>で設定すると、脳が「これだ」と認識し、行動に必要な情報を自然と集め始めます。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">② SMART+ERの各要素</h4>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2.2;">
+                        <li><strong>Specific（具体的か）</strong>：何を、どこまで、誰とやるかがはっきりしているか。</li>
+                        <li><strong>Measurable（測定可能か）</strong>：達成したかどうかが、自分でわかるか。</li>
+                        <li><strong>Achievable（達成可能か）</strong>：今の自分に、現実的に手が届くか。</li>
+                        <li><strong>Related（価値観に合っているか）</strong>：自分が大切にしていることとつながっているか。</li>
+                        <li><strong>Time-bound（期限はあるか）</strong>：「いつまでに」が決まっているか。</li>
+                        <li><strong>+ Emotion（ワクワクするか・感情が動くか）</strong>：思い浮かべると、気持ちが動くか。</li>
+                        <li><strong>+ Ecology（周りの環境や家族との調和は取れているか）</strong>：家族や生活とのバランスは大丈夫か。</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 18px; line-height: 1.9;">ママの目標は「自分だけ」で完結しにくいもの。Ecology（家族との調和）を忘れずに、「私の時間を週に2時間確保する」「子どもが寝たあと30分は自分の読書タイムにする」のように、具体的で測れる形に落とし込んでみましょう。</p>
+
+                <div style="background: #fff7ed; border-radius: 8px; padding: 20px; margin: 24px 0;">
+                    <p style="font-weight: 600; margin-bottom: 10px; color: #c2410c;">ママへのひとこと</p>
+                    <p style="margin: 0; line-height: 1.9;">「いつかやりたい」は脳には届きません。「今月の第2日曜の午前中、1時間、〇〇をする」のように、日付と時間まで決めると、カレンダーに書き込めて、家族にも伝えやすくなります。</p>
+                </div>
+            </div>
+
+            <div class="work-placeholder">
+                【ワーク】ここにワークを追加できます。（ワーク内容は別途ご指示に応じて反映します）
+            </div>
+        </section>
+
+        <!-- 3-2 ラポール形成（信頼関係を築く） -->
+        <section class="section" data-section="3-2" data-section-title="ラポール形成（信頼関係を築く）">
+            <h2>3-2 ラポール形成（信頼関係を築く）</h2>
+
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
+                <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>誰かと「信頼関係が築けた」と感じた瞬間は、どんなときでしたか？ そのとき、どんなことが起こっていましたか？</li>
+                    <li>逆に、信頼関係が崩れたと感じた瞬間は、どんなときでしたか？ そのとき、どんなことが起こっていましたか？</li>
+                    <li>相手が「安心して話せる」と感じるために、あなたはどんな姿勢や行動が大事だと思いますか？</li>
+                </ol>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; margin-top: 18px; min-height: 100px;">
+                    <p style="color: #6b7280; font-size: 14px;">メモ欄：</p>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">解説</h3>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">① ラポールとは</h4>
+                <p style="margin-bottom: 18px; line-height: 1.9;">ラポール（rapport）は、相手と「信頼関係ができている」「安心して話せる」と感じられる状態のことです。目標を話し合うときも、GROWで対話を進めるときも、この土台がなければ本音や現状が出てきません。第2章で学んだ「認める」「聴く」は、まさにラポールを築くためのスキルです。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">② ラポールを築くための前提（おさえておきたい考え方）</h4>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2.2;">
+                        <li><strong>相手の世界観を尊重する</strong>：「こうあるべき」を押しつけず、相手の見方・感じ方を好奇心で聴く。押しつけると、表情が硬くなったり、言葉が短くなったりする。</li>
+                        <li><strong>行動と変化は周りにも影響する（エコロジー）</strong>：目標や行動が、家族・仕事・生活にどんな影響を与えるかを一緒に考える。ママの目標は家族と切り離せないので、ここを忘れない。</li>
+                        <li><strong>抵抗はラポール不足のサイン</strong>：「わかりません」「別に…」と返される、話題を変えられる、視線が合わなくなる——そんなときは、相手が「この場は安全じゃない」と感じている可能性がある。相手のせいにせず、自分の関わり方を見直す。</li>
+                        <li><strong>行動と人格を分けて捉える</strong>：うまくいかなかった「行動」があっても、その人がダメなわけではない。行動の裏にある「そうしたい理由」に目を向け、別のやり方を一緒に探す。</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 18px; line-height: 1.9;">夫や子ども、ママ友との対話でも、「まず信頼関係があるか」「相手の世界観を尊重しているか」を意識するだけで、その後の目標の話やGROWの流れがずっとスムーズになります。</p>
+
+                <div style="background: #fff7ed; border-radius: 8px; padding: 20px; margin: 24px 0;">
+                    <p style="font-weight: 600; margin-bottom: 10px; color: #c2410c;">ママへのひとこと</p>
+                    <p style="margin: 0; line-height: 1.9;">「なんでそうなの？」と詰めると、相手は心を閉じます。「どうしてそう感じるの？」「もう少し教えて」と、相手の世界観を理解しようとする問いかけに変えると、ラポールが育ち、本音が話しやすくなります。</p>
+                </div>
+            </div>
+
+            <div class="work-placeholder">
+                【ワーク】ここにワークを追加できます。（ワーク内容は別途ご指示に応じて反映します）
+            </div>
+        </section>
+
+        <!-- 3-3 セッションの設計図（GROWモデル） -->
+        <section class="section" data-section="3-3" data-section-title="セッションの設計図（GROWモデル）">
+            <h2>3-3 セッションの設計図（GROWモデル）</h2>
+
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
+                <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>誰かと「話したらスッキリした」「次にやることが決まった」という経験はありますか？</li>
+                    <li>そのとき、会話はどんな流れで進んでいましたか？</li>
+                </ol>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; margin-top: 18px; min-height: 100px;">
+                    <p style="color: #6b7280; font-size: 14px;">メモ欄：</p>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">解説</h3>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">① プロのセッションには「型」がある</h4>
+                <p style="margin-bottom: 18px; line-height: 1.9;">プロのセッションには「型」があります。それが<strong>GROWモデル</strong>です。この流れに沿って会話を進めることで、ただのおしゃべりが「成果を生むセッション」へと変わります。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">② GROWの4ステップ</h4>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 24px; margin: 20px 0;">
+                    <ol style="margin: 0; padding-left: 22px; line-height: 2.4;">
+                        <li><strong>Goal（目標）</strong>：今回の時間はどうなったら最高？ ゴールの合意。</li>
+                        <li><strong>Reality（現状）</strong>：今はどういう状態？ 何がうまくいって、何が課題？</li>
+                        <li><strong>Options（選択肢）</strong>：ギャップを埋めるために何ができる？ 他には？ リソースの棚卸し。</li>
+                        <li><strong>Will（意思）</strong>：具体的にいつやる？ やれる確信度は何％？</li>
+                    </ol>
+                </div>
+                <p style="margin-bottom: 18px; line-height: 1.9;">夫や子どもとの「ちょっとした対話」でも、この順番を意識するだけで、「何がしたいか」「今どうなっているか」「何ができそうか」「いつやるか」が整理され、次の一歩が決まりやすくなります。</p>
+
+                <div style="background: #fff7ed; border-radius: 8px; padding: 20px; margin: 24px 0;">
+                    <p style="font-weight: 600; margin-bottom: 10px; color: #c2410c;">ママへのひとこと</p>
+                    <p style="margin: 0; line-height: 1.9;">「週末に〇〇したいんだけど、今の状況だと時間が取れなくて」——そんなとき、いきなり「じゃあこうすれば？」と提案するより、まず「どうなったら最高？」「今、何が大変？」とGoalとRealityを聴いてから、OptionsとWillを一緒に考えると、相手も自分で決めた感が出て、動きやすくなります。</p>
+                </div>
+            </div>
+
+            <div class="work-placeholder">
+                【ワーク】ここにワークを追加できます。（ワーク内容は別途ご指示に応じて反映します）
+            </div>
+        </section>
+
+        <!-- 章末まとめ -->
+        <section class="section">
+            <h2>章末まとめ</h2>
+            <h3 style="font-size: 18px; margin-top: 24px; margin-bottom: 12px;">理解の確認</h3>
+            <ol style="line-height: 2;">
+                <li>SMART+ERの各要素を、自分や家族の目標に当てはめて、1つ書き直してみましょう。</li>
+                <li>ラポールを築くための前提（相手の世界観を尊重する、抵抗はラポール不足のサイン、など）を、身近な対話で1つ意識してみましょう。</li>
+                <li>GROWモデルの4ステップ（Goal→Reality→Options→Will）を、身近なテーマで1回、会話の流れとしてイメージしてみましょう。</li>
+            </ol>
+            <h3 style="font-size: 18px; margin-top: 24px; margin-bottom: 12px;">次章へのつなぎ</h3>
+            <p style="line-height: 1.9;">第3章で目標の立て方（SMART+ER）、信頼関係の築き方（ラポール形成）、対話の型（GROWモデル）を学びました。次章では、コーチングの倫理とプロ意識、そして「聴く」「認める」「問う」「フィードバックする」を総動員した統合スキル実践に進みます。</p>
+        </section>
+    </div>
+
+    <script>
+        function updateCurrentSection() {
+            const sections = document.querySelectorAll('section.section[data-section]');
+            const headerNumber = document.getElementById('current-section-number');
+            const headerTitle = document.getElementById('current-section-title');
+            if (!sections.length || !headerNumber || !headerTitle) return;
+            const scrollPosition = window.scrollY + 100;
+            let currentSection = sections[0];
+            for (let i = 0; i < sections.length; i++) {
+                const section = sections[i];
+                const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+                if (scrollPosition >= sectionTop) currentSection = section;
+                else break;
+            }
+            if (currentSection) {
+                const sectionNumber = currentSection.getAttribute('data-section');
+                const sectionTitle = currentSection.getAttribute('data-section-title');
+                if (sectionNumber && sectionTitle) {
+                    headerNumber.textContent = sectionNumber;
+                    headerTitle.textContent = sectionTitle;
+                }
+            }
+        }
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() { updateCurrentSection(); ticking = false; });
+                ticking = true;
+            }
+        });
+        updateCurrentSection();
+        window.addEventListener('resize', updateCurrentSection);
+    </script>
+</body>
+</html>
