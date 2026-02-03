@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第3章　構造化：科学的な目標設定と進行｜ミチシル　ママのための私軸コーチング</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .progress-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #ea580c 0%, #fb7185 100%);
+            color: white;
+            padding: 12px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 1000;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .progress-header .chapter-info { font-weight: 600; }
+        .progress-header .section-info { font-weight: 500; opacity: 0.95; }
+        .progress-header .section-number {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-right: 8px;
+        }
+        body { padding-top: 50px; }
+        @media print {
+            .progress-header { display: none; }
+            body { padding-top: 0; }
+            /* 印刷時：変な場所で改ページされないようにする */
+            section.section,
+            .work-block {
+                page-break-inside: avoid;
+            }
+            .chapter-header,
+            h1, h2, h3, h4, h5 {
+                page-break-after: avoid;
+            }
+            h2 { page-break-before: auto; }
+            section.section[data-section] > h2 { page-break-before: always; }
+            section.section[data-section]:first-of-type > h2 { page-break-before: auto; }
+            /* 見出しとその直後の内容が離れないように */
+            h3, h4, h5 {
+                page-break-after: avoid;
+            }
+            h3 + p, h4 + p, h5 + p {
+                page-break-before: avoid;
+            }
+            /* リストやボックスが途中で切れないように */
+            ul, ol, div[style*="background"] {
+                page-break-inside: avoid;
+            }
+            /* 段落が途中で切れないように */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+            .container {
+                padding: 15px 12px;
+            }
+            a {
+                color: #333;
+                text-decoration: none;
+            }
+        }
+        .michishiru-accent { color: #ea580c; font-weight: 600; }
+        .work-placeholder {
+            background: #fff7ed;
+            border: 2px dashed #fb7185;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            color: #c2410c;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-header">
+        <div class="chapter-info">ミチシル　第3章　構造化</div>
+        <div class="section-info">
+            <span class="section-number" id="current-section-number">3-1</span>
+            <span id="current-section-title">目標設定の科学（SMART+ER）</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="chapter-header">
+            <h1>第3章　構造化：科学的な目標設定と進行</h1>
+            <p class="chapter-intro">第2章では「認める」「聴く」「問う」「フィードバックする」の4つの基本スキルを学びました。この章では、そのスキルを活かして、対話を「成果を生む型」に整えていきます。目標の立て方（SMART+ER）、信頼関係の築き方（ラポール形成）、セッションの設計図（GROWモデル）の3つを学び、曖昧な願いを脳が動き出すゴールに変え、ママの日常や子育ての目標にもそのまま使える内容にしていきます。</p>
+            <p class="chapter-intro">対話には、うまくいく「流れ」があります。まず信頼関係を築き、そのうえでテーマや本音を引き出し、具体的な一歩を決め、セッションのあいだも振り返りでつなぐ——その流れを<strong>ストラクチャー</strong>といい、<strong>ラポールモード・発見モード・行動モード・セッションとセッションの間</strong>という4つのモードで形づくられています。第2章で学んだ「認める」「聴く」は最初のラポールモードで、「問う」「フィードバックする」は発見モードで特に活きるスキルです。この章では、目標の立て方（SMART+ER）から始め、信頼関係の築き方（ラポール形成）と対話の型（GROWモデル）を学び、この流れをママの対話でも使いやすくしていきましょう。</p>
+
+            <figure style="margin: 28px 0; padding: 24px; background: #f8f9fa; border-radius: 12px; border: 1px solid #e5e7eb;">
+                <figcaption style="font-weight: 600; margin-bottom: 16px; color: #1a1a1a; font-size: 16px;">［図］ストラクチャー（対話の流れを形づくる4つのモード）</figcaption>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                        <thead>
+                            <tr style="background: #fff7ed; border-bottom: 2px solid #ea580c;">
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">ストラクチャー</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">コーチ</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">クライアント</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">得られるもの</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;"><td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>ラポールモード</strong></td><td style="padding: 12px; border: 1px solid #e5e7eb;">認める、聴く</td><td style="padding: 12px; border: 1px solid #e5e7eb;">話す</td><td style="padding: 12px; border: 1px solid #e5e7eb;">安心感、解放感、信頼</td></tr>
+                            <tr style="background: #fefce8;"><td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>発見モード</strong></td><td style="padding: 12px; border: 1px solid #e5e7eb;">質問する、フィードバックする</td><td style="padding: 12px; border: 1px solid #e5e7eb;">考える、答える、感じる</td><td style="padding: 12px; border: 1px solid #e5e7eb;">棚卸し、整理、気づき</td></tr>
+                            <tr style="background: white;"><td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>行動モード</strong></td><td style="padding: 12px; border: 1px solid #e5e7eb;">リクエストする</td><td style="padding: 12px; border: 1px solid #e5e7eb;">納得する</td><td style="padding: 12px; border: 1px solid #e5e7eb;">意欲、自発、自信</td></tr>
+                            <tr style="background: #f0fdf4;"><td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>セッションとセッションの間</strong></td><td style="padding: 12px; border: 1px solid #e5e7eb;">フォローアップする</td><td style="padding: 12px; border: 1px solid #e5e7eb;">行動する</td><td style="padding: 12px; border: 1px solid #e5e7eb;">持続性</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin-top: 16px; margin-bottom: 0; font-size: 14px; color: #374151; line-height: 1.7;">クライアントの「行動する」とコーチの「フォローアップする」が重なり合うことで、<strong>目標達成</strong>につながります。</p>
+            </figure>
+
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 24px; margin: 28px 0;">
+                <h2 style="color: #166534; margin-top: 0; margin-bottom: 16px; font-size: 18px;">ストラクチャーの3つのモード——行ったり来たりしながら進める</h2>
+                <p style="margin-bottom: 16px; line-height: 1.9;">ストラクチャーの基本は<strong>ラポールモード → 発見モード → 行動モード</strong>の順番です。でも、実際のセッションでは、この順番を一直線に進むのではなく、<strong>各モード間を行ったり戻ったりしながら</strong>進めます。例えば、発見モードで「今、何が大変？」と聞いたら、相手が不安そうな表情をした——そんなときは、もう一度ラポールモードに戻って「不安そうな表情に見えますが、いかがですか？」と聞き、相手から気持ちを聞いてから、また発見モードに進みます。クライアントの状況に応じて、この3つのモードを柔軟に組み合わせることで、コーチングの効果が上がっていきます。</p>
+                <p style="margin-bottom: 0; line-height: 1.9;">また、コーチングは<strong>1回のセッションで目標達成までの全ての道筋を見つけたり、問題を解決したりするものではありません</strong>。長期にわたってクライアントと良好な関係を築きながら、目標達成をサポートしていくものです。リソースに気づくためにも時間が必要ですし、成長したら新しいゴールを設定することもあります。短期的に成果を上げることを焦らず、<strong>長期的な観点で3つのモードを運用していく</strong>ことが大切です。</p>
+            </div>
+
+            <div style="background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 24px; margin: 28px 0;">
+                <h2 style="color: #c2410c; margin-top: 0; margin-bottom: 16px; font-size: 18px;">セッションの時間配分——30分から60分で効果的に</h2>
+                <p style="margin-bottom: 16px; line-height: 1.9;">コーチングセッションは、一般的に<strong>30分から60分間</strong>で行われます。研究では、それ以上時間をかけても効果に大きな差が出ないことがわかっています。この時間の中で、ストラクチャーの3つのモードを繰り返しながら進めます。目安としては、次のような配分になります。</p>
+                <ul style="margin: 0 0 16px 22px; padding-left: 18px; line-height: 2;">
+                    <li><strong>ラポールモード</strong>（約3分）……「認める」「聴く」で安心感・解放感・信頼を築く</li>
+                    <li><strong>発見モード</strong>（約15分）……「質問する」「フィードバックする」でリソースの棚卸し・整理・気づきを促す</li>
+                    <li><strong>行動モード</strong>（約10〜15分）……「リクエストする」でクライアントが納得して行動に踏み出す</li>
+                </ul>
+                <p style="margin-bottom: 0; line-height: 1.9;">時間配分も大事です。ラポールモードを短く済ませすぎると本音が出にくく、発見モードを急ぎすぎると気づきが浅くなり、行動モードを飛ばすと「話しただけ」で終わってしまいます。この配分を頭に入れておくと、セッションの流れが自然と整いやすくなります。</p>
+            </div>
+        </header>
+
+        <!-- 3-1 目標設定の科学（SMART+ER） -->
+        <section class="section" data-section="3-1" data-section-title="目標設定の科学（SMART+ER）">
+            <h2>3-1 目標設定の科学（SMART+ER）</h2>
+
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
+                <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>「幸せになりたい」「もっと余裕を持ちたい」——そんな目標を立てたことはありますか？</li>
+                    <li>その目標は、具体的にいつ・何をすれば達成したと言えますか？</li>
+                </ol>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; margin-top: 18px; min-height: 100px;">
+                    <p style="color: #6b7280; font-size: 14px;">メモ欄：</p>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">解説</h3>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">目標設定は、なぜ大切か</h4>
+                <p style="margin-bottom: 18px; line-height: 1.9;">コーチングでは、<strong>目標の設定は「土台」</strong>です。目標がはっきりしていないと、「何をすればいいか」ばかりを考えがちになり、会話が堂々巡りになりやすいと言われています。逆に、「どうなりたいか」「どうなったらいいか」という「ありたい姿」を先に描くと、「何をすればいいか」は自然と自分の中から湧いてきやすく、ワクワク感や意欲も高まります。目標を明確にすることは、意識を集中し続けるためにも欠かせません。ママの日常でも、「余裕が欲しい」だけでなく「週に2回、子どもが寝たあと30分は自分の時間にする」のように、<strong>いつ・何ができたら達成したと言えるか</strong>を決めておくだけで、脳と行動が動き始めます。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">① 曖昧なゴールでは脳は動かない</h4>
+                <p style="margin-bottom: 18px; line-height: 1.9;">「幸せになりたい」「もっと余裕を持ちたい」といった曖昧なゴールでは、脳（RAS：網様体賦活系）は情報を集められません。SMARTの法則に、感情と整合性を加えた<strong>SMART+ER</strong>で設定すると、脳が「これだ」と認識し、行動に必要な情報を自然と集め始めます。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">② 目標を「映像」にできるくらい具体化する</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">プロのコーチングでは、<strong>漠然とした目標のイメージを、映像にできるくらいはっきりしたものにすること</strong>が重視されます。そのために、「いつ・どこで・誰と・何を・どのように」といった<strong>5W1H</strong>で掘り下げたり、目標が叶ったときの<strong>自分の表情や様子</strong>を思い浮かべたりして、臨場感のあるイメージを描くことを促します。自分が本当に手に入れたいことや、大切にしたいこと（価値観）とつながっているかも確認すると、その目標へのモチベーションが続きやすくなります。ママの場合も、「〇〇ができるようになりたい」を「毎週日曜の午前1時間、〇〇をして、終わったら自分にご褒美のコーヒーを飲む」のように、<strong>達成した状態が頭に浮かぶレベル</strong>まで具体化してみましょう。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>五感を使った質問で臨場感を高める</strong>……目標達成のイメージをより鮮明にするために、<strong>五感を使った質問</strong>が効果的です。クライアントを主役とした映画のハイライトシーンを引き出すかのようにすることで、臨場感をイメージに持たせられます。これはクライアントの気持ちを高めるポイントにもなります。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 18px; margin: 14px 0;">
+                    <p style="margin: 0 0 10px 0; font-weight: 600; color: #ea580c;">五感を使った質問の例</p>
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2;">
+                        <li><strong>視覚</strong>：「目標達成ができて、〇〇さん、どのような表情をされていますか？」「ダイエットが成功し、どのような服を着て出かけますか？」</li>
+                        <li><strong>聴覚</strong>：「周囲からはどのような声をかけてもらっていますか？」</li>
+                        <li><strong>触覚</strong>：「握手した相手の手から何を感じているのでしょうか？」</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 14px; line-height: 1.9;">このような質問で、目標達成の瞬間を五感で感じられるようにすると、モチベーションが高まり、行動につながりやすくなります。</p>
+                <p style="margin-bottom: 18px; line-height: 1.9;"><strong>クライアントの価値観と整合性を確認する</strong>……目標が本当にその人らしいものか、大切にしていることとつながっているかを確認することも重要です。「〇〇さんが本当に手に入れたいことは何でしょうか？」「〇〇さんを、〇〇さんらしさを出すとしたらどうしたらいい？」という質問で、価値観との整合性を確認すると、目標へのモチベーションが続きやすくなります。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">③ SMART+ERの各要素</h4>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2.2;">
+                        <li><strong>Specific（具体的か）</strong>：何を、どこまで、誰とやるかがはっきりしているか。</li>
+                        <li><strong>Measurable（測定可能か）</strong>：達成したかどうかが、自分でわかるか。</li>
+                        <li><strong>Achievable（達成可能か）</strong>：今の自分に、現実的に手が届くか。</li>
+                        <li><strong>Related（価値観に合っているか）</strong>：自分が大切にしていることとつながっているか。</li>
+                        <li><strong>Time-bound（期限はあるか）</strong>：「いつまでに」が決まっているか。</li>
+                        <li><strong>+ Emotion（ワクワクするか・感情が動くか）</strong>：思い浮かべると、気持ちが動くか。</li>
+                        <li><strong>+ Ecology（周りの環境や家族との調和は取れているか）</strong>：家族や生活とのバランスは大丈夫か。</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 18px; line-height: 1.9;">ママの目標は「自分だけ」で完結しにくいもの。Ecology（家族との調和）を忘れずに、「私の時間を週に2時間確保する」「子どもが寝たあと30分は自分の読書タイムにする」のように、具体的で測れる形に落とし込んでみましょう。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">目標設定の留意点</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">目標を設定するとき、次の2点を確認すると、より効果的になります。</p>
+                <ul style="margin: 0 0 18px 22px; padding-left: 22px; line-height: 2;">
+                    <li><strong>目標が具体的になっているか</strong>……SMART+ERの法則で確認できます。Specific（具体的か）、Measurable（測定可能か）、Time-bound（期限はあるか）などが揃っていると、目標が明確になり、行動につながりやすくなります。</li>
+                    <li><strong>ワクワクする目標になっているか</strong>……Emotion（感情が動くか）が重要です。目標を思い浮かべたときに、ワクワク感や「これができたらいいな」という気持ちが湧くかどうか。感情が動く目標の方が、モチベーションが続きやすく、行動につながりやすくなります。</li>
+                </ul>
+                <p style="margin-bottom: 18px; line-height: 1.9;">この2点を意識して目標を設定すると、「やらなきゃ」ではなく「やりたい」という気持ちが生まれ、自然と行動につながっていきます。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">④ 目標を決めてから、行動を決める</h4>
+                <p style="margin-bottom: 18px; line-height: 1.9;">「何をするか」より先に、「どうなりたいか」「どうなったらいいか」をしっかり決めることが大切です。目標（ありたい姿）がはっきりすると、やるべきことが自然と見えてきやすく、意欲も続きやすくなります。また、最初から大きな成果を狙うより、<strong>早い段階で「小さくても確実にできた」という成功体験</strong>を積むと、モチベーションが維持され、その後の一歩も踏み出しやすくなります。目標は、自分が本当に望んでいるか、価値観に合っているかも時々振り返ると、ブレずに進めやすくなります。</p>
+
+                <div style="background: #fff7ed; border-radius: 8px; padding: 20px; margin: 24px 0;">
+                    <p style="font-weight: 600; margin-bottom: 10px; color: #c2410c;">ママへのひとこと</p>
+                    <p style="margin: 0; line-height: 1.9;">「いつかやりたい」は脳には届きません。「今月の第2日曜の午前中、1時間、〇〇をする」のように、日付と時間まで決めると、カレンダーに書き込めて、家族にも伝えやすくなります。</p>
+                </div>
+            </div>
+
+            <!-- ワーク：曖昧な願いを脳が動く目標に変える -->
+            <div style="background: #fff7ed; border: 2px solid #ea580c; border-radius: 12px; padding: 28px; margin: 28px 0;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 8px; font-size: 20px;">ワーク　曖昧な願いを「脳が動く目標」に変える</h3>
+                <p style="font-size: 14px; color: #6b7280; margin-bottom: 20px;">SMART+ERでつくる、私のリアルなゴール設計ワーク　所要時間：30〜45分（ノート・ワークシート推奨／途中で休憩してOK）</p>
+                <p style="margin-bottom: 24px; line-height: 1.9; font-size: 15px;">このワークは、目標を「正しく立てる」ためではなく、<strong>脳が自然に動き出す目標を、自分の言葉で設計する</strong>ためのものです。第2章で身につけた「問い・承認・フィードバック」を、自分自身に使う構成になっています。</p>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step1　いまの「曖昧な願い」をそのまま書く（目安5分）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">整えなくて大丈夫です。今、心にある願いをそのままの言葉で書き出してください。</p>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 12px;">最近よく思っている「こうだったらいいのに」は何ですか？　「余裕がほしい」「変わりたい」「ちゃんとしたい」など、曖昧でもOKです。</p>
+                <p style="margin-bottom: 8px; font-size: 14px; color: #6b7280;">記入例：もっと心に余裕を持ちたい／子どもにイライラしないママになりたい／自分の時間がほしい</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 80px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">メモ欄：</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step2　その願いが叶った「1日のワンシーン」を描く（臨場感）（目安10分）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">「達成した結果」ではなく、「叶っている日常」を具体的に描きます。</p>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 12px;">その願いが叶ったとしたら、ある平日の一日はどう始まりますか？　何時ごろ、どこで、誰と、どんな表情で過ごしていますか？　体はどんな感覚ですか？（軽い／落ち着いている／笑っている など）</p>
+                <p style="margin-bottom: 8px; font-size: 14px; color: #6b7280;">ポイント：うまく書こうとしなくてOK。セリフ・動作・空気感があると◎</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 120px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">メモ欄：</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step3　SMART+ERで「目標の形」に整える（目安15分）</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">Step2で描いたシーンをもとに、下の問いに1つずつ答えて目標を構造化します。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                    <p style="margin: 0 0 10px 0;"><strong>Specific（具体的）</strong>　何を、どこまで、どんな形で？　→</p>
+                    <p style="margin: 0 0 14px 0;"><strong>Measurable（測定可能）</strong>　できた／できていないが、どうなったら分かる？　→</p>
+                    <p style="margin: 0 0 14px 0;"><strong>Achievable（達成可能）</strong>　今の生活の中で、現実的にできそう？　→</p>
+                    <p style="margin: 0 0 14px 0;"><strong>Related（価値観）</strong>　それは、あなたにとって何を大切にしているから？　→</p>
+                    <p style="margin: 0 0 14px 0;"><strong>Time-bound（期限）</strong>　いつまでに？　→</p>
+                    <p style="margin: 0 0 14px 0;"><strong>Emotion（感情）</strong>　それを想像すると、どんな気持ちが湧く？　→</p>
+                    <p style="margin: 0 0 0 0;"><strong>Ecology（調和）</strong>　家族・生活・周囲への影響はどう？　→</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step4　「やること」ではなく「ありたい状態」を1文でまとめる（目安5分）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">行動に入る前に、軸になる一文をつくります。</p>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 8px;">私は、どんな状態の私で在りたい？</p>
+                <p style="margin-bottom: 12px; font-size: 14px; color: #6b7280;">例：私は、イライラしても立ち止まって深呼吸できるママでいる／私は、週に2回は自分の時間を大切にできている</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 60px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">記入欄：</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step5　最初の「小さな一歩」を決める（目安5分）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">最後に、行動を小さく・具体的に決めます。</p>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 8px;">明日〜1週間以内にできる、一番小さな行動は何ですか？　いつ・どこで・何分くらい？</p>
+                <p style="margin-bottom: 12px; font-size: 14px; color: #6b7280;">例：明日の夜、子どもが寝たあと10分だけノートを書く／今週の日曜、午前中に30分カフェに行く</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 60px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">記入欄：</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">振り返り（内省）</h4>
+                <ul style="margin: 0 0 20px 20px; padding-left: 20px; line-height: 2;">
+                    <li>曖昧だった願いは、どこが一番クリアになりましたか？</li>
+                    <li>「やらなきゃ」ではなく、「やれそう」と感じたポイントはどこですか？</li>
+                    <li>この目標は、今のあなたに優しいですか？</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3-2 ラポール形成（信頼関係を築く） -->
+        <section class="section" data-section="3-2" data-section-title="ラポール形成（信頼関係を築く）">
+            <h2>3-2 ラポール形成（信頼関係を築く）</h2>
+
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
+                <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>誰かと「信頼関係が築けた」と感じた瞬間は、どんなときでしたか？ そのとき、どんなことが起こっていましたか？</li>
+                    <li>逆に、信頼関係が崩れたと感じた瞬間は、どんなときでしたか？ そのとき、どんなことが起こっていましたか？</li>
+                    <li>相手が「安心して話せる」と感じるために、あなたはどんな姿勢や行動が大事だと思いますか？</li>
+                </ol>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; margin-top: 18px; min-height: 100px;">
+                    <p style="color: #6b7280; font-size: 14px;">メモ欄：</p>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">解説</h3>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">なぜラポール（信頼関係）が必要か</h4>
+                <p style="margin-bottom: 18px; line-height: 1.9;">コーチングの世界では、「<strong>信頼関係のない相手とは、コーチングは機能しない</strong>」と言われます。本音で話してもらえないと、目標の話をしても表面だけの答えになり、GROWで「どうなりたい？」「今、何が大変？」と聞いても、本当のことが出てきません。ママの日常でも同じです。「早く言いなさい」「なんでできないの？」と聞くと、子どもも夫も心を閉じて、「別に」「わかんない」としか言わなくなった経験はありませんか？　逆に、「この人は話しても大丈夫」と相手が感じていれば、本音や困っていることが自然と出てきて、その後の「じゃあどうする？」の話がしやすくなります。だから、<strong>目標やGROWの前に、まず「安心して話せる」土台＝ラポールを意識する</strong>ことが大切です。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">① ラポールとは</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>ラポール（rapport）</strong>は、相手と「信頼関係ができている」「安心して話せる」と感じられる状態のことです。相手が「この人には本音を言ってもいい」「責められない」「味方でいてくれる」と感じていると、聞かれたことに正直に答えやすく、目標や「今、何が困っているか」も話しやすくなります。目標を話し合うときも、GROWで対話を進めるときも、この土台がなければ本音や現状が出てこず、会話が空回りしがちです。第2章で学んだ<strong>「認める」「聴く」</strong>は、まさにラポールを築くためのスキルです。相手の言葉を評価せず受け止め、しっかり聴くだけで、「話しても大丈夫」という安心感が伝わります。</p>
+                <p style="margin-bottom: 18px; line-height: 1.9;">ラポールが育つ土台には、次のような要素があります。<strong>集中してくれている</strong>（話を遮らず、最後まで聴いてくれる）、<strong>守秘義務を守ってくれる</strong>（話した内容を他に漏らさない）、<strong>笑顔でジャッジメントされない</strong>（評価や批判をしない）、<strong>利害関係がない</strong>（純粋に自分のために聞いてくれている）、<strong>盗み聞きされない</strong>（プライバシーが守られている）、<strong>待ってくれる</strong>（考えている時間をくれる）——これらが揃うと、相手は「ここなら安心して話せる」と感じやすくなります。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">② ラポールを築くために、日常でできること</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">プロのコーチは、セッションの最初に「安心して話せる環境」を整えます。ママの場面では、次のようなことがそのまま使えます。</p>
+                <ul style="margin: 0 0 18px 22px; padding-left: 22px; line-height: 2;">
+                    <li><strong>アイスブレイク——話しやすい話題から開始する</strong>……いきなり本題に入らず、相手が話しやすい話題から始めます。「今日どうだった？」「最近、〇〇はどう？」など、季節的なことや相手が関心を持っていることに触れると、相手が心を開きやすくなります。子どもなら「今日の給食、何だった？」、夫なら「今週末、何か予定ある？」など、軽い話題から入ると、その後の本題の話もしやすくなります。</li>
+                    <li><strong>名前を確認する——先に自分の名前を伝えてから、相手の名前を聞く</strong>……「私の名前は〇〇です。〇〇と呼んでください。お名前は何とお呼びしたらよろしいですか？」のように、先に自分の名前を伝えてから相手の名前を聞くと、相手も「呼んでもらいたい呼び名」を教えやすくなります。会話の中で適度に相手の名前を呼ぶと、「この人は自分を見てくれている」という安心感につながります。</li>
+                    <li><strong>相手の話を遮らない</strong>……「それはね、〇〇でしょ」と先に言わず、最後まで聴く。「そうなんだね」「そこ、もう少し教えて」と受け止めると、相手は「聴いてもらえた」と感じます。</li>
+                    <li><strong>「あなたの味方だよ」が伝わる態度</strong>……うなずく、相づちを打つ、相手の名前を呼ぶ。小さなことですが、「この人は自分を見てくれている」という安心感につながります。</li>
+                    <li><strong>応援していることを示す</strong>……「あなたのことを応援してるよ」「一緒に考えよう」と伝えると、相手は「この人は自分の味方だ」と感じやすくなります。</li>
+                    <li><strong>話した内容を他に漏らさない</strong>……「ここで話したことは、外で言わない」と心に決めておくだけでも、相手は話しやすくなります。子どもや夫に対しても、「お母さんには言わないでね」と頼まれたら、守る姿勢が信頼を育てます。</li>
+                    <li><strong>自己開示する——共感を生むために</strong>……自分の体験や考えを少し開示すると、「この人も同じような経験をしている」と感じて、相手も話しやすくなります。自己開示の深さは、相手と同じレベルに合わせると共感が生まれやすくなります。自分の成功話は自分に聞こえてしまうことがあるので、失敗談の方が自己開示に向いているとされていますが、これはケースバイケースです。相手が「私も同じような経験がある」と感じられる内容を選ぶことが大切です。「私も、そういうことあったよ」と共感を示すと、距離が縮まり、ラポールが育ちやすくなります。</li>
+                </ul>
+                <p style="margin-bottom: 18px; line-height: 1.9;">特別なことをする必要はありません。第2章の「認める」「聴く」を、意識して使うだけでも、ラポールは少しずつ育っていきます。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">③ ラポールを築くための前提（おさえておきたい考え方）</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">次の4つを頭に入れておくと、信頼関係が壊れにくく、対話が続きやすくなります。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2.2;">
+                        <li style="margin-bottom: 16px;"><strong>相手の世界観を尊重する</strong>……「こうあるべき」を押しつけず、相手の見方・感じ方を好奇心で聴く。押しつけると、表情が硬くなったり、言葉が短くなったりする。
+                            <div style="background: #fff7ed; border-left: 3px solid #ea580c; padding: 12px 16px; margin-top: 10px; border-radius: 4px;">
+                                <p style="margin: 0 0 6px 0; font-weight: 600; color: #c2410c; font-size: 14px;">例</p>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.8;">「ママはこうすべきでしょ」と決めつけると、子どもも夫も心を閉じがち。代わりに「あなたはどう思う？」「どう感じてる？」と聞くと、相手の世界観に寄り添え、本音が話しやすくなる。</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 16px;"><strong>行動と変化は周りにも影響する（エコロジー）</strong>……目標や行動が、家族・仕事・生活にどんな影響を与えるかを一緒に考える。ママの目標は家族と切り離せないので、ここを忘れない。
+                            <div style="background: #fff7ed; border-left: 3px solid #ea580c; padding: 12px 16px; margin-top: 10px; border-radius: 4px;">
+                                <p style="margin: 0 0 6px 0; font-weight: 600; color: #c2410c; font-size: 14px;">例</p>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.8;">自分だけ「毎朝5時起きで勉強する」と決めると、朝の支度が家族にしわ寄せすることもある。「パパや子どもに、どう影響しそう？」と一度考えると、無理のない形で続けやすくなる。</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 16px;"><strong>抵抗はラポール不足のサイン</strong>……「わかりません」「別に…」と返される、話題を変えられる、視線が合わなくなる——そんなときは、相手が「この場は安全じゃない」と感じている可能性がある。相手のせいにせず、自分の関わり方を見直す。
+                            <div style="background: #fff7ed; border-left: 3px solid #ea580c; padding: 12px 16px; margin-top: 10px; border-radius: 4px;">
+                                <p style="margin: 0 0 6px 0; font-weight: 600; color: #c2410c; font-size: 14px;">例</p>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.8;">「なんで？」と詰めるのではなく、「今は話したくないように見えますが、いかがですか？」と感じたことを伝えて相手から気持ちを聞くと、相手の緊張が和らぐことがある。</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 0;"><strong>行動と人格を分けて捉える</strong>……うまくいかなかった「行動」があっても、その人がダメなわけではない。行動の裏にある「そうしたい理由」に目を向け、別のやり方を一緒に探す。
+                            <div style="background: #fff7ed; border-left: 3px solid #ea580c; padding: 12px 16px; margin-top: 10px; border-radius: 4px;">
+                                <p style="margin: 0 0 6px 0; font-weight: 600; color: #c2410c; font-size: 14px;">例</p>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.8;">「またできなかった」と人格を責めると、相手は防衛的になる。「今回は〇〇だったね。次は、どうするとやりやすそう？」と行動に焦点を当てると、前を向きやすくなる。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 18px; line-height: 1.9;">夫や子ども、ママ友との対話でも、「まず信頼関係があるか」「相手の世界観を尊重しているか」を意識するだけで、その後の目標の話やGROWの流れがずっとスムーズになります。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">④ コーチとしての自己基盤を整える——スキルだけでは不十分</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">ラポールを築くために、スキルや質問の技術は大切です。でも、それ以上に大切なのは、<strong>コーチとしての自己基盤を整えること</strong>です。確たる自己基盤を含むコーチの人間性や品格、包容力が、ラポール形成に大きく影響します。ここまで話したスキルや質問がいくら出てきたとしても、そういった人間性が重視されるのがコーチングです。単なる口先や小手先のテクニックだけでは不十分です。次の項目を守るように意識することで、自己基盤が整い、ラポールが育ちやすくなります。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 24px; margin: 20px 0;">
+                    <ol style="margin: 0; padding-left: 22px; line-height: 2.2;">
+                        <li><strong>誠実さを体現する</strong>……真摯さ、正直さ、誠実さを常に示し、心理的安全性を妨害しない姿勢を持つ</li>
+                        <li><strong>約束を守る</strong>……明確にクライアントと合意を取って約束を守る</li>
+                        <li><strong>敬意を払う</strong>……クライアントに対して敬意を払い、言葉遣いにも配慮する。性差別や人種差別、専門用語や隠語を避ける</li>
+                        <li><strong>相手の言葉や世界観を尊重する</strong>……相手が発言したことに対して素直に受け止め、ものの見方や個人としての在り方を尊重する</li>
+                        <li><strong>継続的にサポートする</strong>……クライアントが新しい行動に挑戦するときや、失敗や不安を感じている場合でも、継続的にサポートし支える姿勢を持つ</li>
+                        <li><strong>デリケートな質問には了承を得る</strong>……デリケートな部分に触れるような質問をする場合には、クライアントの了承を必ず得る</li>
+                        <li><strong>倫理基準を理解し、守る</strong>……倫理基準や行動規範を理解して、それに基づいて行動する</li>
+                        <li><strong>柔軟さとユーモアを持つ</strong>……クライアントの100%味方になるという点では、堅苦しく考えず柔軟さや自由さを大事にする。クライアントの変化に合わせて軽やかに対応し、効果的にユーモアを取り入れる心の余裕を持つ</li>
+                    </ol>
+                </div>
+                <p style="margin-bottom: 18px; line-height: 1.9;">これらの項目は、ママの日常の対話でもそのまま活きます。子どもや夫、ママ友との会話でも、「誠実さ」「敬意」「柔軟さ」を意識するだけで、信頼関係が育ちやすくなります。技術だけでなく、<strong>人間としての在り方</strong>が、ラポールの土台になります。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">⑤ ラポールが崩れたとき——再構築する</h4>
+                <p style="margin-bottom: 18px; line-height: 1.9;">会話をしているときに、ラポールが崩れることがあります。例えば、<strong>相手が本当は触れてほしくなかったところを質問によって掘り起こしてしまった</strong>とき、<strong>急に予想していなかった部外者が入ってきたり</strong>したとき、「私の話聞いてないの？」みたいなハプニングがあったときなどです。そんなときは、<strong>素直に謝ったり、素直に対応する</strong>ことが、コーチングマインドを発揮することになります。「さっきの質問、触れてほしくなかったように見えますが、いかがですか？」「今、話を遮ってしまったようです。もう一度聞かせてください」と、感じたことを伝えて相手から気持ちを聞いたり、事実を伝えて対応したりすると、ラポールは再構築されやすくなります。相手のせいにせず、自分の関わり方を見直す姿勢が、信頼関係を修復します。</p>
+
+                <div style="background: #fff7ed; border-radius: 8px; padding: 20px; margin: 24px 0;">
+                    <p style="font-weight: 600; margin-bottom: 10px; color: #c2410c;">ママへのひとこと</p>
+                    <p style="margin: 0; line-height: 1.9;">「なんでそうなの？」と詰めると、相手は心を閉じます。「どうしてそう感じるの？」「もう少し教えて」と、相手の世界観を理解しようとする問いかけに変えると、ラポールが育ち、本音が話しやすくなります。</p>
+                </div>
+            </div>
+
+            <!-- ワーク：ラポールを「感覚」から「再現できる行動」に落とす -->
+            <div style="background: #fff7ed; border: 2px solid #ea580c; border-radius: 12px; padding: 28px; margin: 28px 0;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 8px; font-size: 20px;">ワーク　ラポールを「感覚」から「再現できる行動」に落とす</h3>
+                <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">信頼関係が育つ関わりを設計するワーク　所要時間：20〜30分（1人ワーク → 日常で実践 → 次章につながる構成）</p>
+                <p style="margin-bottom: 24px; line-height: 1.9; font-size: 15px;">ラポールは、性格や相性ではなく、<strong>意識して選べる関わり方の積み重ね</strong>です。このワークでは、うまくいった体験とうまくいかなかった体験を比べて、「信頼関係が育つ関わり方」を自分の言葉で見つけ、今日から使える行動に落とし込みます。</p>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step1　信頼が「育った瞬間」を具体化する（気づき）（目安5分）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">まずは、うまくいった体験を思い出します。</p>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 8px;">最近、誰かと「この人には話しても大丈夫」と感じた場面はありましたか？　そのとき、相手はあなたにどんな態度・言葉・雰囲気で接していましたか？</p>
+                <p style="margin-bottom: 12px; font-size: 14px; color: #6b7280;">ヒント：子ども・夫・ママ友・自分自身、誰との場面でもOK。内容より「空気感」に注目してみてください。</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 100px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">メモ欄：</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step2　信頼が「崩れた瞬間」を振り返る（対比）（目安5分）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">次に、うまくいかなかった場面を見ます。</p>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 8px;">逆に、「あ、心が離れたな」と感じた会話はありましたか？　そのとき、自分はどんな関わり方をしていましたか？</p>
+                <p style="margin-bottom: 12px; font-size: 14px; color: #6b7280;">例：急いで結論を出そうとした／正しさを伝えようとした／相手の話を途中で止めた</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 100px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">メモ欄：</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step3　ラポールが育つ「共通点」を言語化する（構造化）（目安5分）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">Step1とStep2を比べて、気づいたことを書き出します。</p>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 8px;">信頼が育ったとき、自分は何をしていましたか？　信頼が崩れたとき、逆に何をしていましたか？</p>
+                <p style="margin-bottom: 12px; font-size: 14px; color: #6b7280;">記入例：育ったとき：評価せずに聴いていた　崩れたとき：正解を言おうとしていた</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 80px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">メモ欄：</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step4　今日から使う「ラポール行動」を3つ決める（設計）（目安10分）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">ここからがこのワークの核です。感覚ではなく、行動に落とします。</p>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 12px;">相手が「安心して話せる」と感じるために、今日から意識できる行動は何ですか？　下から選んでも、自分で考えてもOKです。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin-bottom: 16px;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2.2;">
+                        <li>□ 話し始めに、いきなり本題に入らない</li>
+                        <li>□ 相手の言葉を最後まで聴く</li>
+                        <li>□ 名前を呼んで話す</li>
+                        <li>□ 評価・アドバイスを一旦止める</li>
+                        <li>□ 「それ、もう少し教えて」と興味で聞く</li>
+                        <li>□ 相づち・うなずきを意識する</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 8px; font-weight: 600;">今日意識するラポール行動（3つ）</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 100px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0 0 8px 0;">1.</p>
+                    <p style="color: #6b7280; font-size: 14px; margin: 0 0 8px 0;">2.</p>
+                    <p style="color: #6b7280; font-size: 14px; margin: 0 0 0 0;">3.</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step5　実践シーンを1つ決める（行動につなげる）（目安5分）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">最後に、使う場面を決めます。</p>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 8px;">このラポール行動を、誰との・どんな会話で使いますか？</p>
+                <p style="margin-bottom: 12px; font-size: 14px; color: #6b7280;">例：今夜、子どもが学校の話をするとき／週末、夫と予定の話をするとき</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 60px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">記入欄：</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">振り返り（内省）</h4>
+                <ul style="margin: 0 0 20px 20px; padding-left: 20px; line-height: 2;">
+                    <li>相手が「安心して話せた」としたら、どんな変化が起きそうですか？</li>
+                    <li>いつもより、相手の反応はどう変わりそうですか？</li>
+                    <li>「正しく関わる」より「安心をつくる」ことについて、どんな気づきがありましたか？</li>
+                </ul>
+            </div>
+
+            <!-- 備考：サイレントコーチング -->
+            <div style="background: #f0f9ff; border: 1px dashed #3b82f6; border-radius: 8px; padding: 20px; margin: 28px 0;">
+                <p style="font-weight: 600; margin-bottom: 12px; color: #1e40af; font-size: 16px;">📌 備考：サイレントコーチング</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>サイレントコーチング</strong>は、大人数でもできるコーチングの練習方法です。オート効果（自分が話すことで気づきが生まれる）を体験するため、クライアントは話せた方が効果的です。コーチは何も伝えなくても、クライアントが自分で答えを出せることを感じられるコーチングです。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;">考えることにも間が必要なので、答えを聞かなくてもアドバイスをする必要はありません。<strong>沈黙でクライアントを見つめること</strong>がとても大事です。その上で、ストラクチャーがあると質問がしやすかったり、あいづちをすることによって相手が話しやすくなって、自己開示もしやすくなります。</p>
+                <p style="margin-bottom: 0; line-height: 1.9;">名前を意図的に会話に入れる、表情をリフレインできる、驚く表情で聞いている、前のめりで聞いている感を出しつつサイレントコーチングをすると、<strong>沈黙やラポール形成に役立ちます</strong>。サイレントコーチングを理解した上でストラクチャーを使うと、より効果的に対話を進められるようになります。</p>
+            </div>
+        </section>
+
+        <!-- 3-3 セッションの設計図（GROWモデル） -->
+        <section class="section" data-section="3-3" data-section-title="セッションの設計図（GROWモデル）">
+            <h2>3-3 セッションの設計図（GROWモデル）</h2>
+
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
+                <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>誰かと「話したらスッキリした」「次にやることが決まった」という経験はありますか？</li>
+                    <li>そのとき、会話はどんな流れで進んでいましたか？</li>
+                </ol>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; margin-top: 18px; min-height: 100px;">
+                    <p style="color: #6b7280; font-size: 14px;">メモ欄：</p>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">解説</h3>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">GROWモデルって何？</h4>
+                <p style="margin-bottom: 18px; line-height: 1.9;"><strong>GROW（グロウ）</strong>は、会話を「4つの順番」で進めるやり方の名前です。英語の4つの言葉の頭文字を並べたもので、プロのコーチがよく使う「会話の型」です。難しいことはしていません。やることは、次の4つだけです。<br>① まず「どうなりたい？」を聞く　② 次に「今、どうなってる？」を聞く　③ そのうえで「何ができそう？」を一緒に考える　④ 最後に「いつやる？」を決める。この順番を意識するだけで、なんとなくのおしゃべりが、「話したあとにやることが決まる」会話に変わります。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">なんでこの順番で話すの？</h4>
+                <p style="margin-bottom: 18px; line-height: 1.9;">相手が「〇〇したいんだけど、うまくいかなくて…」と言ったとき、つい「じゃあこうすれば？」と答えを出したくなりませんか？　でも、先にこちらの考えを言うと、相手は「言われたからやる」になりやすく、自分で決めた感じが弱くなります。GROWの順番なら、<strong>まず「どうなりたい？」「今、何が大変？」を聞く</strong>ので、相手が自分の頭で整理してから「じゃあ、こうしてみる」と言いやすくなります。また、この4つの順番で話すと、話が散らばらず、最後まで「いつやる？」まで行きやすいので、「話しただけ」で終わらず、<strong>「次にやることが決まった」</strong>ところまで持っていきやすくなります。</p>
+
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">4つのステップを、ひとつずつ</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">GROWの4つを、もう少しわかりやすく書きます。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 24px; margin: 20px 0;">
+                    <p style="margin: 0 0 16px 0;"><strong>G（ゴール）</strong>……今回の話で「どうなったらいい？」を決める。相手が「これができたらいい」と言えるところまで、一緒にはっきりさせる。</p>
+                    <p style="margin: 0 0 16px 0;"><strong>R（今の状態）</strong>……「今、どうなってる？」を確認する。うまくいっていること、困っていること、両方聞くと、相手も自分で状況を整理しやすくなる。</p>
+                    <p style="margin: 0 0 16px 0;"><strong>O（できること）</strong>……「それに向けて、何ができそう？」を一緒に考える。「他には？」と聞くと、アイデアが増える。相手から出てきたことを、大事にする。</p>
+                    <p style="margin: 0 0 0 0;"><strong>W（いつやる）</strong>……「じゃあ、いつやる？」「本当にできそう？」を決める。日付や時間まで言ってもらうと、やりやすくなる。</p>
+                </div>
+
+                <h4 style="color: #ea580c; margin-top: 24px; margin-bottom: 12px; font-size: 18px;">第2章の「認める・聴く・問う・フィードバック」を、GROWのどこで使う？</h4>
+                <p style="margin-bottom: 16px; line-height: 1.9;">GROWは「順番」の型です。その一つひとつの場面で、第2章で学んだ<strong>「認める」「聴く」「問う」「フィードバックする」</strong>が活きます。どの段階で、どのスキルを意識するとよいか、イメージできるようにまとめます。</p>
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                    <p style="margin: 0 0 14px 0;"><strong>G（ゴール）のとき</strong>……<strong>「問う」</strong>で「どうなったらいい？」と聞き、<strong>「聴く」</strong>で相手の言葉をしっかり受け取る。相手が言ったことを<strong>「認める」</strong>（「そうなんだね」「それ、いいね」）で受け止めると、安心して「本当は〇〇がしたい」と言いやすくなる。</p>
+                    <p style="margin: 0 0 14px 0;"><strong>R（今の状態）のとき</strong>……<strong>「問う」</strong>で「今、どうなってる？」「うまくいってることは？　困ってることは？」と聞き、<strong>「聴く」</strong>で話の奥にある本音や文脈まで受け取る。<strong>「認める」</strong>で「そこまでやってるんだ」と事実を伝えたり、「表情が曇ったように見えましたが、いかがですか？」と感じたことを伝えて相手から気持ちを聞いたりすると、相手が自分の状況を整理しやすくなります。</p>
+                    <p style="margin: 0 0 14px 0;"><strong>O（できること）のとき</strong>……<strong>「問う」</strong>で「何ができそう？」「他には？」と広げて聞く。相手から出てきた考えを<strong>「聴く」</strong>で受け止め、<strong>「認める」</strong>で「そのやり方、ありだね」と伝える。ここで<strong>「フィードバック」</strong>（「今の話、すごく前向きに聞こえた」「〇〇って言ったとき、顔がパッと明るくなった」）を入れると、相手の気づきややる気につながる。</p>
+                    <p style="margin: 0 0 0 0;"><strong>W（いつやる）のとき</strong>……<strong>「問う」</strong>で「じゃあ、いつやる？」「本当にできそう？」と聞き、相手が決めたことを<strong>「認める」</strong>で「それでいこう」と受け止める。最後に<strong>「フィードバック」</strong>で「ここまで話して、やることを決めたの、すごい」と伝えると、相手の「やる」がより形に残りやすくなる。</p>
+                </div>
+                <p style="margin-bottom: 18px; line-height: 1.9;">つまり、<strong>「問う」でGROWの問いを投げ、「聴く」で答えを受け取り、「認める」で受け止め、「フィードバック」で気づきや背中押しを添える</strong>——この組み合わせで、GROWの流れが、第2章のスキルとひとつにつながります。夫や子どもとのちょっとした会話でも、この順番を頭に入れておくだけで、「何がしたいか」「今どうなっているか」「何ができそうか」「いつやるか」が自然とそろい、次の一歩が決まりやすくなります。</p>
+
+                <div style="background: #fff7ed; border-radius: 8px; padding: 20px; margin: 24px 0;">
+                    <p style="font-weight: 600; margin-bottom: 10px; color: #c2410c;">ママへのひとこと</p>
+                    <p style="margin: 0; line-height: 1.9;">「週末に〇〇したいんだけど、今の状況だと時間が取れなくて」——そんなとき、いきなり「じゃあこうすれば？」と提案するより、まず「どうなったら最高？」「今、何が大変？」と聞いてから、「何ができそう？」「いつやる？」を一緒に考えると、相手も自分で決めた感じが出て、動きやすくなります。</p>
+                </div>
+            </div>
+
+            <!-- ワーク：会話をスッキリ終わらせるGROW体験 -->
+            <div style="background: #fff7ed; border: 2px solid #ea580c; border-radius: 12px; padding: 28px; margin: 28px 0;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 8px; font-size: 20px;">ワーク　会話を「スッキリ終わらせる」GROW体験</h3>
+                <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">なんとなくの話を、次の一歩が決まる対話に変える　所要時間：20〜30分</p>
+                <p style="margin-bottom: 16px; line-height: 1.9; font-size: 15px;">GROWは「うまく話すための技術」ではなく、<strong>会話を行動につなげるための道筋</strong>です。この型を頭に入れておくだけで、日常の対話が「話して終わり」から「次が決まる」ものに変わっていきます。第2章で「どう関わるか」（スキル）、第3章前半で「どこに向かうか」（目標）を学びました。このワークでは<strong>「どう進めるか」（構造）</strong>を体験し、「私、もうGROWで話せるかも」という感覚を手に入れましょう。</p>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step1　最近の「話したけど進まなかった会話」を1つ選ぶ（目安5分）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">GROWを当てはめる素材を選びます。次の中から1つでOKです。</p>
+                <ul style="margin: 0 0 12px 22px; padding-left: 18px; line-height: 1.9;">子どもとの会話（注意・お願い・話し合い）／夫との会話（家事・時間・気持ち）／ママ友との会話／自分自身との頭の中の会話（悩み・迷い）</ul>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 12px;">どんな場面でしたか？　話したけど「結局どうするか決まらなかった」会話はどれですか？</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 70px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">メモ欄：（いつ／誰と／どんなテーマ）</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step2　その会話を「GROWの4つ」に分けてみる（目安10分）</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">選んだ会話をGROWの順番で整理します。正解はありません。今の視点でOKです。</p>
+                <p style="margin-bottom: 8px; font-weight: 600;">G｜ゴール（どうなったらよかった？）</p>
+                <p style="margin-bottom: 10px;">本当は、この会話で「どうなったらよかった」ですか？　話し終わったあと、どんな状態だったら理想でしたか？</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 14px; min-height: 50px; margin-bottom: 18px;"><p style="color: #6b7280; font-size: 14px; margin: 0;">記入欄：</p></div>
+                <p style="margin-bottom: 8px; font-weight: 600;">R｜今の状態（実際はどうなっていた？）</p>
+                <p style="margin-bottom: 10px;">そのとき、現実はどうなっていましたか？　困っていたこと／うまくいっていたことは？</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 14px; min-height: 50px; margin-bottom: 18px;"><p style="color: #6b7280; font-size: 14px; margin: 0;">記入欄：</p></div>
+                <p style="margin-bottom: 8px; font-weight: 600;">O｜できること（本当は、どんな選択肢があった？）</p>
+                <p style="margin-bottom: 10px;">その場で、他にできそうだったことは何ですか？　「こうしなきゃ」以外に、どんなやり方がありそうですか？　思いつくまま、複数書いてOKです。</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 14px; min-height: 50px; margin-bottom: 18px;"><p style="color: #6b7280; font-size: 14px; margin: 0;">記入欄：</p></div>
+                <p style="margin-bottom: 8px; font-weight: 600;">W｜いつやる（どこまで決められていた？）</p>
+                <p style="margin-bottom: 10px;">その会話では、「いつ・何をするか」まで決まりましたか？　決まっていなかったとしたら、何が決まっていればよかったですか？</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 14px; min-height: 50px; margin-bottom: 20px;"><p style="color: #6b7280; font-size: 14px; margin: 0;">記入欄：</p></div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step3　GROWを意識した「言い換え」を1つ作る（目安5分）</h4>
+                <p style="margin-bottom: 10px; font-weight: 600;">問い</p>
+                <p style="margin-bottom: 12px;">次に同じ場面が来たら、GROWを意識して、どんな一言を最初にかけますか？</p>
+                <p style="margin-bottom: 10px; font-size: 14px; color: #6b7280;">例：「どうなったら一番いいと思う？」（G）／「今、何が一番大変？」（R）／「他にできそうなこと、あるかな？」（O）／「じゃあ、いつやってみる？」（W）</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 60px; margin-bottom: 20px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">記入欄：（自分の言葉で）</p>
+                </div>
+
+                <h4 style="color: #c2410c; margin-top: 24px; margin-bottom: 10px; font-size: 17px;">Step4　振り返り（理解の定着）</h4>
+                <p style="margin-bottom: 12px; line-height: 1.9;">GROWの順番を意識すると、会話の何が変わりそうですか？　これまで自分は、どの段階を飛ばしがちだったと思いますか？</p>
+                <ul style="margin: 0 0 14px 22px; padding-left: 18px; line-height: 2; list-style: none;">
+                    <li>□ ゴールを決めずに話していた</li>
+                    <li>□ 今の状態を十分に聞けていなかった</li>
+                    <li>□ すぐに解決策を出していた</li>
+                    <li>□ 「いつやるか」まで決めていなかった</li>
+                </ul>
+                <p style="margin-bottom: 10px; font-weight: 600;">今日から一番意識したいのは、どこですか？</p>
+                <div style="background: white; border: 1px dashed #fdba74; border-radius: 6px; padding: 18px; min-height: 50px;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">記入欄：</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3-4 発見モード・行動モード・セッションの間 -->
+        <section class="section" data-section="3-4" data-section-title="発見モード・行動モード・セッションの間">
+            <h2>3-4 発見モード・行動モード・セッションの間</h2>
+            <p style="margin-bottom: 20px; line-height: 1.9;">3-1で<strong>目標の立て方</strong>（SMART+ER）、3-2で<strong>信頼関係</strong>（ラポール）、3-3で<strong>会話の順番</strong>（GROW）を学びました。これらは、章頭の表で示した「対話の流れ」のどこに入るのでしょうか。このセクションでは、<strong>発見モード・行動モード・セッションとセッションの間</strong>の3つを、前の章とつなげながら整理します。流れが一本線でつながると、「いつ、何を意識すればいいか」がイメージしやすくなります。</p>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見モード——引き出す（目標・現状・やることを決める）</h3>
+                <p style="margin-bottom: 18px; line-height: 1.9;">3-2のラポールで「安心して話せる」土台ができたら、次は<strong>発見モード</strong>です。ここでは相手の中にあるものを、<strong>質問とフィードバック（第2章のスキル）</strong>で引き出します。3-3のGROWでいうと、G（ゴール）・R（今の状態）・O（できること）・W（いつやる）のうち、<strong>「いつやる」まで決めるところ</strong>が、発見モードの役割です。その中身は、次の3つに分けて考えるとわかりやすいです。</p>
+                <ul style="margin: 0 0 18px 22px; padding-left: 18px; line-height: 2;">
+                    <li><strong>目標設定</strong>（3-1で学んだ）……「どうなりたいか」「ありたい姿」を明確・具体化する。</li>
+                    <li><strong>現状把握</strong>……「今、どの状態か」を確認し、目標と現状のギャップをはっきりさせる。</li>
+                    <li><strong>プロセス設定</strong>……目標に近づくための「具体的な行動」や「最初の一歩」を決める。</li>
+                </ul>
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">発見モードで使う質問のポイント</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>水平質問によって深まるべき事柄を明らかにする</strong>……第2章で学んだ「水平質問」（広げる質問）は、発見モードで特に重要です。「他にはどうですか？」「もし何の制約もなかったら、他にはどんなことが考えられますか？」と聞くことで、相手の中にある選択肢や視点を広げ、<strong>深まるべき事柄を明らかにする</strong>ことができます。水平質問で広げた後、垂直質問（掘り下げる質問）で具体化していく流れが、発見モードの基本です。</p>
+                <p style="margin-bottom: 18px; line-height: 1.9;"><strong>クライアントの価値観と整合性を確認する</strong>……目標設定やプロセス設定の際に、「〇〇さんが本当に手に入れたいことは何でしょうか？」「〇〇さんを、〇〇さんらしさを出すとしたらどうしたらいい？」という質問で、価値観との整合性を確認することも非常に重要です。価値観とつながっている目標の方が、モチベーションが続きやすく、行動につながりやすくなります。発見モードでは、必ずこの確認を入れるようにしましょう。</p>
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">現状把握——なぜ必要か、何をするか</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">目標が決まったら、次は<strong>現状把握</strong>です。これは、クライアントが今どんな状態なのかを確認して理解するプロセスです。<strong>ありたい姿（目標）と今の現状のギャップを埋めるために行動する</strong>ためには、現状把握が必ず必要になります。現状を正しく確認して理解することで、目標達成に向けての現在地を知ることができ、冷静になって客観的な視点でクライアント自身が状況を知る・眺めることができます。また、思い込んでいたことを排除して気づきを得ることができたり、使えるリソースを確認したり、新しく発見できたりします。目標達成に向けてのモチベーションが高まり、やるべきことが明確になるためにも現状把握は必要です。</p>
+                <p style="margin-bottom: 18px; line-height: 1.9;">コーチが求められることとしては、コーチングの所定の目標を達成する上で中心的な役割を果たす重要な事柄やチャンスをクライアント自身が効果的に探し当て、気持ちを集中することをサポートする必要があります。さらに、クライアント自身の内外のリソース（過去の経験、人脈、書籍、外部の専門家など）をクライアント自身が見つけて利用できるようにサポートすることも重要です。セッションの中で得たクライアントに関する情報を整理し、クライアントとともに振り返りを行うことで、こういった現状把握が可能になります。</p>
+                
+                <h5 style="color: #ea580c; margin-top: 20px; margin-bottom: 10px; font-size: 16px;">現状把握の具体的な質問例</h5>
+                <p style="margin-bottom: 14px; line-height: 1.9;">現状把握では、次のような質問を使います。目標達成を100%とした場合、現在の達成度が何%かを確認することでポジティブな自己承認を促すことができます。その内容は何か、どのようなことをしてきたのかを振り返り、目標達成に向けて取り組む上でクライアントのどんな強みを活かせるかを考えることが重要です。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 18px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2.2;">
+                        <li>目標達成を100%とした場合、現在の達成度は何%ですか？</li>
+                        <li>その内容は何ですか？どのようなことをしてきましたか？</li>
+                        <li>目標達成に向けて取り組む上で、〇〇さんのどんな強みを活かせますか？</li>
+                        <li>〇〇さんのどんな経験が役に立つと思いますか？</li>
+                        <li>以前うまくいった時は何を活用しましたか？</li>
+                        <li>力を貸してくれそうな人を挙げるとしたら、誰を挙げられますか？</li>
+                        <li>〇〇さんが自由に使えるものとしては何がありますか？</li>
+                        <li>どんな時間を活用できますか？</li>
+                    </ul>
+                </div>
+                
+                <h5 style="color: #ea580c; margin-top: 20px; margin-bottom: 10px; font-size: 16px;">質問の仕方の注意点——「できそうですか？」ではなく「できますか？」</h5>
+                <p style="margin-bottom: 14px; line-height: 1.9;">現状把握の質問をする際、質問の仕方に注意が必要です。<strong>「活かせそうですか？」という聞き方は避け、「活かせますか？」という表現を使いましょう</strong>。「〇〇できそうですか？」という質問も基本的には避けるべきです。これはコーチングマインドに基づくもので、相手ができそうかどうかをこちらが危惧しているような表現になりがちだからです。「できそうですか？」という質問は、イエス・ノーで答えられる形式になり、深い対話を妨げる可能性があります。既に相手には能力が備わっている前提で使う場合を除き、相手（クライアント）に対しては「できそうかどうか」ではなく、「活かせますか？」というふうに聞きましょう。</p>
+                
+                <h5 style="color: #ea580c; margin-top: 20px; margin-bottom: 10px; font-size: 16px;">視点の移動——異なる視点で眺める機会を提供する</h5>
+                <p style="margin-bottom: 14px; line-height: 1.9;">異なる視点で眺める機会を提供することも、現状を把握する上で非常に重要です。これは<strong>「視点の移動」</strong>とも言われます。例えば、次のような質問を通じて、他人の視点を取り入れることができます。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 18px; margin: 14px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2;">
+                        <li>「私には〇〇さんが前向きに取り組んでいるように見えますが、いかがですか？」</li>
+                        <li>「あなたの家族（または同僚）は、この状況をどのように感じていると思いますか？」</li>
+                        <li>「それは目標を達成する上でどのような意義がありますか？」</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 14px; line-height: 1.9;">これらの質問を通じて、他人の視点を取り入れたり、目標との関連を意識させたりすることが、現状把握における質問の重要なポイントとなります。</p>
+                
+                <h5 style="color: #ea580c; margin-top: 20px; margin-bottom: 10px; font-size: 16px;">水平質問の留意点——リフレインを挟んで受け止める</h5>
+                <p style="margin-bottom: 14px; line-height: 1.9;">現状把握するときに、「他には？　他には？　他には？」と水平質問していきます。水平質問するときの留意点としては、<strong>広げるには、相手が答えてくれたことに対して、すぐに「他には？」というのではなくて、一旦リフレインを挟んであげる。一旦受け止めるという行程を必ずしましょう</strong>。そうじゃないと、詰問に聞こえてしまう可能性があります。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;">相手が答えた内容を「〇〇なんですね」「〇〇ということですね」とリフレイン（繰り返し）してから、「他には？」と聞くことで、相手は「聴いてもらえた」と感じ、安心して次の答えを出しやすくなります。</p>
+                
+                <h5 style="color: #ea580c; margin-top: 20px; margin-bottom: 10px; font-size: 16px;">現状把握の注意点——未来に目を向ける</h5>
+                <p style="margin-bottom: 0; line-height: 1.9;">ここで気をつけないといけないのが、<strong>愚痴とかネガティブなことの深掘りはしない</strong>ことです。<strong>現在ではなく未来に目を向ける</strong>ということが必要なので、過去のどうでもできないことに対しては深掘りはしちゃいけません。現状把握は「今、どこにいるか」を確認するためのものですが、それは未来に向かうための現在地を知るためです。過去の失敗や後悔にずっと留まらず、「今、何ができているか」「どんなリソースがあるか」「これからどう活かせるか」に焦点を当てることが大切です。ママの対話でも、「〇〇したい」のあとに「今、何ができていて、何が足りない？」と聴くと、相手自身が現状を整理しやすくなります。</p>
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">プロセス設定——具体的な行動計画を決める</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">目標設定や現状把握は、<strong>大きなキャンバスにクライアントが言ったことを全部書いて、それを埋め尽くすように永遠と広がっているキャンバスに描き落としていく</strong>イメージで明確にしていくことが必要です。しかし、目標を達成するには、思い描くだけではなく<strong>行動が必ず必要</strong>です。具体的にどんな行動をどんな順番でしていくかを明確にしないと、プロセスが設定できていないということになり、結局目標達成が難しくなります。目標は絵と達成するにはプロセスを決めないといけないので、ただ単なる努力目標ではなく、<strong>小さい、誰でも取り掛かり始められるような具体的な行動計画まで深める必要があります</strong>。</p>
+                <p style="margin-bottom: 18px; line-height: 1.9;">「できたらいいな」「やりたいな」だと抽象的で情報が足りないため、結局「じゃあやろう」となった時に行動に移せないことがあります。例えば、「英語を勉強する」ではなく、「毎日英単語を10個覚える」「毎日シャドーイングをする（3分の動画を使って）」のように、<strong>具体的な行動に落とし込む</strong>必要があります。やることを明確にして具体的にするのと同時に、それをすぐに行動に移すことを促すことで、目標に向かって進んでいるかどうかを明らかにする効果があります。細かくスモールステップで大丈夫です。例えば、<strong>NextActionとして最低限何を1個やるか</strong>というように考えてみましょう。</p>
+                
+                <h5 style="color: #ea580c; margin-top: 20px; margin-bottom: 10px; font-size: 16px;">プロセス設定の具体的な方法——リソースの活用と質問</h5>
+                <p style="margin-bottom: 14px; line-height: 1.9;">プロセス設定の具体的な方法としては、まず<strong>現状把握で引き出したクライアントのリソースをどんな風に活かすかという活用方法についても、クライアントが自分で考える</strong>必要があります。このプロセス設定では<strong>水平質問や視点を移動させることによって明確にしていきます</strong>。例えば、次のような質問が有効です。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 18px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2.2;">
+                        <li>目標達成するためにはどんな行動が必要ですか？</li>
+                        <li>まず何%アップしたいかという小さい目標に対してどうしたらいいですか？</li>
+                        <li>先ほどのリソースをどのように活かしますか？どう活かせますか？</li>
+                        <li>理想とする自分だったらどのように取り組むと思いますか？（視点を移動させた水平質問）</li>
+                        <li>あなたが明日からできるとしたら何ですか？</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 14px; line-height: 1.9;">「あなたの尊敬する人ならどう取り組むか？」という質問でも良いですが、<strong>「理想とする自分だったら」の方がより自分ごと化されます</strong>。さらに、引き出した行動について<strong>優先順位を決めたりする必要があります</strong>。次のような質問も有効です。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 18px; margin: 14px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2;">
+                        <li>それを行った場合、どんな効果が得られますか？</li>
+                        <li>どんな方法であれば続けられてうまくいきそうですか？</li>
+                        <li>それをどれくらいの長さやりますか？</li>
+                        <li>今出してもらったものをどのような順番で行いますか？</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 18px; line-height: 1.9;">そういったことを通じて、まずは行動を引き出し、絞るための準備ができたかを確認しましょう。</p>
+                
+                <h5 style="color: #ea580c; margin-top: 20px; margin-bottom: 10px; font-size: 16px;">小さな行動を具体的に約束する——5W1Hで明確に</h5>
+                <p style="margin-bottom: 14px; line-height: 1.9;">ここから先は、複数回行動を引き出した後、<strong>小さな行動を具体的に約束することが重要</strong>です。例えば、次のような質問で、<strong>5W1H（いつ・どこで・誰と・何を・どのように・なぜ）に沿って確実な行動を移せる状態</strong>にします。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 18px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2.2;">
+                        <li>このセッションの後、次のセッションまでに何をしますか？</li>
+                        <li>それをいつから行って、どれくらいやりますか？</li>
+                        <li>どのように、誰とやりますか？</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 14px; line-height: 1.9;">留意点としては、クライアントの発言がマイナスばかりで、できない理由やその原因をずっと発言するようであれば、<strong>「何があればできるんだろう？」「それを手に入れるにはどのような行動が必要か？」</strong>といった質問を通じて、行動を引き出す必要があります。クライアントが発言した最初の言動については、さらに深掘りを進めて、行動自体を小さくしたり、できるだけ細かく具体化していきます。これに加えて、<strong>感情も一緒に聞く</strong>と良いでしょう。</p>
+                <p style="margin-bottom: 18px; line-height: 1.9;">セッションが終わった後に取り組む小さな一歩の内容を具体的にすることは、<strong>「いつ」「どうやって」まで明確にすることが重要</strong>です。「明日以降やります」「今度やります」といった曖昧な表現ではなく、具体的な日時や方法まで決めることで、行動に移しやすくなります。</p>
+                
+                <h5 style="color: #ea580c; margin-top: 20px; margin-bottom: 10px; font-size: 16px;">プロセス設定で注意すべきこと</h5>
+                <p style="margin-bottom: 14px; line-height: 1.9;">プロセス設定では、<strong>クライアントの言っていることが自分自身と認識が合っているか</strong>を確認します。例えば、クライアントが行動することが5W1Hに沿って確実な行動を移せる状態になっているかどうかを見極めることが大切です。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>プロセスは提案しない</strong>という原則を守ります。プロセスはやり方に関するものであり、自分の場合に合っていた方法が、他の人にも合うだろうと考えがちです。しかし、基本的には<strong>誰かの答えは誰かの内側にしかない</strong>ので、自分の答えが相手の答えだとは絶対に思わず、提案は避ける必要があります。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>1回のセッションですべてのプロセスをカバーしようとしない</strong>ようにします。場合によっては長すぎるものに対しては<strong>中間目標を設定する</strong>ことが有効です。例えば、「今からそれをやることが100%だとしたら、今から10%進んだ状態とはどんな状態ですか？」という質問で明確にしたり、「それをいつまでに達成しますか？」といった質問で、段階的に進めていくことができます。</p>
+                <p style="margin-bottom: 0; line-height: 1.9;"><strong>学びや成長に焦点を当てる</strong>ことも重要です。目標に向けて取り組む内容を複数引き出した上で、クライアントのリソースの活用方法を明確にし、「これをやれば目標達成に向けて前進できる」とクライアント自身が感じられるようにします。ママの対話でも、「今週はどこまでやりますか？」「いつやりますか？」と聞くだけで、相手の口から具体的な行動が出やすくなります。ただし、<strong>教えるのではなく、相手が自分で「これをやる」と言えるようにすることがポイント</strong>です。</p>
+            </div>
+
+            <p style="margin: 24px 0 12px 0; padding-left: 16px; border-left: 4px solid #ea580c; line-height: 1.9; color: #374151;">発見モードで「やること」が決まっても、<strong>決まっただけでは動かない</strong>ことが多いものです。「じゃあ、やってみてね」と背中を押す段階が必要になります。そこで出てくるのが、<strong>行動モード</strong>です。</p>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">行動モード——行動を促す（「やる」を形にする）</h3>
+                <p style="margin-bottom: 18px; line-height: 1.9;">行動モードの目的は、<strong>相手が「決めたこと」を本当にやる一歩にすること</strong>です。発見モードで「いつ・何をやる」まで話し合っても、「言っただけ」で終わらせないために、こちらからはっきり<strong>「やってみてね」「できたこと、次に教えてね」</strong>と伝えます。相手の意欲や自信を支えるので、第2章の<strong>「認める」「フィードバックする」</strong>がそのまま活きます。</p>
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">何をするか——リクエスト・励まし・フィードバック</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>① リクエストする</strong>……「ぜひ、それをやってみて」「できたこと、次に会ったとき教えてね」と、行動をストレートに促します。約束と報告を頼むと、「言ったからにはやろう」という気持ちが相手の中に残りやすくなります。ときには「その半分の時間でも試してみる？」のように、ワンランク上の一歩を提案することもあります。押しつけではなく、「あなたならできそう」と信じているからこその一言です。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>② 励ます</strong>……「応援してるよ」「ここまで話して決めたの、すごい」と、相手の背中を軽く押します。第2章の「認める」で、相手の決意やこれまでの頑張りを事実として伝えると、不安が和らぎ、動きやすくなります。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>③ フィードバックする</strong>……「声が明るくなったね」「ここまでやってきたから、きっとできる」と、自分が感じたことを伝えます。相手には見えていない「自分の変化」や「持っている力」に光を当てるので、意欲や自信につながります。ここで得られるのは、<strong>意欲・自発・自信</strong>です。</p>
+                <p style="margin-bottom: 0; line-height: 1.9;">ママの場面では、「それ、いいね。いつまでにやる？」と一言リクエストするだけでも、「やる」が形になりやすくなります。相手が「うん、やる」と言ったら、「やってみたこと、今度教えて」と伝えると、次に会ったときの振り返りにもつながります。</p>
+            </div>
+
+            <p style="margin: 24px 0 12px 0; padding-left: 16px; border-left: 4px solid #ea580c; line-height: 1.9; color: #374151;">行動モードで背中を押したあと、相手は<strong>対話の場を離れて、実際に動く</strong>側に回ります。その「対話の外」の時間が、<strong>セッションとセッションの間</strong>です。ここを意識すると、「話しただけ」で終わらない対話になります。</p>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">セッションとセッションの間——持続させる（動いたあと、振り返る）</h3>
+                <p style="margin-bottom: 18px; line-height: 1.9;">対話が終わったあと、<strong>相手は「やると決めたこと」を実際にやる</strong>側、<strong>こちらは「次に会ったときに、どうだったか聞く」</strong>側です。この「対話の外で動く→次に会ったとき振り返る」のくり返しが、行動を続けさせ、目標に近づけます。つまり、<strong>持続性</strong>を生むのは、この「セッションとセッションの間」の過ごし方です。</p>
+                <h4 style="color: #ea580c; margin-top: 22px; margin-bottom: 12px; font-size: 18px;">次に会ったとき、何を聞くか</h4>
+                <p style="margin-bottom: 14px; line-height: 1.9;">次に会ったときは、<strong>「あの約束、どうだった？」</strong>から始めます。うまくいったなら「やりましたね」「着実に進んでる」と認めると、相手の自信になります。うまくいかなかったなら、「何が起きた？」「何が邪魔になった？」と聞き、責めずに受け止めます。そのうえで「その経験から、何がわかった？」と聞くと、次に活かせる気づきが引き出せます。できた・できなかったのどちらでも、<strong>振り返りをすることで「話しただけ」ではなく「動いたあと」の対話</strong>になり、目標達成につながっていきます。</p>
+                <p style="margin-bottom: 0; line-height: 1.9;">ママの日常では、夫や子どもに「この前の〇〇、進んでる？」「やってみてどうだった？」と一声かけるだけで、この「セッションとセッションの間」を活かせます。定期的に会うママ友なら、「前回のあれ、どうなった？」と聞くだけでも、同じ流れになります。</p>
+            </div>
+
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin: 24px 0;">
+                <p style="font-weight: 600; margin-bottom: 12px; color: #166534;">流れのまとめ——発見→行動→セッションの間</p>
+                <p style="margin: 0; line-height: 1.9;">ラポールのうえで、<strong>発見モード</strong>で「目標・現状・やること」を引き出し、<strong>行動モード</strong>で「やってみてね」「次に教えて」と背中を押し、相手が動いたあと<strong>セッションとセッションの間</strong>で「どうだった？」と振り返る——この一連の流れを頭に入れておくと、3-1〜3-3で学んだ目標設定・ラポール・GROWが、「対話のどこで」使われるかがつながって見えます。</p>
+            </div>
+
+            <div style="background: #fff7ed; border-radius: 8px; padding: 20px; margin: 24px 0;">
+                <p style="font-weight: 600; margin-bottom: 10px; color: #c2410c;">ママへのひとこと</p>
+                <p style="margin: 0; line-height: 1.9;">「発見」で目標・現状・やることを引き出し、「行動」でリクエストして背中を押し、「セッションの間」で実際に動いてもらい、次に振り返る——この一連の流れを意識するだけで、普段の会話が「成果につながる対話」に近づきます。</p>
+            </div>
+        </section>
+
+        <!-- 章末まとめ -->
+        <section class="section">
+            <h2>章末まとめ</h2>
+            <h3 style="font-size: 18px; margin-top: 24px; margin-bottom: 12px;">理解の確認</h3>
+            <ol style="line-height: 2;">
+                <li>SMART+ERの各要素を、自分や家族の目標に当てはめて、1つ書き直してみましょう。</li>
+                <li>ラポールを築くための前提（相手の世界観を尊重する、抵抗はラポール不足のサイン、など）を、身近な対話で1つ意識してみましょう。</li>
+                <li>GROWモデルの4ステップ（Goal→Reality→Options→Will）を、身近なテーマで1回、会話の流れとしてイメージしてみましょう。</li>
+                <li>発見モードの3つ（目標設定・現状把握・プロセス設定）、行動モード、セッションとセッションの間が、対話のどこでどう活きるか、自分の言葉で1つ説明してみましょう。</li>
+            </ol>
+            <h3 style="font-size: 18px; margin-top: 24px; margin-bottom: 12px;">第3章を振り返る——あなたにとってのコーチングとは</h3>
+            <p style="margin-bottom: 16px; line-height: 1.9;">第3章で目標の立て方（SMART+ER）、信頼関係の築き方（ラポール形成）、対話の型（GROWモデル）、そして発見モード・行動モード・セッションの間の役割を学びました。ここまで学んだ今、改めて考えてみてください。</p>
+            <div style="background: #fff7ed; border-left: 4px solid #ea580c; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                <p style="font-weight: 600; margin-bottom: 12px; color: #c2410c; font-size: 16px;">問い</p>
+                <p style="margin-bottom: 16px; line-height: 1.9; font-size: 17px;"><strong>今のあなたにとって、コーチングとは何ですか？</strong></p>
+                <p style="margin-bottom: 12px; line-height: 1.9;">人によって、コーチングの捉え方はさまざまです。例えば、「羅針盤」のように方向を示してくれるもの、「漢方薬」のようにじっくりと体質を整えるもの、「あなたの内なる声を引き出すサポート」のように自分の中にある答えを見つける手助け——など、それぞれに意味づけがあります。</p>
+                <p style="margin-bottom: 0; line-height: 1.9;">第1章の最初で、あなたは「理想のコーチ像」や「コーチングへの期待」を描いたかもしれません。今、第3章まで学んだあなたにとってのコーチングは、その最初のイメージとどこまで重なっていますか？　あるいは、どんな違いがありますか？　最初に掲げたコーチ像と比べて、あなたのコーチングへの理解は、どのように深まったり、変化したりしたでしょうか。一度、最初のワークを見返してみてください。そのうえで、今のあなたの言葉で、コーチングを定義してみましょう。</p>
+            </div>
+
+            <h3 style="font-size: 18px; margin-top: 24px; margin-bottom: 12px;">次章へのつなぎ</h3>
+            <p style="line-height: 1.9;">第3章で目標の立て方（SMART+ER）、信頼関係の築き方（ラポール形成）、対話の型（GROWモデル）、そして発見モード・行動モード・セッションの間の役割を学びました。次章では、コーチングの倫理とプロ意識、そして「聴く」「認める」「問う」「フィードバックする」を総動員した統合スキル実践に進みます。</p>
+        </section>
+    </div>
+
+    <script>
+        function updateCurrentSection() {
+            const sections = document.querySelectorAll('section.section[data-section]');
+            const headerNumber = document.getElementById('current-section-number');
+            const headerTitle = document.getElementById('current-section-title');
+            if (!sections.length || !headerNumber || !headerTitle) return;
+            const scrollPosition = window.scrollY + 100;
+            let currentSection = sections[0];
+            for (let i = 0; i < sections.length; i++) {
+                const section = sections[i];
+                const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+                if (scrollPosition >= sectionTop) currentSection = section;
+                else break;
+            }
+            if (currentSection) {
+                const sectionNumber = currentSection.getAttribute('data-section');
+                const sectionTitle = currentSection.getAttribute('data-section-title');
+                if (sectionNumber && sectionTitle) {
+                    headerNumber.textContent = sectionNumber;
+                    headerTitle.textContent = sectionTitle;
+                }
+            }
+        }
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() { updateCurrentSection(); ticking = false; });
+                ticking = true;
+            }
+        });
+        updateCurrentSection();
+        window.addEventListener('resize', updateCurrentSection);
+    </script>
+</body>
+</html>
