@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第1章　基盤構築：脳の仕組みとコーチングの本質｜ミチシル　ママのための私軸コーチング</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .progress-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #ea580c 0%, #fb7185 100%);
+            color: white;
+            padding: 12px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 1000;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .progress-header .chapter-info { font-weight: 600; }
+        .progress-header .section-info { font-weight: 500; opacity: 0.95; }
+        .progress-header .section-number {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-right: 8px;
+        }
+        body { padding-top: 50px; }
+        @media print {
+            .progress-header { display: none; }
+            body { padding-top: 0; }
+            /* 印刷時：変な場所で改ページされないようにする */
+            section.section,
+            section.preface,
+            section.table-of-contents,
+            .work-block,
+            section.work-block {
+                page-break-inside: avoid;
+            }
+            .chapter-header,
+            h1, h2, h3, h4, h5 {
+                page-break-after: avoid;
+            }
+            h2 { page-break-before: auto; }
+            section.section[data-section] > h2 { page-break-before: always; }
+            section.section[data-section]:first-of-type > h2 { page-break-before: auto; }
+            /* 見出しとその直後の内容が離れないように */
+            h3, h4, h5 {
+                page-break-after: avoid;
+            }
+            h3 + p, h4 + p, h5 + p {
+                page-break-before: avoid;
+            }
+            /* リストやボックスが途中で切れないように */
+            ul, ol, div[style*="background"] {
+                page-break-inside: avoid;
+            }
+            /* 段落が途中で切れないように */
+            p, li {
+                orphans: 2;
+                widows: 2;
+            }
+            .container {
+                padding: 15px 12px;
+            }
+            a {
+                color: #333;
+                text-decoration: none;
+            }
+        }
+        .michishiru-accent { color: #ea580c; font-weight: 600; }
+        .work-placeholder {
+            background: #fff7ed;
+            border: 2px dashed #fb7185;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            color: #c2410c;
+            font-style: italic;
+        }
+        /* 区切りの文字が表示されないように（念のため） */
+        [aria-hidden="true"] {
+            display: block;
+        }
+        [aria-hidden="true"]::before,
+        [aria-hidden="true"]::after {
+            content: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-header">
+        <div class="chapter-info">ミチシル　第1章　基盤構築</div>
+        <div class="section-info">
+            <span class="section-number" id="current-section-number">1-1</span>
+            <span id="current-section-title">コーチングの誕生と「馬車」の物語</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- はじめに -->
+        <section class="preface" style="margin-bottom: 60px; padding: 40px; background: linear-gradient(180deg, #fff7ed 0%, #fff1f2 100%); border-radius: 12px; border-left: 5px solid #ea580c;">
+            <h1 style="font-size: 28px; color: #1a1a1a; margin-bottom: 16px; text-align: center;">ミチシル　ママのための私軸コーチング</h1>
+            <p style="font-size: 18px; color: #c2410c; margin-bottom: 30px; text-align: center;">～脳の仕組みと対話の科学で、私と家族の未来をひらく～</p>
+            <h2 style="font-size: 22px; color: #ea580c; margin-bottom: 20px; border-bottom: 2px solid #fed7aa; padding-bottom: 10px;">はじめに：なぜ今、「私軸」が必要なのか</h2>
+            <p style="font-size: 16px; line-height: 1.9; margin-bottom: 20px; color: #374151;">
+                このテキストを手に取ったあなたは、日々の家事や育児、仕事に追われる中で「私の人生、このままでいいのかな？」というふとした迷いを抱えているかもしれません。私たちは、誰かの妻であり、母であり、娘であり、社会人でもあります。多くの<strong>役割（Doing）</strong>をこなす中で、自分自身の<strong>「あり方（Being）」</strong>を見失ってしまうことがあります。
+            </p>
+            <p style="font-size: 16px; line-height: 1.9; margin-bottom: 20px; color: #374151;">
+                本コース「ミチシル」は、単なる会話テクニックを学ぶ場所ではありません。確固たる土台（Foundation）の上に立ち、自分の内面（Being）と行動（Doing）を一致させ、希望に満ちた未来へ進むための<strong class="michishiru-accent">「私軸」</strong>を作る旅です。認知科学に基づいた「脳と心の仕組み」を理解し、あなた自身が輝くことで、家族や周りの人々の可能性をも引き出す。そんな「一生モノの対話力」を、8週間かけて体系的に習得していきます。
+            </p>
+        </section>
+
+        <!-- 目次 -->
+        <section class="table-of-contents" style="margin-bottom: 60px; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <h2 style="font-size: 24px; color: #1a1a1a; margin-bottom: 28px; text-align: center; border-bottom: 3px solid #ea580c; padding-bottom: 12px;">目次</h2>
+            <div style="font-size: 15px; line-height: 2;">
+                <h3 style="font-size: 18px; color: #ea580c; margin-top: 22px; margin-bottom: 12px; padding-left: 10px; border-left: 4px solid #ea580c;">第1章　基盤構築：脳の仕組みとコーチングの本質</h3>
+                <ul style="list-style: none; padding-left: 0; margin: 0 0 18px 0;">
+                    <li style="padding-left: 20px; margin-bottom: 8px;"><span style="color: #ea580c; font-weight: 600;">1-1</span> コーチングの誕生と「馬車」の物語</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">① コーチングの語源は「馬車」→ワーク／② コーチングとは／③ ティーチング・カウンセリングとの違い</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">④ 一番大切な考え方／⑤ コーチングにおけるリソース</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">⑥ コーチングの効果と効果を高めるためにできること→ワーク／⑦ エフィカシー→ワーク</li>
+                    <li style="padding-left: 36px; margin-bottom: 8px; font-size: 14px; color: #6b7280;">⑧ コーチングが機能する条件とやってはいけないこと</li>
+                    <li style="padding-left: 20px; margin-bottom: 8px;"><span style="color: #ea580c; font-weight: 600;">1-2</span> なぜ人は変われないのか？（ホメオスタシスと無意識）</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">① 続かないのは「意思が弱い」からではない／② 無意識という巨大なゾウ</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">③ モチベーションの再定義／④ コンフォートゾーンを構成する4つの層</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">⑤ 心の免疫システム／コンフォートゾーンを未来へ移動させる（まとめ）</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">ワーク② 実感：いつもの声かけを書き換える</li>
+                </ul>
+                <h3 style="font-size: 18px; color: #ea580c; margin-top: 22px; margin-bottom: 12px; padding-left: 10px; border-left: 4px solid #ea580c;">第2章　基本スキル：信頼を築き、本音を引き出す</h3>
+                <ul style="list-style: none; padding-left: 0; margin: 0 0 18px 0;">
+                    <li style="padding-left: 20px; margin-bottom: 8px;"><span style="color: #ea580c; font-weight: 600;">2-1</span> 聴く力（アクティブリスニング）</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">① 「聞く」と「聴く」は違う／② 沈黙を恐れない</li>
+                    <li style="padding-left: 20px; margin-bottom: 8px;"><span style="color: #ea580c; font-weight: 600;">2-2</span> 承認スキル（Acknowledgment）</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">① 「褒める」と「認める」は違う／② ママは自分への承認が不足しがち</li>
+                    <li style="padding-left: 20px; margin-bottom: 8px;"><span style="color: #ea580c; font-weight: 600;">2-3</span> 質問スキルの体系化</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">① 質問は脳内の検索エンジンを動かすスイッチ／② 4層質問モデルで深く掘り下げる</li>
+                </ul>
+                <h3 style="font-size: 18px; color: #ea580c; margin-top: 22px; margin-bottom: 12px; padding-left: 10px; border-left: 4px solid #ea580c;">第3章　構造化：科学的な目標設定と進行</h3>
+                <ul style="list-style: none; padding-left: 0; margin: 0 0 18px 0;">
+                    <li style="padding-left: 20px; margin-bottom: 8px;"><span style="color: #ea580c; font-weight: 600;">3-1</span> 目標設定の科学（SMART+ER）</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">① 曖昧なゴールでは脳は動かない／② SMART+ERの各要素</li>
+                    <li style="padding-left: 20px; margin-bottom: 8px;"><span style="color: #ea580c; font-weight: 600;">3-2</span> セッションの設計図（GROWモデル）</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">① プロのセッションには「型」がある／② GROWの4ステップ</li>
+                </ul>
+                <h3 style="font-size: 18px; color: #ea580c; margin-top: 22px; margin-bottom: 12px; padding-left: 10px; border-left: 4px solid #ea580c;">第4章　実践力：倫理と統合</h3>
+                <ul style="list-style: none; padding-left: 0; margin: 0 0 18px 0;">
+                    <li style="padding-left: 20px; margin-bottom: 8px;"><span style="color: #ea580c; font-weight: 600;">4-1</span> コーチング倫理とプロ意識</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">① ママ友同士の会話とプロのコーチングの違いは「倫理」／② 健全な境界線（バウンダリー）を引く</li>
+                    <li style="padding-left: 20px; margin-bottom: 8px;"><span style="color: #ea580c; font-weight: 600;">4-2</span> 統合スキル実践</li>
+                    <li style="padding-left: 36px; margin-bottom: 4px; font-size: 14px; color: #6b7280;">① 「聴く」「認める」「問う」を総動員する／② 実践のポイント</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 受講にあたって -->
+        <section class="preface" style="margin-bottom: 60px; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 5px solid #ea580c;">
+            <h2 style="font-size: 24px; color: #ea580c; margin-bottom: 24px; border-bottom: 2px solid #fed7aa; padding-bottom: 10px;">受講にあたって</h2>
+            <p style="font-size: 15px; line-height: 1.8; margin-bottom: 24px; color: #374151;">本コースをより実りあるものにするために、以下の点にご理解・ご協力ください。</p>
+            <ol style="font-size: 15px; line-height: 2; color: #374151; padding-left: 24px; margin: 0 0 24px 0;">
+                <li style="margin-bottom: 10px;"><strong>学びへのコミットメント</strong>：コーチングスキルの習得は、ご自身の取り組み次第です。主体的に学ぶ姿勢が、習得の早さと深さを左右します。</li>
+                <li style="margin-bottom: 10px;"><strong>目的・ゴールを明確に</strong>：講座には「目的」や「ゴール」を明確にして臨んでください。何のために学ぶのかがはっきりしているほど、気づきと行動が生まれやすくなります。</li>
+                <li style="margin-bottom: 10px;"><strong>その場で質問する</strong>：分からないことや引っかかったことがあれば、その場で質問し、解消してから次に進んでください。持ち越さないことが理解を深めます。</li>
+                <li style="margin-bottom: 10px;"><strong>継続参加とフィードバックの受容</strong>：できるだけ休まず参加し、講師や仲間から受けるフィードバックを素直に受け止めてください。フィードバックは成長のためのギフトです。</li>
+                <li style="margin-bottom: 10px;"><strong>クライアントのロールモデルを目指す</strong>：受講生同士のロールプレイでは、相手の気づきと行動を引き出す「クライアント役」としての在り方も学びます。クライアントのロールモデルを目指して臨んでください。</li>
+                <li style="margin-bottom: 10px;"><strong>機密保持・録音について</strong>：講座で扱う内容は機密とします。録音・録画は許可された場合のみ、指定された方法・場所で行ってください。</li>
+                <li style="margin-bottom: 10px;"><strong>オンライン受講時の環境</strong>：オンラインで参加する場合は、集中して取り組める環境を整え、対面のセミナー室ではしないような行動（私用の並行作業など）は避けてください。</li>
+                <li style="margin-bottom: 10px;"><strong>セルフコーチング・他者への実践</strong>：日頃からセルフコーチングを実践すると、講座での学びが最大化されます。プロフェッショナルコーチを目指す方は、早い段階から他者へのコーチングにも挑戦してみてください。</li>
+                <li style="margin-bottom: 10px;"><strong>コーチングスキルの倫理的な使用</strong>：コーチングスキルを、人の心を操ったりコントロールしたりする道具として使うことは厳に慎んでください。相手の成長と幸せを願う、良い意図で用いてください。</li>
+                <li style="margin-bottom: 10px;"><strong>自己開示への積極的な参加</strong>：コーチングスキルを理解し身につけるには、自己開示する機会が多くあります。安全な場だからこそ、積極的に自分の考えや体験を話し、学びに活かしてください。</li>
+                <li style="margin-bottom: 10px;"><strong>情報の厳守</strong>：講座内で得た情報（発言・記述・オンライン上で知り得たことを含む）は、いかなる形であれ、講座の外で漏らさないでください。</li>
+                <li style="margin-bottom: 10px;"><strong>不快な体験も成長の機会と捉える</strong>：講座のなかでは、少し不快に感じる体験や、自分の弱みに触れる場面もあるかもしれません。それらを「成長のための機会」と捉え、前向きに取り組んでください。</li>
+                <li style="margin-bottom: 10px;"><strong>互いに支え合う場として参加する</strong>：コーチは、相手を支える存在であるとともに、自分も支えられながら成長します。仲間と互いに支え合い、高め合える場として、本コースに参加してください。</li>
+            </ol>
+        </section>
+
+        <!-- コミットメントシート -->
+        <section class="preface" style="margin-bottom: 60px; padding: 40px; background: linear-gradient(180deg, #fff7ed 0%, #fff1f2 100%); border-radius: 12px; border: 2px solid #fed7aa; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+            <h2 style="font-size: 24px; color: #ea580c; margin-bottom: 8px; text-align: center; border-bottom: 2px solid #fed7aa; padding-bottom: 12px;">コミットメントシート</h2>
+            <p style="font-size: 14px; color: #78716c; margin-bottom: 28px; text-align: center;">受講のスタートに、次の3つの問いへの答えを書いておきましょう。後から振り返ると、あなたの変化が実感できます。</p>
+            <div style="margin-bottom: 28px;">
+                <p style="font-weight: 600; margin-bottom: 10px; color: #374151; font-size: 16px;">1) 受講の理由・目的は何ですか？</p>
+                <div style="background: white; border: 2px solid #fdba74; border-radius: 8px; padding: 20px; min-height: 140px; position: relative;">
+                    <div style="position: absolute; left: 16px; top: 20px; bottom: 20px; width: 12px; display: flex; flex-direction: column; gap: 12px;">
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                    </div>
+                    <div style="margin-left: 28px; min-height: 120px;">
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom: 28px;">
+                <p style="font-weight: 600; margin-bottom: 10px; color: #374151; font-size: 16px;">2) 受講により手に入れたいことは何ですか？</p>
+                <div style="background: white; border: 2px solid #fdba74; border-radius: 8px; padding: 20px; min-height: 140px; position: relative;">
+                    <div style="position: absolute; left: 16px; top: 20px; bottom: 20px; width: 12px; display: flex; flex-direction: column; gap: 12px;">
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                    </div>
+                    <div style="margin-left: 28px; min-height: 120px;">
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom: 0;">
+                <p style="font-weight: 600; margin-bottom: 10px; color: #374151; font-size: 16px;">3) 将来、どのような自分になっていたいですか？</p>
+                <div style="background: white; border: 2px solid #fdba74; border-radius: 8px; padding: 20px; min-height: 140px; position: relative;">
+                    <div style="position: absolute; left: 16px; top: 20px; bottom: 20px; width: 12px; display: flex; flex-direction: column; gap: 12px;">
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                        <span style="display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fdba74; background: white;"></span>
+                    </div>
+                    <div style="margin-left: 28px; min-height: 120px;">
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px; margin-bottom: 8px;"></div>
+                        <div style="border-bottom: 1px solid #e7e5e4; height: 24px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <header class="chapter-header">
+            <h1>第1章　基盤構築：脳の仕組みとコーチングの本質</h1>
+            <p class="chapter-intro">マインドセットの確立から、コーチングの本質まで。まずは「なぜコーチングが人を動かすのか」「なぜ自分は変わりたいのに続かないのか」を、脳の仕組みとともに理解していきましょう。ママとしての毎日の中で、自分らしい「私軸」を立てる土台を作る章です。</p>
+        </header>
+
+        <!-- 1-1 コーチングの誕生と「馬車」の物語 -->
+        <section class="section" data-section="1-1" data-section-title="コーチングの誕生と「馬車」の物語">
+            <h2>1-1 コーチングの誕生と「馬車」の物語</h2>
+
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
+                <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>「コーチ」と聞いて、どんなイメージが浮かびますか？</li>
+                    <li>誰かを「目的地まで送り届ける」存在として、あなたの人生で思い当たる人はいますか？</li>
+                </ol>
+                <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 18px; margin-top: 18px; min-height: 100px;"></div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">① コーチングの語源は「馬車」</h3>
+                <p style="margin-bottom: 18px; line-height: 1.9;">コーチングの語源は、ハンガリーの町<strong>「コチ」</strong>で作られた馬車にあります。馬車の役割は、大切な人を乗せ、その人が望む目的地まで安全に送り届けること。現代のコーチも同じです。クライアント（あなた、あるいは対話相手）を<strong>背負って走るのではなく</strong>、横に座って対話し、「望む未来」という目的地へ送り届けるパートナーです。</p>
+                <p style="margin-bottom: 18px; line-height: 1.9;">子育てでも「早くしなさい」「こうしなさい」と背中を押しがちではありませんか？ コーチングでは、答えを教えるのではなく、相手の中にある答えを一緒に探し、その人が自分で歩き出せるように伴走します。</p>
+            </div>
+
+            <!-- 体感ワーク：今、私は誰の馬車に乗っているのか -->
+            <section class="work-block" style="margin: 36px 0; padding: 32px; background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 8px; font-size: 20px;">「今、私は誰の馬車に乗っているのか？」</h3>
+                <p style="font-size: 14px; color: #78716c; margin-bottom: 24px;">馬車の例えを聞いて、こんな問いを投げかけてみましょう。無意識にやっている「背負う・押す・引っ張る」関わりに気づくための体感ワークです。</p>
+                <p style="font-weight: 600; margin-bottom: 20px; color: #1a1a1a;">あなたは今、どんな関わり方をしていますか？ 以下の問いに、正解を探さず思いつくまま書いてみましょう。</p>
+
+                <div style="margin-bottom: 24px;">
+                    <p style="font-weight: 600; margin-bottom: 8px; color: #374151;"><strong>Q1.</strong> 最近、あなたが「何とかしてあげよう」と必死になった相手は誰ですか？<br><span style="font-size: 14px; font-weight: 400; color: #6b7280;">（子ども／夫／家族／職場の人／自分自身 など）</span></p>
+                    <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 16px; min-height: 56px;"></div>
+                </div>
+                <div style="margin-bottom: 24px;">
+                    <p style="font-weight: 600; margin-bottom: 8px; color: #374151;"><strong>Q2.</strong> その関わり方は、馬車の例えで言うとどれに近いですか？</p>
+                    <ul style="list-style: none; padding-left: 0; margin: 0 0 12px 0;">
+                        <li style="margin-bottom: 6px;"><span style="display: inline-block; width: 1.2em;">□</span> 相手を背負って走っている</li>
+                        <li style="margin-bottom: 6px;"><span style="display: inline-block; width: 1.2em;">□</span> 後ろから強く押している</li>
+                        <li style="margin-bottom: 6px;"><span style="display: inline-block; width: 1.2em;">□</span> 前を走って引っ張っている</li>
+                        <li style="margin-bottom: 6px;"><span style="display: inline-block; width: 1.2em;">□</span> 横に座って行き先を一緒に確認している</li>
+                    </ul>
+                    <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 16px; min-height: 48px;"></div>
+                </div>
+                <div style="margin-bottom: 0;">
+                    <p style="font-weight: 600; margin-bottom: 8px; color: #374151;"><strong>Q3.</strong> もし「横に座る」関わり方を選ぶとしたら、何を"やめる"必要がありそうですか？</p>
+                    <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 16px; min-height: 56px;"></div>
+                </div>
+
+                <div style="margin-top: 28px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ea580c;">
+                    <p style="font-size: 14px; color: #374151; margin: 0; line-height: 1.8;">多くのママは、愛情があるからこそ無意識に「背負う・押す・引っ張る」関わりをしています。コーチングは、相手を動かす技術ではなく、<strong>相手が自分で動ける状態をつくる関わり方</strong>です。</p>
+                </div>
+            </section>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">② コーチングとは</h3>
+                <p style="margin-bottom: 18px; line-height: 1.9;">コーチングを一言で言うと、<strong>「対話で気づきを引き出すこと」</strong>です。コーチが答えを教えるのではなく、<strong>問いかけ</strong>によって相手が自分で考え、自分で気づくのを手伝います。相手の立場で言うと、「やりたいこと」をやり、「なりたい自分」になるための行動を後押ししてもらう関わりです。</p>
+
+                <h3 style="color: #1a1a1a; margin-top: 32px; margin-bottom: 18px; font-size: 20px;">③ ティーチング・カウンセリングとの違い</h3>
+                <p style="margin-bottom: 14px; line-height: 1.9;">対人支援には、目的の違う3つのアプローチがあります。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2;">
+                        <li><strong>ティーチング（指導）</strong>：正解を持っている先生が、知識を与えること。</li>
+                        <li><strong>カウンセリング（治癒）</strong>：心がマイナスの状態から、ゼロの状態へ戻すアプローチ。</li>
+                        <li><strong>コーチング（達成）</strong>：心身が健康な人が、ゼロからプラスへ、さらに大きな未来へ向かうアプローチ。「答えは相手の中にある」と信じ、未来の可能性に焦点を当てます。</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 18px; line-height: 1.9;">ママ友同士の「聞いてもらう」だけの会話とも違います。コーチングでは、聴いたうえで「じゃあ、本当はどうなったら最高？」と未来へ問いを向け、行動につなげていきます。</p>
+
+                <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 24px; margin: 32px 0; border-radius: 8px;">
+                    <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 16px; font-size: 18px;">④ コーチングで一番大切な考え方</h3>
+                    <p style="margin: 0; line-height: 1.9; font-size: 17px;">答えはすべて相手の中にある。だから、コーチは問いかけと承認で支える存在です。背負うでも、押すでも、引っ張るでもなく——横に座って、相手が自分で答えを見つけられるよう伴走する。ママとしての日常でも、「私が教えてあげなきゃ」と思いがちなときこそ、この考え方を思い出してください。</p>
+                </div>
+            </div>
+
+            <div style="margin: 40px 0; padding: 8px 0; border-top: 2px dashed #fed7aa; border-bottom: 2px dashed #fed7aa;" aria-hidden="true"></div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">⑤ コーチングにおけるリソース</h3>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>リソース</strong>とは、コーチングの文脈では「その人の中にある、目標達成や前進に使える“資源”」のことです。お金や時間だけでなく、<strong>知識・経験・スキル・人脈・環境</strong>、そして「自分では気づいていなかった強み」や「忘れていた成功体験」まで含みます。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;">コーチングの対話を通じて、相手は自分の中に山のように眠っていたリソースや、リソースだと思っていなかったもの、すっかり忘れていたものまで意識するようになります。その結果、<strong>新たな気づきが得られ、自信とやる気が高まり、より高い目標にチャレンジする意欲</strong>が湧いてきます。また、「行動するために必要なもの」と「すでに持っているもの」「これから手に入れるもの」がはっきりするので、<strong>とるべき行動が具体的</strong>になります。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;">コーチの役割は、相手の中にあるリソースを一緒に棚卸しし、解放していく手伝いをすること。相手が「自分には〇〇がある」と気づくための問いかけを重ね、リソースが使える状態にしていきます。ママとしても、子どもや夫の「できていること」「持っている力」に光を当てる問いかけが、相手のリソースを引き出すきっかけになります。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 18px 0;">
+                    <p style="font-weight: 600; margin-bottom: 10px; color: #c2410c;">リソースの例（イメージ）</p>
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2;">
+                        <li><strong>もともと意識していた強み</strong>：得意なこと、好きなこと</li>
+                        <li><strong>忘れていた経験・スキル</strong>：昔うまくいったやり方、培った力</li>
+                        <li><strong>人脈・環境</strong>：支えてくれる人、集中できる場所</li>
+                        <li><strong>リソースだと思っていなかった内面</strong>：感情のエネルギー、価値観、情熱</li>
+                    </ul>
+                    <p style="margin-top: 14px; margin-bottom: 0; font-size: 14px; color: #6b7280;">「うちの子には何がある？」と問いかけると、親自身が子どものリソースに気づき、声かけが変わっていくこともあります。</p>
+                </div>
+            </div>
+
+            <div style="margin: 40px 0; padding: 8px 0; border-top: 2px dashed #fed7aa; border-bottom: 2px dashed #fed7aa;" aria-hidden="true"></div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">⑥ コーチングの効果と効果を高めるためにできること</h3>
+                <p style="margin-bottom: 18px; line-height: 1.9;">コーチングは、クライアント（コーチングを受ける側）とコーチ（コーチングをする側）の双方に、豊かな効果をもたらします。</p>
+
+                <h5 style="color: #c2410c; margin-top: 20px; margin-bottom: 10px; font-size: 17px; font-weight: 600;">クライアント（コーチングを受ける側）にもたらされる効果</h5>
+                <p style="margin-bottom: 14px; line-height: 1.9;">コーチとの対話を通じて、相手は自分の中にある考え・感情・可能性に<strong>気づき</strong>、具体的な行動を明確にしていきます。セッションごとに小さな行動を積み重ねることで、<strong>モチベーションが高まり、自己信頼が育ち、目標達成や自己実現</strong>につながります。</p>
+                <ul style="margin: 0 0 14px 22px; padding-left: 8px; line-height: 2;">
+                    <li><strong>目標の明確化</strong>：達成したいことと、その理由・イメージがはっきりする</li>
+                    <li><strong>行動の具体化</strong>：「今週やること」レベルまで落ち、実行しやすくなる</li>
+                    <li><strong>意識の持続</strong>：目標に意識を向け続け、集中力を保てる</li>
+                    <li><strong>安心感・尊重</strong>：本音が大切にされ、受け入れられていると感じられる</li>
+                    <li><strong>自己理解の深まり</strong>：内面やリソースに気づき、自分らしい土台が育つ</li>
+                    <li><strong>ストレスの軽減</strong>：悩みや気がかりを話すことで、心が軽くなる</li>
+                    <li><strong>行動への責任感</strong>：約束（宣言）によって、自分の行動に責任を持ち、怠け心を乗り越える</li>
+                </ul>
+                <p style="margin-bottom: 18px; line-height: 1.9;">安心して話せる関係性の中では、変化と前進が支えられ、想像以上の成果や生き生きとした毎日につながるきっかけになります。</p>
+
+                <h5 style="color: #c2410c; margin-top: 20px; margin-bottom: 10px; font-size: 17px; font-weight: 600;">コーチ（コーチングをする側）にもたらされる効果</h5>
+                <p style="margin-bottom: 14px; line-height: 1.9;">コーチングを学び、実践することで、コーチ自身にも大きな成長と喜びがもたらされます。相手を支える経験を通じて、自分自身の人間力や対話力が磨かれ、日常のあらゆる場面で活かせる力が身につきます。</p>
+                <ul style="margin: 0 0 14px 22px; padding-left: 8px; line-height: 2;">
+                    <li><strong>対話力の向上</strong>：相手の話を深く聴けるようになり、日常の会話が円滑になる</li>
+                    <li><strong>多様性の尊重</strong>：価値観の違いを受け入れられ、包容力と人間的魅力が増す</li>
+                    <li><strong>支援する喜び</strong>：相手を支えることに喜びを感じ、人との関わりが楽しくなる</li>
+                    <li><strong>自己理解の深化</strong>：自分の内面やリソースに気づき、自己基盤が育まれる</li>
+                    <li><strong>前向き思考</strong>：物事の肯定的な側面に目を向けられるようになる</li>
+                    <li><strong>率直な発信力</strong>：感じたことを素直に言葉にできる力が身につく</li>
+                    <li><strong>相互成長の実感</strong>：クライアントとの関わりを通じて、自分自身も刺激を受け、学び、成長していける</li>
+                </ul>
+                <p style="margin-bottom: 18px; line-height: 1.9;">コーチとクライアントは、互いに高め合う<strong>協働関係</strong>です。双方が互いに豊かさをもたらし合える関係こそが、コーチングの本質です。</p>
+            </div>
+
+            <!-- ワーク：コーチになったら自分はどんな人間になれそうか -->
+            <section class="work-block" style="margin: 36px 0; padding: 32px; background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 8px; font-size: 20px;">「コーチになったら、自分はどんな人間になれそうか？」</h3>
+                <p style="font-size: 14px; color: #78716c; margin-bottom: 24px;">今の解説を聞いて、コーチングをする側としての自分をイメージしてみましょう。</p>
+                <p style="font-weight: 600; margin-bottom: 20px; color: #1a1a1a;">以下の問いに、思いつくまま書いてみてください。</p>
+
+                <div style="margin-bottom: 24px;">
+                    <p style="font-weight: 600; margin-bottom: 8px; color: #374151;"><strong>Q1.</strong> コーチングを学び、人を支える関わりをするようになったら、あなたはどんな人間になれそうですか？<br><span style="font-size: 14px; font-weight: 400; color: #6b7280;">（例：聴ける人／相手を信じられる人／前向きな人 など）</span></p>
+                    <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 16px; min-height: 80px;"></div>
+                </div>
+                <div style="margin-bottom: 0;">
+                    <p style="font-weight: 600; margin-bottom: 8px; color: #374151;"><strong>Q2.</strong> その「なりそうな自分」は、今のあなたにどんな変化をもたらしそうですか？</p>
+                    <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 16px; min-height: 80px;"></div>
+                </div>
+            </section>
+
+            <div style="margin: 40px 0; padding: 8px 0; border-top: 2px dashed #fed7aa; border-bottom: 2px dashed #fed7aa;" aria-hidden="true"></div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">⑦ 行動の鍵となる「エフィカシー」（自己効力感）を高める</h3>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>エフィカシー</strong>とは、心理学でいう<strong>自己効力感</strong>のことです。「自分にはできる」「必ず成し遂げられる」という、自分自身の能力への評価・信頼感を指します。やる気（「やりたい」という気持ち）は、天気や体調、周りの言葉など外的な要因で変わりやすいもの。それに対してエフィカシーは、<strong>能力そのものへの揺るぎない信頼</strong>なので、つらいときや不安なときでも、行動を支える土台になります。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;">コーチングの本質は、この<strong>エフィカシーを高める</strong>ことです。クライアントの「自分だったら大丈夫」「未来の私はもっとできる」という確信を育て、未来のゴール達成が「当たり前」だと感じられる状態に近づけていきます。コーチングはママのためだけのものではありません。ビジネスパーソン、起業家、教員、医療・福祉の現場、子育て中のパパやママ、キャリアを模索する学生など、<strong>どんな業種・どんな立場・どんな背景の人にとっても</strong>、目標を達成し、自分らしく変化していくうえで、とても大事な関わり方です。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;">エフィカシーは、放っておいても育つものではありません。次の<strong>3つの条件</strong>がそろうと、育ちやすくなります。</p>
+                <ul style="margin: 0 0 14px 22px; padding-left: 8px; line-height: 2;">
+                    <li><strong>エフィカシーが高い人と関わる</strong>：未来を切り開いている人や、「自分にもできる」と信じて動いている人と対話することで、無意識に「自分にもできる」という可能性が自分の中にインストールされていきます。コーチ自身の高いエフィカシーが、クライアントへの最大のギフトになる、と言われる所以です。</li>
+                    <li><strong>エフィカシーの高い環境に身を置く</strong>：周囲が未来志向で、「やってみよう」「できる」という空気であれば、本人の未来志向も維持しやすくなります。コミュニティの力が、行動を加速させます。</li>
+                    <li><strong>自分のリソースを解放する</strong>：自分の強みや過去の成功体験を発揮できる場で、小さな成功を積み重ねること。コーチングでは、クライアント自身が気づいていないリソース（知識・経験・人脈など）を棚卸しし、解放していく手伝いをします。</li>
+                </ul>
+                <p style="margin-bottom: 18px; line-height: 1.9;">この3つがそろうからこそ、コーチングは<strong>目標達成</strong>や<strong>人が変化を起こす</strong>うえで、これほどまでに有効だと言われています。エフィカシーが育つ「場所」や「関係」を意識して、自分自身も、対話する相手も、その土台を整えていきましょう。</p>
+            </div>
+
+            <div style="margin: 40px 0; padding: 8px 0; border-top: 2px dashed #fed7aa; border-bottom: 2px dashed #fed7aa;" aria-hidden="true"></div>
+
+            <!-- ワーク：エフィカシーが高いとはどういうことか -->
+            <section class="work-block" style="margin: 36px 0; padding: 32px; background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 8px; font-size: 20px;">「エフィカシーが高い」とは、どういうことか？</h3>
+                <p style="font-size: 14px; color: #78716c; margin-bottom: 24px;">「自分にはできる」と信じて動いている人の姿を思い浮かべて、エフィカシーの感覚を捉えてみましょう。</p>
+
+                <div style="margin-bottom: 24px;">
+                    <p style="font-weight: 600; margin-bottom: 8px; color: #374151;"><strong>Q1.</strong> 「エフィカシーが高い人」と聞いて、どんな人をイメージしますか？ あなたの周りにいる人や、憧れる人の姿を思い浮かべて書いてみてください。</p>
+                    <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 16px; min-height: 80px;"></div>
+                </div>
+                <div style="margin-bottom: 0;">
+                    <p style="font-weight: 600; margin-bottom: 8px; color: #374151;"><strong>Q2.</strong> あなた自身が「自分にはできる」と感じられた経験はありますか？ どんなときでしたか？</p>
+                    <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 16px; min-height: 80px;"></div>
+                </div>
+            </section>
+
+            <div style="margin: 40px 0; padding: 8px 0; border-top: 2px dashed #fed7aa; border-bottom: 2px dashed #fed7aa;" aria-hidden="true"></div>
+
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">⑧ コーチングが機能する条件とやってはいけないこと</h3>
+                <p style="margin-bottom: 14px; line-height: 1.9;">コーチングがきちんと働くには、いくつかの<strong>土台</strong>が必要です。</p>
+                <ul style="margin: 0 0 14px 22px; padding-left: 8px; line-height: 2;">
+                    <li><strong>安心して話せる信頼関係（ラポール）</strong>：これがないと、本音を話せず、気づきや行動変容も生まれにくい。</li>
+                    <li><strong>アドバイスせず、質問で引き出す</strong>：答えを教えず、相手が話すことで思考が整理され、自分で気づくことを促す。</li>
+                    <li><strong>コーチの自己基盤</strong>：コーチ自身が自分を理解し、自分を肯定していること。誠実で、感情に流されず、相手を尊重できる姿勢。</li>
+                    <li><strong>「答えは、その人の中にある」と信じるマインド</strong>：コーチが100％相手の味方であり、共に目標達成を目指すパートナーであること。</li>
+                </ul>
+                <p style="margin-bottom: 18px; line-height: 1.9;">つまり、<strong>信頼関係という土台の上に、質問と聴く力があり、コーチ自身の在り方（自己基盤・コーチングマインド）が支え</strong>になって初めて、コーチングは機能します。</p>
+
+                <p style="margin-top: 20px; margin-bottom: 14px; line-height: 1.9;">一方で、以下は避けたいこと。これらを意識すると、相手が安心して話せず、気づきや行動が生まれにくくなります。</p>
+                <div style="background: #fef2f2; border: 2px solid #fecaca; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                    <p style="font-weight: 600; margin-bottom: 12px; color: #b91c1c;">❌ やってはいけないこと・避けるべきこと</p>
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2;">
+                        <li><strong>答えをアドバイスで教える</strong>：コーチングでは「質問で引き出す」が基本。アドバイスばかりだと、相手が自分で気づく機会を奪う。</li>
+                        <li><strong>批判や判断を加える</strong>：「認める」ときも、批判・判断を込めない。込めると相手は安心して話せなくなる。</li>
+                        <li><strong>比較で褒める</strong>：「人と比べてすごい」はNG。短い言葉で、具体的に、そのまま受け止めて伝える。</li>
+                        <li><strong>不自然な「褒め」</strong>：基本は「褒める」ことより「そのまま受け止める」こと。心からそう思えるときだけ、自然に褒める。</li>
+                        <li><strong>聴くより話す・質問を連発する</strong>：「聴く」が土台。質問しすぎず、相手が話しやすいリズムと沈黙を大切に。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1-2 なぜ人は変われないのか？ -->
+        <section class="section" data-section="1-2" data-section-title="なぜ人は変われないのか？（ホメオスタシスと無意識）">
+            <h2>1-2 なぜ人は変われないのか？（ホメオスタシスと無意識）</h2>
+
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
+                <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>「変わりたい」と思ったのに、続かなかった経験はありますか？</li>
+                    <li>そのとき、「意思が弱いから」と自分を責めていませんでしたか？</li>
+                </ol>
+                <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 18px; margin-top: 18px; min-height: 100px;"></div>
+            </div>
+
+            <!-- ①＋② 続かない理由と無意識のゾウ -->
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">① 続かないのは「意思が弱い」からではない</h3>
+                <p style="margin-bottom: 18px; line-height: 1.9;">「変わりたい」と思っても続かないのは、意思が弱いからではありません。脳の<strong>ホメオスタシス（恒常性維持機能）</strong>が働いているからです。これは体温を一定に保つように、「今の生活」—心理学でいう<strong>コンフォートゾーン</strong>（自分が安心・安全だと感じるいつもの心理的状態）—を維持しようとする脳の安全装置。脳にとって変化は「危険」なこと。だから、新しいことを始めようとすると、無意識が全力で元の場所へ引き戻そうとします。</p>
+
+                <h3 style="color: #1a1a1a; margin-top: 28px; margin-bottom: 18px; font-size: 20px;">② 無意識という巨大なゾウ</h3>
+                <p style="margin-bottom: 18px; line-height: 1.9;">人間の意識は、氷山の一角です。理性の力（意識）が「お尻についたノミ」だとしたら、感情や本能（無意識）は「巨大なアフリカゾウ」のようなパワーを持っています。気合いでゾウを動かすことはできません。</p>
+                <p style="margin-bottom: 0; line-height: 1.9;">コーチングでは、脳の仕組みを使い、<strong>「未来の理想の状態こそが、私にとっての安心な場所（新しいコンフォートゾーン）だ」</strong>と脳に認識させることで、このゾウを未来へ向かって歩かせます。だから、「やる気を出せ」と自分を責めるのではなく、「脳に新しい安心の場所を見せてあげる」という発想が大切です。</p>
+            </div>
+
+            <div style="margin: 40px 0; padding: 8px 0; border-top: 2px dashed #fed7aa; border-bottom: 2px dashed #fed7aa;" aria-hidden="true"></div>
+
+            <!-- ③＋④ コンフォートゾーンの話 -->
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">③ モチベーションの再定義：「やる気」ではなく「コンフォートゾーンを維持する力」</h3>
+                <p style="margin-bottom: 14px; line-height: 1.9;"><strong>コンフォートゾーン</strong>とは、自分が安心・安全だと感じる「いつもの心理的状態」のこと。私たちの行動は、無意識にこのゾーンの内側に留まろうとする力によって決まっています。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;">多くの人のコンフォートゾーンは「過去」や「現在」に固定されています。そのため、未来の目標に向けた行動（昇進への挑戦、新スキル習得、健康的な生活への切り替えなど）が「居心地の悪い」ものに感じられ、無意識に避けられてしまうのです。</p>
+                <p style="margin-bottom: 28px; line-height: 1.9;">つまり、<strong>モチベーション＝「やる気」</strong>ではありません。<strong>モチベーション＝「コンフォートゾーンを維持する力」</strong>です。変われないのは意思が弱いからではなく、脳が「今の場所」を守ろうとしているから。この仕組みを理解することが、変化の第一歩です。</p>
+
+                <h3 style="color: #1a1a1a; margin-top: 28px; margin-bottom: 18px; font-size: 20px;">④ コンフォートゾーンを構成する4つの層</h3>
+                <p style="margin-bottom: 14px; line-height: 1.9;">変化を阻む抵抗は、単なる行動や習慣ではありません。コンフォートゾーンは、表層から深層まで<strong>4つの層</strong>で構成されています。深層にあるアイデンティティレベルの書き換えが、真の変容を加速させます。</p>
+                <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 18px 0;">
+                    <ul style="margin: 0; padding-left: 22px; line-height: 2;">
+                        <li><strong>Layer 1：身体・生理</strong> … 呼吸、姿勢、睡眠</li>
+                        <li><strong>Layer 2：行動</strong> … 目に見える習慣、先延ばし</li>
+                        <li><strong>Layer 3：感情・思考</strong> … 不安、思い込み、セルフトーク</li>
+                        <li><strong>Layer 4：アイデンティティ</strong> … 「自分とはこういう人間だ」という信念</li>
+                    </ul>
+                </div>
+                <p style="margin-bottom: 0; line-height: 1.9;">コーチの役割は、どの層が変化のブレーキになっているかを見極め、層を行き来しながら介入することです。行動だけを変えようとしても、深い層の信念が変わっていなければ、元に戻ってしまいます。</p>
+            </div>
+
+            <div style="margin: 40px 0; padding: 8px 0; border-top: 2px dashed #fed7aa; border-bottom: 2px dashed #fed7aa;" aria-hidden="true"></div>
+
+            <!-- ⑤ 心の免疫システム -->
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">⑤ 心の免疫システム：変化を妨げる「無意識の抵抗」を理解する</h3>
+                <p style="margin-bottom: 14px; line-height: 1.9;">「変わりたい」と思っているのに、なぜか続かない、一歩踏み出せない——そんなとき、心の中では<strong>「変わりたい」と「変わりたくない」が同時に働いている</strong>ことがあります。ハーバード大学の研究で提唱された考え方に、<strong>「心の免疫システム」</strong>というものがあります。からだの免疫がウイルスから守ってくれるように、心にも「今の自分を守ろうとする」仕組みがあり、それが<strong>変化を無意識に妨げる</strong>のです。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;">私たちは、コンフォートゾーンを「未来」に置く必要がある、と前の節で学びました。未来に置くということは、その過程で<strong>自分自身が変わらなければならない</strong>場面が出てきます。ところが、<strong>変化は人間にとって怖いもの</strong>です。未知のことは不安だし、失敗したらどうしよう、と感じるのは自然なこと。だから、「こうなりたい」という表向きの気持ちとは裏腹に、心の奥では「今のままでいたい」「傷つきたくない」という<strong>変わりたくない気持ち</strong>が働き、知らないうちに自分で自分にブレーキをかけていることがあります。</p>
+                <p style="margin-bottom: 14px; line-height: 1.9;">例えば、「挑戦的な提案をしたい」と思っていても、本当は「批判されたくない」という気持ちが強く、つい準備に時間をかけすぎて一歩踏み出せない——そんなふうに、<strong>表向きの目標と、隠れた「守りたい気持ち」がぶつかり合う</strong>状態が、心の免疫システムが働いている状態です。根っこには「失敗したら自分の価値が下がる」のような、自分でも気づいていない「大前提」のような思い込みがあることがあります。</p>
+                <p style="margin-bottom: 0; line-height: 1.9;">コーチングでは、その「大前提」に気づき、<strong>「それは今も本当に真実か？」と問い直す</strong>手伝いをします。心の免疫システムを解除するには、いきなり大きな変化を目指すのではなく、小さな一歩を試して「思っていたほど怖くない」という体験を積み、脳に新しい安心を届けていくことが大切です。まずは「なぜ自分は動けないんだろう？」を責めず、<strong>心にも守りたい自分がいる</strong>ことを理解することから始めましょう。</p>
+            </div>
+
+            <div style="margin: 40px 0; padding: 8px 0; border-top: 2px dashed #fed7aa; border-bottom: 2px dashed #fed7aa;" aria-hidden="true"></div>
+
+            <!-- まとめ：コンフォートゾーンを未来へ移動させる -->
+            <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
+                <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">コンフォートゾーンを「未来」へ移動させる——ここまでのまとめ</h3>
+                <p style="margin-bottom: 14px; line-height: 1.9;">コンフォートゾーンのあり方と心の免疫システムについて学んできました。では、実際にどう扱っていけばよいのか。コーチングの核心は、<strong>変化を強制するのではなく、未来の理想像を新たな「当たり前」にする</strong>ことです。脳は臨場感の強い方を現実と認識するため、未来のリアリティを高めることで、無意識が自然とそちらへ向かい始めます。</p>
+                <p style="margin-bottom: 10px; line-height: 1.9; font-weight: 600;">3つのポイント：</p>
+                <ul style="margin: 0 0 14px 22px; padding-left: 8px; line-height: 2;">
+                    <li><strong>未来をリアルに描く</strong>：感情や五感を伴う鮮明なゴールビジョンを設定する。</li>
+                    <li><strong>ギャップがエネルギーを生む</strong>：現在とのギャップが明確になり、それを埋めようとする力が自然に湧き上がる。</li>
+                    <li><strong>無意識が味方になる</strong>：未来がコンフォートゾーンになると、目標達成に必要な情報や行動が無意識に選択されるようになる。</li>
+                </ul>
+                <p style="margin-bottom: 0; line-height: 1.9;">「現在」の安心ゾーンから「未来」の安心ゾーンへ、コーチングによる意図的な移動を促す。これが、人が変わり続けるための考え方です。</p>
+            </div>
+
+            <div style="background: #fff7ed; border-radius: 8px; padding: 20px; margin: 28px 0; border-left: 5px solid #ea580c;">
+                <p style="font-weight: 600; margin-bottom: 10px; color: #c2410c;">ママへのひとこと</p>
+                <p style="margin: 0; line-height: 1.9; color: #374151;">「また今日も怒ってしまった」「時間がないから自分を後回しにしている」——そんな自分を責めがちなときこそ、ホメオスタシスを思い出してください。脳は「いつもの私」を守ろうとしているだけ。まずは「理想の私」を具体的に描くことから、一歩ずつ始めましょう。</p>
+            </div>
+
+            <!-- ワーク② 実感：いつもの声かけを書き換える -->
+            <section class="work-block" style="margin: 36px 0; padding: 32px; background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa;">
+                <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 8px; font-size: 20px;">【実感ワーク】「いつもの声かけ」を書き換える</h3>
+                <p style="font-size: 14px; color: #78716c; margin-bottom: 24px;">子育てシーンで即使える、コーチングが“技術”だと分かるワークです。</p>
+                <p style="font-weight: 600; margin-bottom: 20px; color: #1a1a1a;">その声かけ、どう変えられそう？ 問い・選択・未来に向けた言葉に変えてみましょう。</p>
+
+                <div style="display: grid; gap: 24px; margin-bottom: 24px;">
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 8px; color: #c2410c;">Before（いつもの声かけ）</p>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">例：「早くしなさい」「何回言ったら分かるの」</p>
+                        <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 16px; min-height: 64px;"></div>
+                    </div>
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 8px; color: #ea580c;">After（コーチング的な声かけ）</p>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">例：「今、何に時間がかかってる？」「どうしたら間に合いそう？」</p>
+                        <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 16px; min-height: 64px;"></div>
+                    </div>
+                </div>
+
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ea580c;">
+                    <p style="font-size: 14px; color: #374151; margin: 0; line-height: 1.8;">コーチングは、特別な場面だけで使うものではありません。毎日の声かけこそが、最も実践しやすいフィールドです。</p>
+                </div>
+            </section>
+        </section>
+
+        <!-- 章末まとめ -->
+        <section class="section">
+            <h2>第1章まとめ｜人は「未来の臨場感」によって、自ら変わり始める</h2>
+
+            <div style="background: #fff7ed; border-radius: 12px; padding: 32px; margin: 28px 0; border-left: 5px solid #ea580c;">
+                <p style="margin-bottom: 18px; line-height: 1.9; color: #374151;">人は、意志の力だけで無理やり自分を変えることはできません。「もっと頑張ろう」「ちゃんとしよう」と思っても続かないのは、あなたの意志が弱いからではありません。</p>
+                <p style="margin-bottom: 18px; line-height: 1.9; color: #374151;">変化の本質は、行動そのものを変えることではなく、世界の捉え方（認知）を書き換えることにあります。</p>
+                <p style="margin-bottom: 18px; line-height: 1.9; color: #374151;">私たちは無意識のうちに、「これが普通」「私はこういう人」という<strong>コンフォートゾーン（慣れ親しんだ認知の枠）</strong>の中で生きています。だからこそ、何かを変えたいと思っても、無意識は元の世界に戻ろうとします。</p>
+            </div>
+
+            <h3 style="font-size: 18px; margin-top: 28px; margin-bottom: 12px; color: #ea580c;">人が自然に変わり始める瞬間</h3>
+            <p style="margin-bottom: 14px; line-height: 1.9;">人が本当に変わり始めるのは、「こうなった自分で生きている未来」を、今ここでリアルに感じられたときです。</p>
+            <ul style="margin: 0 0 20px 22px; padding-left: 8px; line-height: 2;">
+                <li>その未来の自分は、どんな気持ちで朝を迎えているのか</li>
+                <li>誰と、どんな関係性で過ごしているのか</li>
+                <li>どんな選択を、無理なく選んでいるのか</li>
+            </ul>
+            <p style="margin-bottom: 28px; line-height: 1.9;">このような未来が「想像」ではなく「臨場感」として立ち上がったとき、人は努力ではなく、自然な選択として行動を変え始めます。</p>
+
+            <h3 style="font-size: 18px; margin-top: 28px; margin-bottom: 12px; color: #ea580c;">コーチングにおける「コーチの役割」</h3>
+            <p style="margin-bottom: 14px; line-height: 1.9;">コーチの役割は、クライアントを引っ張ることでも、正解を教えることでもありません。コーチが行うのは、</p>
+            <ul style="margin: 0 0 14px 22px; padding-left: 8px; line-height: 2;">
+                <li>クライアントが今いる「現在の認知（Being）」を丁寧に扱い</li>
+                <li>望む未来の「在り方・行動（Doing &amp; Being）」を再構築し</li>
+                <li>その未来を、今ここでリアルに感じられるように支援すること</li>
+            </ul>
+            <p style="margin-bottom: 14px; line-height: 1.9;">つまり、変化のプロセスに寄り添い、クライアント自身のエフィカシー（自己信頼）を高め、内側に眠っているリソースを解放する存在です。変化は、外から与えられるものではなく、その人の内側から立ち上がるものだからです。</p>
+
+            <h3 style="font-size: 18px; margin-top: 28px; margin-bottom: 12px; color: #ea580c;">第1章の位置づけ</h3>
+            <p style="margin-bottom: 28px; line-height: 1.9;">この第1章では、</p>
+            <ul style="margin: 0 0 20px 22px; padding-left: 8px; line-height: 2;">
+                <li>なぜ人は変わりたいのに変われないのか</li>
+                <li>なぜコーチングが人を動かすのか</li>
+                <li>変化は「行動」ではなく「認知」から始まる</li>
+            </ul>
+            <p style="margin-bottom: 0; line-height: 1.9;">という、すべての土台となる考え方を扱ってきました。このあと行うワークでは、今日学んだことを「知識」で終わらせず、あなた自身の認知を書き換える体験をしていきます。</p>
+
+            <hr style="margin: 40px 0; border: none; border-top: 2px dashed #fed7aa;" />
+
+            <!-- 第1章 内省ワーク -->
+            <div style="background: linear-gradient(180deg, #fff7ed 0%, #fff1f2 100%); border-radius: 12px; padding: 32px; margin: 28px 0; border: 2px solid #fed7aa;">
+                <h3 style="font-size: 20px; color: #ea580c; margin-top: 0; margin-bottom: 8px;">【第1章 内省ワーク】</h3>
+                <p style="font-size: 15px; color: #374151; margin-bottom: 28px;">ここまで学んで、今のあなたに起きていること。以下の問いに、正解を探さず、今の気持ちで答えてください。</p>
+
+                <div style="margin-bottom: 24px;">
+                    <p style="font-weight: 600; margin-bottom: 8px; color: #374151;"><strong>Q1.</strong> 第1章を通して、「今までそうだと思い込んでいた考え方」で、揺らいだもの・引っかかったものは何ですか？</p>
+                    <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 20px; min-height: 80px;"></div>
+                </div>
+                <div style="margin-bottom: 24px;">
+                    <p style="font-weight: 600; margin-bottom: 8px; color: #374151;"><strong>Q2.</strong> 「もし認知が変わったら、行動は自然に変わる」という考え方を聞いて、あなたの中でどんな感情が湧きましたか？</p>
+                    <ul style="list-style: none; padding-left: 0; margin: 0 0 12px 0;">
+                        <li style="margin-bottom: 6px;"><span style="display: inline-block; width: 1.2em;">□</span> 安心した</li>
+                        <li style="margin-bottom: 6px;"><span style="display: inline-block; width: 1.2em;">□</span> 期待した</li>
+                        <li style="margin-bottom: 6px;"><span style="display: inline-block; width: 1.2em;">□</span> 半信半疑</li>
+                        <li style="margin-bottom: 6px;"><span style="display: inline-block; width: 1.2em;">□</span> 抵抗を感じた</li>
+                        <li style="margin-bottom: 6px;"><span style="display: inline-block; width: 1.2em;">□</span> その他（自由記述）</li>
+                    </ul>
+                    <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 20px; min-height: 80px;"></div>
+                </div>
+                <div style="margin-bottom: 28px;">
+                    <p style="font-weight: 600; margin-bottom: 8px; color: #374151;"><strong>Q3.</strong> これから行うワークを通して、どんな自分の変化を体験してみたいですか？</p>
+                    <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 20px; min-height: 80px;"></div>
+                </div>
+
+                <div style="padding: 20px; background: white; border-radius: 8px; border-left: 4px solid #ea580c;">
+                    <p style="font-size: 16px; color: #374151; margin: 0; line-height: 1.8;"><strong>ひとことメッセージ</strong><br>変わる準備ができていなくても大丈夫です。「気づいた」という事実そのものが、すでに変化のプロセスの一部です。</p>
+                </div>
+            </div>
+
+            <hr style="margin: 40px 0; border: none; border-top: 2px dashed #fed7aa;" />
+
+            <h3 style="font-size: 18px; margin-top: 24px; margin-bottom: 12px;">理解の確認</h3>
+            <ol style="line-height: 2;">
+                <li>コーチングの語源（馬車）と、ティーチング・カウンセリングとの違いを、自分の言葉で説明してみましょう。</li>
+                <li>「コーチングとは」を、相手に伝えるつもりで一言で噛み砕いて説明してみましょう。</li>
+                <li>コーチングにおける「リソース」とは何か、具体例を1〜2個挙げて説明してみましょう。</li>
+                <li>コーチングの効果と、エフィカシー（自己効力感）を高めることの関係を、自分の言葉で説明してみましょう。</li>
+                <li>エフィカシーを育む3つの条件（高い人と関わる・高い環境に身を置く・自分のリソースを解放する）を挙げ、なぜコーチングが目標達成や変化に有効か、つなげて考えてみましょう。</li>
+                <li>コーチングが機能する条件と、コーチングで「やってはいけないこと」を、それぞれ1つずつ挙げてみましょう。</li>
+                <li>「変われない」理由を、ホメオスタシスと無意識のゾウの比喩で整理してみましょう。</li>
+                <li>「心の免疫システム」とは何か、ママや身近な人に伝えるつもりで、噛み砕いて説明してみましょう。</li>
+                <li>モチベーションの再定義（「やる気」ではなく「コンフォートゾーンを維持する力」）と、コンフォートゾーンを構成する4つの層を、自分の言葉で説明してみましょう。</li>
+                <li>コンフォートゾーンを「未来」へ移動させるメカニズムの3つのポイントを挙げ、それぞれを日常でどう活かせそうか考えてみましょう。</li>
+            </ol>
+            <div style="margin-top: 32px; padding: 24px; background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; text-align: center;">
+                <p style="font-size: 18px; line-height: 1.8; color: #1a1a1a; margin: 0; font-weight: 600;">コーチングとは、<br>誰かを変える方法ではなく、<br><strong style="color: #ea580c;">「その人が、自分で進める状態をつくる在り方」</strong>です。</p>
+            </div>
+            <h3 style="font-size: 18px; margin-top: 28px; margin-bottom: 12px;">次章へのつなぎ</h3>
+            <p style="line-height: 1.9;">第1章で、コーチングの本質と「人が変わる仕組み」の土台を押さえました。次章では、信頼を築き、本音を引き出す「認める」「聴く」「問う」「フィードバックする」の4つの基本スキルを学んでいきます。</p>
+        </section>
+    </div>
+
+    <script>
+        function updateCurrentSection() {
+            const sections = document.querySelectorAll('section.section[data-section]');
+            const headerNumber = document.getElementById('current-section-number');
+            const headerTitle = document.getElementById('current-section-title');
+            if (!sections.length || !headerNumber || !headerTitle) return;
+            const scrollPosition = window.scrollY + 100;
+            let currentSection = sections[0];
+            for (let i = 0; i < sections.length; i++) {
+                const section = sections[i];
+                const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+                if (scrollPosition >= sectionTop) currentSection = section;
+                else break;
+            }
+            if (currentSection) {
+                const sectionNumber = currentSection.getAttribute('data-section');
+                const sectionTitle = currentSection.getAttribute('data-section-title');
+                if (sectionNumber && sectionTitle) {
+                    headerNumber.textContent = sectionNumber;
+                    headerTitle.textContent = sectionTitle;
+                }
+            }
+        }
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() { updateCurrentSection(); ticking = false; });
+                ticking = true;
+            }
+        });
+        updateCurrentSection();
+        window.addEventListener('resize', updateCurrentSection);
+    </script>
+</body>
+</html>
