@@ -33,38 +33,6 @@
         @media print {
             .progress-header { display: none; }
             body { padding-top: 0; }
-            /* style.cssの競合を上書き（第2章専用） */
-            .container .section { page-break-inside: auto !important; }
-            .container div[style*="background"] { page-break-inside: auto !important; page-break-after: auto !important; }
-            .print-keep-together { page-break-inside: avoid !important; }
-            .chapter-header, h1, h2, h3, h4, h5 { page-break-after: avoid; }
-            section.section[data-section="2-1"],
-            section.section[data-section="2-2"],
-            section.section[data-section="2-3"],
-            section.section[data-section="2-4"] { page-break-before: always !important; }
-            /* 見出しとその直後の内容が離れないように */
-            h3, h4, h5 {
-                page-break-after: avoid;
-            }
-            h3 + p, h4 + p, h5 + p {
-                page-break-before: avoid;
-            }
-            /* リストやボックスが途中で切れないように */
-            ul, ol {
-                page-break-inside: avoid;
-            }
-            /* 段落が途中で切れないように */
-            p, li {
-                orphans: 2;
-                widows: 2;
-            }
-            .container {
-                padding: 15px 12px;
-            }
-            a {
-                color: #333;
-                text-decoration: none;
-            }
         }
         .michishiru-accent { color: #ea580c; font-weight: 600; }
         .work-placeholder {
@@ -137,7 +105,7 @@
 
         <!-- 前段：基本スキルを学ぶ前に -->
         <section class="section" data-section="intro" data-section-title="基本スキルを学ぶ前に">
-            <div class="print-keep-together" style="background: #fffbeb; border: 2px solid #f59e0b; border-radius: 12px; padding: 32px; margin: 32px 0;">
+            <div style="background: #fffbeb; border: 2px solid #f59e0b; border-radius: 12px; padding: 32px; margin: 32px 0;">
                 <h2 style="color: #b45309; margin-top: 0; margin-bottom: 20px; font-size: 20px;">基本スキルを学ぶ前に</h2>
                 <p style="margin-bottom: 20px; line-height: 2;">相手の話から聞こえてきた事実を受け止め、認めることで、相手は安心感や自己信頼を得られます。そのことにより、相手との間に信頼感が醸成され、何でも話せる雰囲気が生まれます。</p>
                 <p style="margin-bottom: 14px; line-height: 2;">この「安心と信頼」がないまま質問をすると、対話は詰問になりやすく、行動にはつながりません。だからこそ、ミチシルでは土台から順番に積み上げます。</p>
@@ -148,7 +116,7 @@
 
         <!-- ワーク0：第2章 導入ワーク -->
         <section class="section" data-section="work-0" data-section-title="ワーク0：私の対話パターンを見つける">
-            <div class="print-keep-together" style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 32px 0;">
+            <div style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 32px 0;">
                 <h2 style="color: #ea580c; margin-top: 0; margin-bottom: 8px; font-size: 20px;">なぜ行動につながらない？を体感する</h2>
                 <h3 style="color: #c2410c; font-size: 18px; font-weight: 600; margin-bottom: 20px;">ワーク0：私の「対話パターン」を見つける</h3>
                 <p style="margin-bottom: 24px; font-size: 14px; color: #6b7280; line-height: 1.8;">いまの自分の対話が「A：命令・詰問型」か「B：コーチ型」かを整理し、この章で学ぶ4スキルが必要な理由を自分ごとにします。</p>
@@ -279,7 +247,7 @@
         <section class="section" data-section="2-1" data-section-title="承認スキル（認める）">
             <h2>2-1 承認スキル（認める）</h2>
 
-            <div class="print-keep-together" style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
                 <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
                 <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
                 <ol style="margin-left: 20px; line-height: 2;">
@@ -346,7 +314,7 @@
             </div>
 
             <!-- 2-1 承認スキル ワーク -->
-            <div class="print-keep-together" style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 36px 0;">
+            <div style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 36px 0;">
                 <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 24px; font-size: 20px;">ワーク1：いつもの声かけを振り返る</h3>
                 <p style="margin-bottom: 20px; font-size: 14px; color: #6b7280; line-height: 1.8;">「褒める」と「認める」の違いを、自分の言葉で整理します。</p>
                 <p style="font-weight: 600; margin-bottom: 8px; color: #374151;">Q1. 最近、家族や自分にかけた言葉を3つ書いてください（子ども／夫／親／自分 など、どれでもOK）</p>
@@ -362,7 +330,7 @@
                 <div style="background: white; border: 1px solid #fdba74; border-radius: 8px; padding: 16px; margin-bottom: 0; min-height: 56px;"></div>
             </div>
 
-            <div class="print-keep-together" style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 36px 0;">
+            <div style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 36px 0;">
                 <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 16px; font-size: 20px;">ワーク2：「褒める」→「認める」に書き換える</h3>
                 <p style="margin-bottom: 20px; font-size: 14px; color: #6b7280; line-height: 1.8;">承認の型を作って、明日から使える状態にします。</p>
                 <div style="display: grid; gap: 16px;">
@@ -378,7 +346,7 @@
                 </div>
             </div>
 
-            <div class="print-keep-together" style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 36px 0;">
+            <div style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 36px 0;">
                 <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 16px; font-size: 20px;">ワーク3：今日の自分を、そのまま受け取る</h3>
                 <p style="margin-bottom: 20px; font-size: 14px; color: #6b7280; line-height: 1.8;">自分の状態を整えてから、相手を認められるようにします。</p>
                 <p style="font-weight: 600; margin-bottom: 8px; color: #374151;">Q1. 今日できたことを3つ（小さくてOK）</p>
@@ -398,9 +366,9 @@
         <!-- 2-2 聴く力（アクティブリスニング） -->
         <section class="section" data-section="2-2" data-section-title="聴く力（アクティブリスニング）">
             <h2>2-2 聴く力（アクティブリスニング）</h2>
-            <p class="print-keep-together" style="margin-bottom: 24px; padding: 16px; background: #f0fdf4; border-radius: 8px; line-height: 1.8;">認めることができた上で、聴くスキルを発揮します。相手の話をしっかりと聴く前提となるものは、相手を認め、受け止めることです。</p>
+            <p style="margin-bottom: 24px; padding: 16px; background: #f0fdf4; border-radius: 8px; line-height: 1.8;">認めることができた上で、聴くスキルを発揮します。相手の話をしっかりと聴く前提となるものは、相手を認め、受け止めることです。</p>
 
-            <div class="print-keep-together" style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
                 <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
                 <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
                 <ol style="margin-left: 20px; line-height: 2;">
@@ -461,7 +429,7 @@
             </div>
 
             <!-- ワーク① 聴けなくなる瞬間に気づく -->
-            <div class="print-keep-together" style="background: #f0fdf4; border: 2px solid #22c55e; border-radius: 12px; padding: 28px; margin: 28px 0;">
+            <div style="background: #f0fdf4; border: 2px solid #22c55e; border-radius: 12px; padding: 28px; margin: 28px 0;">
                 <h3 style="color: #166534; margin-top: 0; margin-bottom: 8px; font-size: 18px;">「私はどこで聴けなくなる？」</h3>
                 <p style="margin-bottom: 20px; color: #15803d; font-size: 14px;"><strong>目的：</strong>自分が"聴けなくなる瞬間"に気づく／アドバイス癖・先回り癖を自覚する</p>
                 <div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 20px;">
@@ -487,7 +455,7 @@
             </div>
 
             <!-- ワーク② 沈黙を3秒待つ -->
-            <div class="print-keep-together" style="background: #eff6ff; border: 2px solid #3b82f6; border-radius: 12px; padding: 28px; margin: 28px 0;">
+            <div style="background: #eff6ff; border: 2px solid #3b82f6; border-radius: 12px; padding: 28px; margin: 28px 0;">
                 <h3 style="color: #1d4ed8; margin-top: 0; margin-bottom: 16px; font-size: 18px;">沈黙を3秒、待ってみる</h3>
                 <div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 20px;">
                     <p style="font-weight: 600; margin-bottom: 12px;">やり方</p>
@@ -511,9 +479,9 @@
         <!-- 2-3 質問スキルの体系化 -->
         <section class="section" data-section="2-3" data-section-title="質問スキルの体系化">
             <h2>2-3 質問スキルの体系化</h2>
-            <p class="print-keep-together" style="margin-bottom: 24px; padding: 16px; background: #f0fdf4; border-radius: 8px; line-height: 1.8;">「認める」「聴く」ができた上で、質問するスキルを発揮します。質問は「認める」「聴く」の延長として、<strong>相手（クライアント）の中にある考えや気づきを引き出す</strong>役割を持ちます。相手が自分で考え、自分で答えを見つけるために、問いかけていきましょう。</p>
+            <p style="margin-bottom: 24px; padding: 16px; background: #f0fdf4; border-radius: 8px; line-height: 1.8;">「認める」「聴く」ができた上で、質問するスキルを発揮します。質問は「認める」「聴く」の延長として、<strong>相手（クライアント）の中にある考えや気づきを引き出す</strong>役割を持ちます。相手が自分で考え、自分で答えを見つけるために、問いかけていきましょう。</p>
 
-            <div class="print-keep-together" style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
                 <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
                 <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
                 <ol style="margin-left: 20px; line-height: 2;">
@@ -554,7 +522,7 @@
                 </div>
 
                 <!-- オープン・クローズド質問のワーク（ここだけのワーク） -->
-                <div class="print-keep-together" style="background: #eff6ff; border: 2px solid #3b82f6; border-radius: 12px; padding: 24px; margin: 24px 0;">
+                <div style="background: #eff6ff; border: 2px solid #3b82f6; border-radius: 12px; padding: 24px; margin: 24px 0;">
                     <h4 style="color: #1d4ed8; margin-top: 0; margin-bottom: 12px; font-size: 17px;">ワーク：オープン質問に言い換えてみる</h4>
                     <p style="margin-bottom: 16px; font-size: 14px; color: #374151; line-height: 1.8;">クローズドになりがちな質問を、オープン質問に言い換える練習です。</p>
                     <p style="font-weight: 600; margin-bottom: 8px; color: #374151;">Q1. 最近、子どもや夫などにした「Yes/Noで答えられる質問」を1つ書いてください。</p>
@@ -566,14 +534,7 @@
                 <p style="margin-bottom: 14px; line-height: 1.9;"><strong>（2）チャンク・ダウン（5W1H）</strong><br>「かたまりをほぐす＝具体化する」こと。「いつ？」「どこで？」「だれが（に）？」「なにを？」「どのように？」「何が？」を使います。「なぜ」は責めになりやすいので、「何が妨げになった？」に置き換えるとよいです。</p>
                 <p style="margin-bottom: 14px; line-height: 1.9;"><strong>（3）視点を変える質問</strong><br>相手の固定的な視点を移動させ、思い込みから脱し、新しい気づきを引き出します。</p>
                 <div style="background: white; border: 1px solid #fed7aa; border-radius: 8px; padding: 16px; margin: 16px 0;">
-                    <p style="margin-bottom: 8px; font-weight: 600;">例：</p>
-                    <ul style="margin: 0; padding-left: 22px; line-height: 2;">
-                        <li><strong>時系列（現在→過去→未来）</strong>： 「いまの出来事を“過去（少し前）”の自分ならどう見た？」「過去から未来のあなたは、何を選ぶと思う？」</li>
-                        <li><strong>憧れの人なら</strong>： 「あなたの憧れの人なら、この状況で何を大事にして声をかけると思う？」</li>
-                        <li><strong>相手の立場（エラーがある相手）</strong>： 「先輩（旦那様）が本当は守りたいことは何だと思う？」「誤解があるなら、どこがズレていそう？」</li>
-                        <li><strong>第三者・役割交代</strong>： 「客観的に見たら、焦点はどこ？」「“コーチ役”として見るなら、次にどんな問いが必要？」</li>
-                    </ul>
-                    <p style="margin-top: 12px; margin-bottom: 0; font-size: 14px; line-height: 1.8;">他にも、短期/長期や“価値観（何を大事にしたい？）”で視点を置き換えると、問いが広がります。</p>
+                    <p style="margin-bottom: 8px; font-weight: 600;">例：「〇〇ちゃん（子ども）はどう感じてると思う？」「あなたの親友なら、あなたにどんなアドバイスすると思う？」</p>
                 </div>
                 <p style="margin-bottom: 14px; line-height: 1.9;"><strong>（4）4層質問モデル</strong><br>以下の順番で問うと、表面的な愚痴で終わらせず、未来への行動につなげられます。</p>
                 <div style="background: white; border: 2px solid #fed7aa; border-radius: 8px; padding: 20px; margin: 20px 0;">
@@ -600,7 +561,7 @@
             </div>
 
             <!-- 2-3 パートまとめワーク：問いが変わると、相手の反応はどう変わる？ -->
-            <div class="print-keep-together" style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 36px 0;">
+            <div style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 36px 0;">
                 <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 8px; font-size: 20px;">問いが変わると、相手の反応はどう変わる？</h3>
                 <p style="margin-bottom: 24px; font-size: 14px; color: #6b7280; line-height: 1.8;">「会話が止まる質問」と「考えが動く質問」の違いを体感し、自分が普段使っている質問のクセに気づいて、行動につながる問いをつくれるようにします。</p>
 
@@ -674,9 +635,9 @@
         <!-- 2-4 フィードバックするスキル -->
         <section class="section" data-section="2-4" data-section-title="フィードバックするスキル">
             <h2>2-4 フィードバックするスキル</h2>
-            <p class="print-keep-together" style="margin-bottom: 24px; padding: 16px; background: #f0fdf4; border-radius: 8px; line-height: 1.8;">「認める」「聴く」「問う」ができた上で、適切なタイミングでフィードバックするスキルを用います。相手の気づきを促すための鏡となります。</p>
+            <p style="margin-bottom: 24px; padding: 16px; background: #f0fdf4; border-radius: 8px; line-height: 1.8;">「認める」「聴く」「問う」ができた上で、適切なタイミングでフィードバックするスキルを用います。相手の気づきを促すための鏡となります。</p>
 
-            <div class="print-keep-together" style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
+            <div style="background: #fff7ed; border-left: 5px solid #ea580c; padding: 28px; margin: 28px 0; border-radius: 8px;">
                 <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見</h3>
                 <p style="margin-bottom: 16px; font-weight: 600;">このセクションを学ぶ前に、次の問いを考えてみましょう。</p>
                 <ol style="margin-left: 20px; line-height: 2;">
@@ -758,7 +719,7 @@
             </div>
 
             <!-- 2-4 フィードバックのワーク -->
-            <div class="print-keep-together" style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 36px 0;">
+            <div style="background: #fff7ed; border-radius: 12px; border: 2px solid #fed7aa; padding: 32px; margin: 36px 0;">
                 <h3 style="color: #ea580c; margin-top: 0; margin-bottom: 8px; font-size: 20px;">フィードバックは「鏡」になる練習</h3>
                 <p style="margin-bottom: 24px; font-size: 14px; color: #6b7280; line-height: 1.8;">アドバイスや評価ではなく「感じたことを、そのまま伝える」感覚を身につけ、相手に気づきを起こすフィードバックを体験的に理解します。</p>
 
