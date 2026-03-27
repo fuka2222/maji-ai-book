@@ -36,7 +36,7 @@
             /* 印刷時：変な場所で改ページされないようにする */
             section.section,
             .work-block {
-                page-break-inside: avoid;
+                page-break-inside: auto;
             }
             .chapter-header,
             h1, h2, h3, h4, h5 {
@@ -55,6 +55,15 @@
             /* リストやボックスが途中で切れないように */
             ul, ol, div[style*="background"] {
                 page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            figure, table, thead, tbody, tr, th, td {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .print-keep-together {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
             }
             /* 段落が途中で切れないように */
             p, li {
@@ -594,6 +603,126 @@
         <section class="section" data-section="3-4" data-section-title="発見モード・行動モード・セッションの間">
             <h2>3-4 発見モード・行動モード・セッションの間</h2>
             <p style="margin-bottom: 20px; line-height: 1.9;">3-1で<strong>目標の立て方</strong>（SMART+ER）、3-2で<strong>信頼関係</strong>（ラポール）、3-3で<strong>会話の順番</strong>（GROW）を学びました。これらは、章頭の表で示した「対話の流れ」のどこに入るのでしょうか。このセクションでは、<strong>発見モード・行動モード・セッションとセッションの間</strong>の3つを、前の章とつなげながら整理します。流れが一本線でつながると、「いつ、何を意識すればいいか」がイメージしやすくなります。</p>
+
+            <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 24px; margin: 24px 0;">
+                <h3 style="color: #1e40af; margin-top: 0; margin-bottom: 14px; font-size: 19px;">参考：ミチシル式・コーチングセッションのストラクチャー（トークスクリプト）</h3>
+                <p style="margin-bottom: 16px; line-height: 1.9;">実務では、4つのモードや時間の目安を、さらに<strong>「最初に何を話すか」「発見のなかでどう深めるか」</strong>まで落とし込んだ<strong>セッション用トークスクリプト</strong>が用意されていることがあります。以下は、ミチシル教材の<strong>コーチングセッション　トークスクリプト</strong>に沿った骨子です。<strong>章頭で学んだラポール</strong>に相当する<strong>セッション開始</strong>のあと、<strong>発見モード</strong>を「目標設定→現状把握→プロセス設定」の3ブロックに分け、<strong>行動のコミットと振り返り</strong>は<strong>セッション終了</strong>でまとめます。分数はあくまで目安です（オンライン／対面、初回／継続で調整します）。合計の目安はおおよそ50分前後ですが、30〜60分の枠のなかで伸縮させます。</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 14px; background: white;">
+                        <thead>
+                            <tr style="background: #dbeafe; border-bottom: 2px solid #3b82f6;">
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">ブロック</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">目安時間</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">ねらい</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #e5e7eb;">主な流れ（要点）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;">
+                                <td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>セッション開始</strong><br><span style="font-size: 13px; color: #64748b;">（ラポールに相当）</span></td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb; white-space: nowrap;">約5分</td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb;">安心・環境の確認、「この時間はあなたのため」という主導権と意識の共有</td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb; line-height: 1.75;">挨拶と呼び名の確認、環境確認（音声・映像など）、アイスブレイク、守秘と応援の姿勢・時間の意味の伝達</td>
+                            </tr>
+                            <tr style="background: #f8fafc;">
+                                <td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>発見モード：目標設定</strong></td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb; white-space: nowrap;">約18分</td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb;">今日のテーマとセッションゴールの合意、理想の場面の具体化と価値観の接続</td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb; line-height: 1.75;">テーマ確認、戦略確認（終わったときに何が分かっていればよいか・「他には？」・感情）、将来の最高の瞬間の描写、価値観の共感、振り返り、<strong>目標が明確かのチェック</strong></td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>発見モード：現状把握</strong></td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb; white-space: nowrap;">約15分</td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb;">現在地の客観視、リソースと強みの発見、中間の一歩のイメージ</td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb; line-height: 1.75;">点数化とその内訳（リフレインを挟む）、リソース・強み・支援者、中間目標（いつまでにどうなっていれば点数が上がるか）</td>
+                            </tr>
+                            <tr style="background: #f8fafc;">
+                                <td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>発見モード：プロセス設定</strong></td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb; white-space: nowrap;">約10分</td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb;">選択肢の創出、優先順位、実行可能なステップと次の一歩（Will）</td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb; line-height: 1.75;">選択肢の水平展開、優先順位と理由、最初のステップと5W1H、<strong>サマライズ</strong>と事実に基づく応援（実行プロセスが明確かのチェック）</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td style="padding: 12px; border: 1px solid #e5e7eb;"><strong>セッション終了</strong><br><span style="font-size: 13px; color: #64748b;">（振り返り・行動モードに近い締め）</span></td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb; white-space: nowrap;">約5分</td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb;">気づきの定着、コミットの言語化、次回までの橋渡し</td>
+                                <td style="padding: 12px; border: 1px solid #e5e7eb; line-height: 1.75;">セッション全体の振り返り、コーチからのフィードバック（許可を取って）、今日やることの再宣言、次回・報告の約束、感謝のエンディング</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin: 14px 0 0 0; line-height: 1.85; font-size: 14px; color: #475569;"><strong>スクリプト上のチェックポイント：</strong>「最初に挙げたテーマと話がそろっているか」「目標が明確になったか」「実行プロセスまで具体的か」を、押しつけずに確認します。テーマ確認や戦略確認がずれると、その後の質問がすべてブレやすい——という注意も、スクリプトに明記されています。</p>
+            </div>
+
+            <div style="background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 8px; padding: 24px; margin: 28px 0;">
+                <h3 style="color: #6b21a8; margin-top: 0; margin-bottom: 14px; font-size: 19px;">セッション評価項目——一覧と、各項目の「見る意図」</h3>
+                <p style="margin-bottom: 16px; line-height: 1.9;">ミチシル実技で使う<strong>セッション評価項目</strong>は、セッションを<strong>39の観点</strong>に分けて振り返るための一覧です。<strong>区分</strong>ごとに「コーチ自身の土台」「進行」「ラポール」「マインド」「質問」といった観点が整理され、シートでは<strong>117点満点</strong>（別欄で<strong>100点満点</strong>換算）で記録できる形になっています。<strong>A・B・C</strong>の欄は、配点の厳密な意味は講座・試験運用に従いますが、一般には<strong>「よくできている／おおむねできている／次の一歩がある」</strong>といった段階でセルフチェックに使えます。下表の<strong>見る意図</strong>は、評価シートの文言を読みやすくするための補足です。</p>
+
+                <h4 style="color: #7c3aed; margin: 22px 0 12px; font-size: 16px;">区分ごとのねらい</h4>
+                <ul style="margin: 0 0 20px 22px; padding-left: 18px; line-height: 1.95;">
+                    <li><strong>自己基盤／プロコーチ力（No.1〜6）</strong>……環境・コンディション・プロとしての振る舞い、励まし、必要な情報提供や自己開示、挑戦の水準の扱い方。コーチの「土台」がセッションに与える影響を見ます。</li>
+                    <li><strong>セッション運営力（No.7〜15）</strong>……質問の明快さ、時間配分、終了前の振り返り依頼、冷静さと柔軟性、行動促進、フィードバック、焦点の明確さ、場のエネルギー、クライアントにとっての有益さ。対話を「運ぶ技術」を見ます。</li>
+                    <li><strong>ラポール構築力（No.16〜23）</strong>……守秘の告知、非評価的な受け止め、アイスブレイク、ペーシング、相づちと一体感、意図確認、あいづち・リフレイン・認める、協働と信頼。心理的安全性の土台を見ます。</li>
+                    <li><strong>コーチングマインド（No.24〜31）</strong>……代わりに解決しないこと、誘導に感じさせないこと、沈黙と待つこと、感情への問い、教え過ぎないこと、可能性を狭めないこと、クライアント中心、戦略・テーマの共有確認。「誰が答えを持つか」の姿勢を見ます。</li>
+                    <li><strong>質問力（No.32〜39）</strong>……ありたい姿の質問、水平質問、視点転換のオープンクエスチョン、質問の運び方、クローズドの偏り、コーチ都合の聴き取りすぎ、具体化（チャンクダウン）、セッション後の行動の明確さ。問いの質と行動への接続を見ます。</li>
+                </ul>
+
+                <h4 style="color: #7c3aed; margin: 22px 0 12px; font-size: 16px;">評価項目と見る意図（No.1〜39）</h4>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px; background: white;">
+                        <thead>
+                            <tr style="background: #ede9fe; border-bottom: 2px solid #8b5cf6;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e5e7eb; width: 44px;">No</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e5e7eb; width: 140px;">区分</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e5e7eb;">評価項目（シートの文言）</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e5e7eb;">見る意図（補足）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">1</td><td style="padding: 10px; border: 1px solid #e5e7eb;">自己基盤／プロコーチ力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション実施に支障をきたすような環境でセッションを行なっていなかったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">集中・守秘・通信や騒音など、クライアントが安心して話せる環境が確保できているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">2</td><td style="padding: 10px; border: 1px solid #e5e7eb;">自己基盤／プロコーチ力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">自身の体調管理等も含め、プロコーチにふさわしい振る舞いができていたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">コンディション、身だしなみ、言葉遣いなど、プロとしての立居振る舞いが相手に安心感を与えているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">3</td><td style="padding: 10px; border: 1px solid #e5e7eb;">自己基盤／プロコーチ力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントを励まし、勇気づける言葉を用いたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">前向きな一歩を踏み出せるよう、言葉で支えられているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">4</td><td style="padding: 10px; border: 1px solid #e5e7eb;">自己基盤／プロコーチ力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">提案や情報提供は有効だったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">必要最小限の情報提供が、クライアントの思考を助けているか（代答になっていないか）。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">5</td><td style="padding: 10px; border: 1px solid #e5e7eb;">自己基盤／プロコーチ力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">経験談を語るなど、自己開示を行なったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">適切な自己開示でラポールや気づきに寄与しているか（主役はクライアントか）。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">6</td><td style="padding: 10px; border: 1px solid #e5e7eb;">自己基盤／プロコーチ力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">より高いレベルを促したか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">現状維持にとどめず、挑戦や成長を丁寧に促せているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">7</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション運営力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">発話並びに文章や質問は明瞭であったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">聞き取りやすく、質問の意図が伝わるか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">8</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション運営力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">時間管理は適切だったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">開始・終了、ブロック配分が場に適しているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">9</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション運営力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントにフィードバックを求めてからセッションを終えていたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">終了前に、相手の振り返りや感想を十分に聞けているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">10</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション運営力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">常に冷静を保ち、臨機応変にセッションを運営することができていたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">ハプニングや感情の揺れにも、落ち着いて対応できているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">11</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション運営力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントの行動を力強く促したか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">Willに向けて、相手のコミットを後押しできているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">12</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション運営力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">フィードバックのスキルを使ったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">観察に基づき、気づきや強みに光を当てられているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">13</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション運営力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">何に焦点を当ててセッションを運営しようとしているのか、意図は感じられたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">散漫さなく、テーマやゴールに沿った進行に見えるか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">14</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション運営力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">ウキウキ · ワクワク感が醸し出されていたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">希望や前向きさが、場の空気として伝わるか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">15</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション運営力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション全体として、クライアントにとって有益と感じられたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">相手の学び・決意・気づきに資する時間になっているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">16</td><td style="padding: 10px; border: 1px solid #e5e7eb;">ラポール構築力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">守秘義務の告知は行なったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">安心して話せる前提（守秘）を明示しているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">17</td><td style="padding: 10px; border: 1px solid #e5e7eb;">ラポール構築力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントの発言を否定することはなかったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">評価や否定ではなく、言葉を受け止めているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">18</td><td style="padding: 10px; border: 1px solid #e5e7eb;">ラポール構築力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">アイスブレイクでセッションを始め、何でも話せる雰囲気を醸し出していたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">対話の入り口から、話しやすさを意識できているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">19</td><td style="padding: 10px; border: 1px solid #e5e7eb;">ラポール構築力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">適切なペーシングが行なわれ、クライアントは話しやすかったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">話す・聴く・沈黙のリズムが相手に合っているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">20</td><td style="padding: 10px; border: 1px solid #e5e7eb;">ラポール構築力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントの言葉に適切な反応を示し、セッションに一体感はあったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">相づち・反応で「一緒にいる」感じが伝わるか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">21</td><td style="padding: 10px; border: 1px solid #e5e7eb;">ラポール構築力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントの意図を誤解しないように、確認しながらセッションを進めていたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">要約・確認質問で、ズレを防いでいるか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">22</td><td style="padding: 10px; border: 1px solid #e5e7eb;">ラポール構築力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">あいづち、リフレイン、「認める」フレーズをバランスよく使っていたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">傾聴のスキルが偏りなく使えているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">23</td><td style="padding: 10px; border: 1px solid #e5e7eb;">ラポール構築力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">全体として、信頼関係づくりの努力や共感性、クライアントとの協働関係が感じられたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">味方であり、二人で進んでいる感覚があるか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">24</td><td style="padding: 10px; border: 1px solid #e5e7eb;">コーチングマインド</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントではなくコーチ自身が問題を解決しようとしていなかったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">答えを代わりに出すのではなく、相手の内側から引き出しているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">25</td><td style="padding: 10px; border: 1px solid #e5e7eb;">コーチングマインド</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントはコーチが持っている答えに誘導されていると感じなかったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">誘導やすり替えがなく、本人の言葉で決まっているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">26</td><td style="padding: 10px; border: 1px solid #e5e7eb;">コーチングマインド</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントが言葉を尽くすまで、十分に待つことができていたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">沈黙や思考の時間を尊重できているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">27</td><td style="padding: 10px; border: 1px solid #e5e7eb;">コーチングマインド</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントの感情を尋ねる質問をしたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">事実だけでなく、気持ちや感情にも触れる問いができているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">28</td><td style="padding: 10px; border: 1px solid #e5e7eb;">コーチングマインド</td><td style="padding: 10px; border: 1px solid #e5e7eb;">全体的に、コーチの話す分量やコーチがクライアントに教える場面が多過ぎなかったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">コーチの話が主役になっておらず、相手の発話が中心か。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">29</td><td style="padding: 10px; border: 1px solid #e5e7eb;">コーチングマインド</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントの可能性を信じ、可能性を狭めてしまうような対応はしていなかったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">「できない」と決めつけず、選択肢や強みを狭めていないか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">30</td><td style="padding: 10px; border: 1px solid #e5e7eb;">コーチングマインド</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアント自身に焦点を当ててセッションを運営できていたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">一貫して、相手の目標・ニーズが中心にあるか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">31</td><td style="padding: 10px; border: 1px solid #e5e7eb;">コーチングマインド</td><td style="padding: 10px; border: 1px solid #e5e7eb;">戦略の共有 · 確認を行ない、クライアントが話したいテーマでセッションを運営したか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">今日の焦点を共有し、相手のテーマからズレずに進んでいるか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">32</td><td style="padding: 10px; border: 1px solid #e5e7eb;">質問力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントの「ありたい姿」を質問したか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">ゴール・理想が本人の言葉で語られているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">33</td><td style="padding: 10px; border: 1px solid #e5e7eb;">質問力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">水平質問により、クライアントの中にあるものを引き出していたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">「他には」などで、内側の資源や選択肢が広がっているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">34</td><td style="padding: 10px; border: 1px solid #e5e7eb;">質問力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントの視点を変えるオープンクエスチョンを使ったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">別の見方やフレームが開けているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">35</td><td style="padding: 10px; border: 1px solid #e5e7eb;">質問力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">一度に二つ以上の質問や、冗長な質問をしていなかったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">1問1答で、負担の少ない聞き方か。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">36</td><td style="padding: 10px; border: 1px solid #e5e7eb;">質問力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クローズドクエスチョンを避けるようにしていたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">イエス・ノーで終わりすぎず、思考が広がる問いか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">37</td><td style="padding: 10px; border: 1px solid #e5e7eb;">質問力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">状況把握等、コーチのための質問に時間を多くかけ過ぎていなかったか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">コーチの知りたいことではなく、クライアントの変化のために時間を使っているか。</td></tr>
+                            <tr style="background: #faf5ff;"><td style="padding: 10px; border: 1px solid #e5e7eb;">38</td><td style="padding: 10px; border: 1px solid #e5e7eb;">質問力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">クライアントの「ありたい姿」をチャンクダウンし、具体化 · 明確化したか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">抽象度を下げ、行動や場面レベルまで鮮明になっているか。</td></tr>
+                            <tr style="background: white;"><td style="padding: 10px; border: 1px solid #e5e7eb;">39</td><td style="padding: 10px; border: 1px solid #e5e7eb;">質問力</td><td style="padding: 10px; border: 1px solid #e5e7eb;">セッション終了後にクライアントが行動する事柄は、十分に明確になっていたか</td><td style="padding: 10px; border: 1px solid #e5e7eb; line-height: 1.65;">次の一歩が本人の口から具体的に言えているか。</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin: 16px 0 0 0; line-height: 1.85; font-size: 14px; color: #57534e;">実技後のシートには、合格判定や実技達成度（％）、クライアントからのフィードバック、伸びしろの大きい項目、アセッサー講評といった欄もあり、<strong>点数だけでなく言葉での振り返り</strong>とセットで使う前提になっています。</p>
+            </div>
 
             <div style="background: #f8f9fa; padding: 28px; margin: 28px 0; border-radius: 8px;">
                 <h3 style="color: #1a1a1a; margin-top: 0; margin-bottom: 18px; font-size: 20px;">発見モード——引き出す（目標・現状・やることを決める）</h3>
