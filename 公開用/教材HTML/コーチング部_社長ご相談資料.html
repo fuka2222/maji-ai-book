@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コーチング部｜社長ご相談資料</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --white: #ffffff;
+    --surface: #f3f3ef;
+    --border: #e4e4dc;
+    --primary: #2d6a4f;
+    --primary-light: #e8f4ee;
+    --primary-mid: #b7d9c6;
+    --danger: #c0392b;
+    --danger-light: #fdf0ee;
+    --warning: #b07d00;
+    --warning-light: #fdf8e6;
+    --blue: #1a5276;
+    --blue-light: #eaf2fb;
+    --text: #1c1c1a;
+    --text-muted: #6b6b60;
+    --text-light: #a0a095;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    padding: 48px 24px 100px;
+  }
+
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* ── Cover ── */
+  .cover {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 5px solid var(--primary);
+    border-radius: 12px;
+    padding: 48px 48px 40px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .cover-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .cover h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+
+  .cover-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+
+  .meta-item {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .meta-item span {
+    color: var(--text);
+    font-weight: 700;
+    margin-left: 4px;
+  }
+
+  /* ── Index ── */
+  .index-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 36px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.5s 0.1s ease both;
+  }
+
+  .index-title {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 16px;
+  }
+
+  .index-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .index-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.15s;
+  }
+
+  .index-item:hover { background: var(--surface); }
+
+  .index-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--primary);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .index-num.red { background: var(--danger); }
+  .index-num.amber { background: var(--warning); }
+  .index-num.blue { background: var(--blue); }
+
+  .index-item-text { font-size: 14px; font-weight: 500; }
+  .index-badge {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  .badge-decision { background: #fff0f0; color: var(--danger); border: 1px solid #fcc; }
+  .badge-proposal { background: var(--primary-light); color: var(--primary); border: 1px solid var(--primary-mid); }
+  .badge-report { background: var(--blue-light); color: var(--blue); border: 1px solid #aed3f0; }
+
+  /* ── Section ── */
+  .section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.15s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.25s; }
+  .section:nth-child(4) { animation-delay: 0.3s; }
+  .section:nth-child(5) { animation-delay: 0.35s; }
+
+  .section-head {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .section-head.green { background: var(--primary-light); border-bottom-color: var(--primary-mid); }
+  .section-head.red { background: var(--danger-light); border-bottom-color: #f5c0ba; }
+  .section-head.amber { background: var(--warning-light); border-bottom-color: #f0d88a; }
+  .section-head.blue { background: var(--blue-light); border-bottom-color: #aed3f0; }
+
+  .section-icon {
+    font-size: 22px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .section-head-text {}
+  .section-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .section-tag.green { color: var(--primary); }
+  .section-tag.red { color: var(--danger); }
+  .section-tag.amber { color: var(--warning); }
+  .section-tag.blue { color: var(--blue); }
+
+  .section-head h2 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  .section-body { padding: 28px 32px; }
+
+  /* ── Block components ── */
+  .block { margin-bottom: 24px; }
+  .block:last-child { margin-bottom: 0; }
+
+  .block-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .point-list { display: flex; flex-direction: column; gap: 8px; }
+
+  .point {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.7;
+    align-items: flex-start;
+  }
+
+  .point-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+    margin-top: 9px;
+    flex-shrink: 0;
+  }
+
+  .point-dot.red { background: var(--danger); }
+  .point-dot.amber { background: var(--warning); }
+  .point-dot.blue { background: var(--blue); }
+
+  /* ── Alert box ── */
+  .alert {
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .alert.red {
+    background: var(--danger-light);
+    border-left: 3px solid var(--danger);
+    color: #7b1e1e;
+  }
+
+  .alert.green {
+    background: var(--primary-light);
+    border-left: 3px solid var(--primary);
+    color: #1a4a33;
+  }
+
+  .alert.amber {
+    background: var(--warning-light);
+    border-left: 3px solid var(--warning);
+    color: #6b4a00;
+  }
+
+  .alert.blue {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    color: #0d3453;
+  }
+
+  /* ── Stat grid ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .stat-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+
+  .stat-label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+  .stat-val {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .stat-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+  .stat-val.red { color: var(--danger); }
+  .stat-val.green { color: var(--primary); }
+  .stat-val.amber { color: var(--warning); }
+
+  /* ── Compare ── */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 12px;
+    align-items: center;
+    margin: 16px 0;
+  }
+
+  @media (max-width: 560px) {
+    .compare { grid-template-columns: 1fr; }
+    .compare-arrow { transform: rotate(90deg); }
+  }
+
+  .compare-box {
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+
+  .compare-box.before {
+    background: #fdf0ee;
+    border: 1px solid #f5c0ba;
+  }
+
+  .compare-box.after {
+    background: var(--primary-light);
+    border: 1px solid var(--primary-mid);
+  }
+
+  .compare-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .compare-label.before { color: var(--danger); }
+  .compare-label.after { color: var(--primary); }
+
+  .compare-amount {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .compare-amount.before { color: var(--danger); }
+  .compare-amount.after { color: var(--primary); }
+  .compare-sub { font-size: 11px; color: var(--text-muted); }
+
+  .compare-arrow {
+    font-size: 22px;
+    color: var(--text-light);
+    text-align: center;
+  }
+
+  /* ── Table ── */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin: 12px 0;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead { background: var(--surface); }
+  th {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--surface); }
+
+  .rank { font-weight: 700; }
+  .rank-master { color: #6d28d9; }
+  .rank-diamond { color: #1d4ed8; }
+  .rank-platinum { color: #475569; }
+  .rank-gold { color: #b45309; }
+  .rank-silver { color: #64748b; }
+
+  td strong, td b { font-weight: 700; }
+
+  /* ── Divider ── */
+  .chapter {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin: 40px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chapter::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── Decision box ── */
+  .decision-box {
+    background: linear-gradient(135deg, #fff5f5 0%, #fdf8f8 100%);
+    border: 2px solid var(--danger);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+  }
+
+  .decision-box h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--danger);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .cover, .section-body { padding: 24px 20px; }
+    .section-head { padding: 20px; }
+    .index-card { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ── Cover ── -->
+  <div class="cover">
+    <div class="cover-label">コーチング部 ／ 社長ご相談資料</div>
+    <h1>コーチング部の現状報告と<br>改善提案のご相談</h1>
+    <p class="cover-sub">本資料は、コーチング部の運営課題・報酬設計・ご決裁事項についてまとめたものです。<br>ご確認・ご判断をお願いいたします。</p>
+    <div class="cover-meta">
+      <div class="meta-item">作成部署<span>コーチング部</span></div>
+      <div class="meta-item">決裁事項<span>2件</span></div>
+      <div class="meta-item">提案事項<span>2件</span></div>
+      <div class="meta-item">報告事項<span>1件</span></div>
+    </div>
+  </div>
+
+  <!-- ── Index ── -->
+  <div class="index-card">
+    <div class="index-title">目次 ／ Contents</div>
+    <div class="index-list">
+      <a class="index-item" href="#s1">
+        <div class="index-num red">1</div>
+        <div class="index-item-text">マネジメントフィーの改訂について</div>
+        <span class="index-badge badge-decision">決裁希望</span>
+      </a>
+      <a class="index-item" href="#s2">
+        <div class="index-num red">2</div>
+        <div class="index-item-text">オフ会開催のご承認について</div>
+        <span class="index-badge badge-decision">決裁希望</span>
+      </a>
+      <a class="index-item" href="#s3">
+        <div class="index-num amber">3</div>
+        <div class="index-item-text">特進コース評価基準の変更について</div>
+        <span class="index-badge badge-proposal">提案・壁打ち</span>
+      </a>
+      <a class="index-item" href="#s4">
+        <div class="index-num">4</div>
+        <div class="index-item-text">新人向けコーチングの導入について</div>
+        <span class="index-badge badge-proposal">提案</span>
+      </a>
+      <a class="index-item" href="#s5">
+        <div class="index-num blue">5</div>
+        <div class="index-item-text">未締結業務の契約書対応について</div>
+        <span class="index-badge badge-report">報告</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── Chapter 1: 決裁事項 ── -->
+  <div class="chapter">決裁希望事項</div>
+
+  <!-- 決裁① マネジメントフィー -->
+  <div class="section" id="s1">
+    <div class="section-head red">
+      <div class="section-icon">💰</div>
+      <div class="section-head-text">
+        <div class="section-tag red">決裁希望 ①</div>
+        <h2>マネジメントメンバーのフィー改訂をお願いしたい</h2>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="block">
+        <div class="block-label">現状の問題</div>
+        <div class="alert red">
+          <strong>実稼働に対して報酬が著しく不足しており、マネジメントに時間を割けない状況になっています。</strong><br>
+          「生徒を受け持つ方が報酬が高い」という構造上、プレイヤー業務に比重が傾き、チーム運営の質が下がるリスクがあります。
+        </div>
+        <div class="point-list">
+          <div class="point"><div class="point-dot red"></div><div>ゆかさんが離脱し、6名→5名体制で運営中（欠員補充なし）</div></div>
+          <div class="point"><div class="point-dot red"></div><div>新人増員により、担当人数が平均 <strong>6名 → 10名</strong> に増加</div></div>
+          <div class="point"><div class="point-dot red"></div><div>品質向上施策・クレーム対応など突発業務が定常化している</div></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">稼働時間の乖離</div>
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-label">想定していた月間稼働</div>
+            <div class="stat-val amber">24〜39<span style="font-size:14px;font-weight:400">時間</span></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">実際の月間稼働</div>
+            <div class="stat-val red">70〜75<span style="font-size:14px;font-weight:400">時間＋α</span></div>
+            <div class="stat-sub">クレーム対応 4時間/件 別途</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">現状の実質時給</div>
+            <div class="stat-val red">533<span style="font-size:14px;font-weight:400">円/時</span></div>
+            <div class="stat-sub">想定稼働ベースでは 1,026円/時</div>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>稼働内容</th><th>想定時間</th><th>実際の時間</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>マネジメント定例・リーダー1on1・チーム定例</td><td>3時間</td><td>5時間</td></tr>
+              <tr><td>メンバー1on1（6名→10名）</td><td>6時間</td><td>15時間</td></tr>
+              <tr><td>チーム運営・定例準備・チャット対応</td><td>10〜20時間</td><td>50〜55時間</td></tr>
+              <tr><td>クレーム対応（事実確認・指導・報告）</td><td>—</td><td>4時間/件</td></tr>
+              <tr><td><strong>合計</strong></td><td><strong>24〜39時間</strong></td><td><strong>70〜75時間＋α</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">提案する報酬設計</div>
+        <div class="point-list" style="margin-bottom:16px">
+          <div class="point"><div class="point-dot"></div><div><strong>ベース報酬</strong>：1,500円/時 × 55時間 ＝ 82,500円</div></div>
+          <div class="point"><div class="point-dot"></div><div><strong>メンバー担当報酬</strong>：3,000円/名 × 10名 ＝ 30,000円</div></div>
+          <div class="point"><div class="point-dot"></div><div>マネジメントメンバー1名あたり：<strong>112,500円/月</strong></div></div>
+        </div>
+
+        <div class="compare">
+          <div class="compare-box before">
+            <div class="compare-label before">現在（5名分）</div>
+            <div class="compare-amount before">200,000円</div>
+            <div class="compare-sub">40,000円 × 5名</div>
+          </div>
+          <div class="compare-arrow">→</div>
+          <div class="compare-box after">
+            <div class="compare-label after">改訂後（5名分）</div>
+            <div class="compare-amount after">562,500円</div>
+            <div class="compare-sub">112,500円 × 5名</div>
+          </div>
+        </div>
+
+        <div class="alert green">
+          コーチング部の人件費として、月間 <strong>562,500円</strong> の予算確保をお願いしたいです。<br>
+          ご承認いただければ、内容に沿った業務委託契約書を速やかに作成いたします。
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 決裁② オフ会 -->
+  <div class="section" id="s2">
+    <div class="section-head red">
+      <div class="section-icon">🎉</div>
+      <div class="section-head-text">
+        <div class="section-tag red">決裁希望 ②</div>
+        <h2>コーチングメンバーのオフ会開催をご承認いただきたい</h2>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="block">
+        <div class="block-label">背景・目的</div>
+        <div class="point-list">
+          <div class="point"><div class="point-dot"></div><div>メンバーはほぼ全員オンライン勤務で、直接交流の機会がほとんどない</div></div>
+          <div class="point"><div class="point-dot"></div><div>日頃の感謝を伝えるとともに、チームの結束力を高めたい</div></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">ご承認いただきたい費用</div>
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-label">交通費補助（東京 往復）</div>
+            <div class="stat-val amber">2<span style="font-size:14px;font-weight:400">万円</span></div>
+            <div class="stat-sub">1人あたり上限</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">会場費</div>
+            <div class="stat-val green">全額</div>
+            <div class="stat-sub">会社負担をお願いしたい</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Chapter 2: 提案事項 ── -->
+  <div class="chapter">提案・ご相談事項</div>
+
+  <!-- 提案① 評価基準 -->
+  <div class="section" id="s3">
+    <div class="section-head amber">
+      <div class="section-icon">📊</div>
+      <div class="section-head-text">
+        <div class="section-tag amber">提案・壁打ち ①</div>
+        <h2>特進コース評価基準の変更｜新指標についてご意見をいただきたい</h2>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="block">
+        <div class="block-label">変更の背景</div>
+        <div class="point-list">
+          <div class="point"><div class="point-dot amber"></div><div>これまでアクションシートのアクション数でランクアップを評価していた</div></div>
+          <div class="point"><div class="point-dot amber"></div><div>特進コースの変更にともない、アクションシート廃止・「アクション数」の概念を廃止</div></div>
+          <div class="point"><div class="point-dot amber"></div><div>新しい評価指標の設計が必要になった</div></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">新評価指標（案）</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>指標</th><th>報酬（1名あたり）</th><th>条件・補足</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>初投稿 30日以内達成</strong></td>
+                <td><strong>+1,000円</strong></td>
+                <td>ジャンルによって差が出る可能性あり（要検討）</td>
+              </tr>
+              <tr>
+                <td><strong>100投稿達成</strong></td>
+                <td><strong>+1,000円</strong></td>
+                <td>SP開始日から 210日 or 180日 以内</td>
+              </tr>
+              <tr>
+                <td><strong>在学中 万垢達成</strong></td>
+                <td><strong>+5,000円</strong></td>
+                <td>SP開始日から 210日 or 180日 以内に達成</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="alert amber" style="margin-top:12px">
+          新ランク導入にあたり、<strong>ベース報酬は現行ランクの水準に準拠する</strong>方向でよいかご確認をお願いしたいです。
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">現行ランク別報酬テーブル（参考）</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>ランク</th><th>昇格条件</th><th>MG報酬（税込）</th><th>月次請求額</th><th>セッション単価</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="rank rank-master">マスター</td><td>100pt以上</td><td>162,000円</td><td>27,000円</td><td>4,500円</td></tr>
+              <tr><td class="rank rank-diamond">ダイヤモンド</td><td>70〜99pt</td><td>138,000円</td><td>23,000円</td><td>4,000円</td></tr>
+              <tr><td class="rank rank-platinum">プラチナ</td><td>34〜69pt</td><td>120,000円</td><td>20,000円</td><td>3,500円</td></tr>
+              <tr><td class="rank rank-gold">ゴールド</td><td>13〜33pt</td><td>108,000円</td><td>18,000円</td><td>3,000円</td></tr>
+              <tr><td class="rank rank-silver">シルバー</td><td>0〜12pt</td><td>96,000円</td><td>16,000円</td><td>2,500円</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="alert green">
+        💡 今後の展望：チームとしての成果に対する<strong>チーム報酬制度</strong>の導入も検討したいと考えています。
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 提案② 新人コーチング -->
+  <div class="section" id="s4">
+    <div class="section-head green">
+      <div class="section-icon">🌱</div>
+      <div class="section-head-text">
+        <div class="section-tag green">提案 ②</div>
+        <h2>新人向けコーチングを4月より開始したい</h2>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="block">
+        <div class="block-label">概要</div>
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-label">実施回数</div>
+            <div class="stat-val green">3<span style="font-size:14px;font-weight:400">回</span></div>
+            <div class="stat-sub">ジョイン月・翌月・その翌月</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">費用（1名あたり）</div>
+            <div class="stat-val amber">9,000<span style="font-size:14px;font-weight:400">円</span></div>
+            <div class="stat-sub">3,000円/回 × 3回</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">目的・目標</div>
+        <div class="point-list">
+          <div class="point"><div class="point-dot"></div><div>社内文化の定着と、Levela入社後の満足度・成果向上</div></div>
+          <div class="point"><div class="point-dot"></div><div><strong>ジョインから3ヶ月以内に「部署MVBe」または「MVBe」に選出される</strong>人材へ育てることを目指す</div></div>
+          <div class="point"><div class="point-dot"></div><div>「それいいね」獲得数なども指標として検討中</div></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">担当コーチ（初期体制）</div>
+        <div class="point-list">
+          <div class="point"><div class="point-dot"></div><div>ふうか・トミーの2名体制でスタート（今後増員予定）</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Chapter 3: 報告事項 ── -->
+  <div class="chapter">報告事項</div>
+
+  <!-- 報告 契約書 -->
+  <div class="section" id="s5">
+    <div class="section-head blue">
+      <div class="section-icon">📄</div>
+      <div class="section-head-text">
+        <div class="section-tag blue">報告</div>
+        <h2>未締結業務の業務委託契約書を4月中に作成します</h2>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="alert blue">
+        前提：SnsClubコーチング業務の基本契約書はすでに締結済みです。<br>
+        以下の業務について、追加の業務委託契約書を作成します。
+      </div>
+
+      <div class="block">
+        <div class="block-label">4月中に対応するもの（SnsClub関連）</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>業務区分</th><th>主な内容</th><th>対象メンバー</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>コーチング部 CS業務</strong></td>
+                <td>Notion整理、LINE対応、アサイン業務、他部署連携、生徒・講師説明 など</td>
+                <td>はるな・（もえこ）</td>
+              </tr>
+              <tr>
+                <td><strong>マネジメント業務</strong></td>
+                <td>コーチングメンバーの管理・育成・運営</td>
+                <td>そたか・トミー・ちづる・なつみ・ゆり</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">今後 別途対応が必要なもの</div>
+        <div class="point-list">
+          <div class="point"><div class="point-dot blue"></div><div><strong>TikTokライブスクール コーチング業務</strong>：別途、岡さんへ連絡（対象2名）</div></div>
+          <div class="point"><div class="point-dot blue"></div><div><strong>ミチシルコーチング</strong>：セッション実施8名／スクール講師2名／Levela新人向けコーチング2名</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <div style="text-align:center; margin-top:48px; font-size:12px; color:var(--text-light);">
+    コーチング部 ／ 2026年 春　— ご不明点はお気軽にご質問ください
+  </div>
+
+</div>
+</body>
+</html>
